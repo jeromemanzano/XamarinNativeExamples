@@ -1,8 +1,0 @@
-C:\astro.projects\Test\XamarinNativeExamples\XamarinNativeExamples\XamarinNativeExamples.Core\bin\Debug\netstandard2.0\XamarinNativeExamples.Core.deps.json
-C:\astro.projects\Test\XamarinNativeExamples\XamarinNativeExamples\XamarinNativeExamples.Core\bin\Debug\netstandard2.0\XamarinNativeExamples.Core.dll
-C:\astro.projects\Test\XamarinNativeExamples\XamarinNativeExamples\XamarinNativeExamples.Core\bin\Debug\netstandard2.0\XamarinNativeExamples.Core.pdb
-C:\astro.projects\Test\XamarinNativeExamples\XamarinNativeExamples\XamarinNativeExamples.Core\obj\Debug\netstandard2.0\XamarinNativeExamples.Core.AssemblyInfoInputs.cache
-C:\astro.projects\Test\XamarinNativeExamples\XamarinNativeExamples\XamarinNativeExamples.Core\obj\Debug\netstandard2.0\XamarinNativeExamples.Core.AssemblyInfo.cs
-C:\astro.projects\Test\XamarinNativeExamples\XamarinNativeExamples\XamarinNativeExamples.Core\obj\Debug\netstandard2.0\XamarinNativeExamples.Core.csproj.CoreCompileInputs.cache
-C:\astro.projects\Test\XamarinNativeExamples\XamarinNativeExamples\XamarinNativeExamples.Core\obj\Debug\netstandard2.0\XamarinNativeExamples.Core.dll
-C:\astro.projects\Test\XamarinNativeExamples\XamarinNativeExamples\XamarinNativeExamples.Core\obj\Debug\netstandard2.0\XamarinNativeExamples.Core.pdb
