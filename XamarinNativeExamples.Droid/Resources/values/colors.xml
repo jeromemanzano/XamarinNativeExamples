@@ -3,4 +3,9 @@
     <color name="colorPrimary">#2c3e50</color>
     <color name="colorPrimaryDark">#1B3147</color>
     <color name="colorAccent">#3498db</color>
+	<color name="prussianBlue">#1D3557</color>
+	<color name="powderBlue">#A8DADC</color>
+	<color name="celadonBlue">#457B9D</color>
+	<color name="honeyDew">#F1FAEE</color>
+	<color name="imperialRed">#E63946</color>
 </resources>
