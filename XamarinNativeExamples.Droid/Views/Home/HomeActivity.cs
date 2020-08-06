@@ -5,7 +5,7 @@ using XamarinNativeExamples.Droid.Views.Base;
 
 namespace XamarinNativeExamples.Droid.Views.Home
 {
-    [Activity(Label = "HomeActivity")]
+    [Activity(Label = "@string/home")]
     public class HomeActivity : BaseActivity<HomeViewModel>
     {
         protected override int LayoutResource => Resource.Layout.activity_home;
