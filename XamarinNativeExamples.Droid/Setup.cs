@@ -1,5 +1,8 @@
-﻿using MvvmCross.Droid.Support.V7.AppCompat;
+﻿using Com.Ramotion.Foldingcell;
+using MvvmCross.Binding.Bindings.Target.Construction;
+using MvvmCross.Droid.Support.V7.AppCompat;
 using XamarinNativeExamples.Core;
+using XamarinNativeExamples.Droid.Binders;
 
 namespace XamarinNativeExamples.Droid
 {
@@ -8,6 +11,14 @@ namespace XamarinNativeExamples.Droid
         protected override void InitializeFirstChance()
         {
             base.InitializeFirstChance();
+        }
+
+        protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
+        {
+            base.FillTargetFactories(registry);
+
+            registry.RegisterCustomBindingFactory<FoldingCell>("FoldingCellOpen", view => new FoldingCellStatusBinding(view));
+
         }
     }
 }
