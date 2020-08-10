@@ -1,11 +1,12 @@
 ﻿using Android.App;
+using Android.Content.PM;
 using Android.OS;
 using XamarinNativeExamples.Core.ViewModels.Button;
 using XamarinNativeExamples.Droid.Views.Base;
 
 namespace XamarinNativeExamples.Droid.Views.Button
 {
-    [Activity(Label = "@string/button", Theme = "@style/ButtonPageTheme")]
+    [Activity(Label = "@string/button", Theme = "@style/ButtonPageTheme", ScreenOrientation = ScreenOrientation.Portrait)]
     public class ButtonActivity : BaseActivity<ButtonViewModel>
     {
         protected override int LayoutResource => Resource.Layout.activity_button;
