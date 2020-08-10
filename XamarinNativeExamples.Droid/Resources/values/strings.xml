@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">XNE</string>
 	<string name="home">Home</string>
+	<string name="button">Button</string>
+	<string name="ui">User Interface</string>
+
+	<string name="button_long_click_count_label">Long Click Count:</string>
+	<string name="button_click_count_label">Click Count:</string>
+	<string name="open">Open</string>
+	<string name="close">Close</string>
 </resources>
