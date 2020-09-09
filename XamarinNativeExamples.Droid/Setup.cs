@@ -1,12 +1,12 @@
 ﻿using Com.Ramotion.Foldingcell;
 using MvvmCross.Binding.Bindings.Target.Construction;
-using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Platforms.Android.Core;
 using XamarinNativeExamples.Core;
 using XamarinNativeExamples.Droid.Binders;
 
 namespace XamarinNativeExamples.Droid
 {
-    public class Setup : MvxAppCompatSetup<App>
+    public class Setup : MvxAndroidSetup<App>
     {
         protected override void InitializeFirstChance()
         {
