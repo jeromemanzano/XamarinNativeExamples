@@ -1,7 +1,7 @@
 ﻿using Android.OS;
-using Android.Support.V7.Widget;
 using Android.Views;
-using MvvmCross.Droid.Support.V7.AppCompat;
+using AndroidX.AppCompat.Widget;
+using MvvmCross.Platforms.Android.Views;
 using Plugin.CurrentActivity;
 using Xamarin.Essentials;
 using XamarinNativeExamples.Core.ViewModels.Base;
@@ -9,7 +9,7 @@ using XamarinNativeExamples.Core.ViewModels.Base;
 namespace XamarinNativeExamples.Droid.Views.Base
 {
     public abstract class BaseActivity<TViewModel>
-        : MvxAppCompatActivity<TViewModel> where TViewModel : class, IPageViewModel
+        : MvxActivity<TViewModel> where TViewModel : class, IPageViewModel
     {
         protected abstract int LayoutResource { get; }
 

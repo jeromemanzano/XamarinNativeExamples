@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -24,10 +24,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/widget_header">
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <android.support.design.card.MaterialCardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/button_card_view"
                 style="@style/WidgetCardViewStyle"
                 android:layout_marginStart="20dp"
@@ -37,7 +37,7 @@
                     style="@style/WidgetImageStyle"
                     app:MvxBind="Click OpenButtonCommand"
                     android:src="@drawable/panel_button" />
-            </android.support.design.card.MaterialCardView>
+            </com.google.android.material.card.MaterialCardView>
             <TextView
                 style="@style/WidgetTextStyle"
                 android:textAlignment="center"
@@ -48,6 +48,6 @@
                 app:layout_constraintStart_toStartOf="@+id/button_card_view"
                 app:layout_constraintEnd_toEndOf="@+id/button_card_view"
                 app:layout_constraintTop_toBottomOf="@+id/button_card_view"/>
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </HorizontalScrollView>
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

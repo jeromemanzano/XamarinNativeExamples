@@ -2,13 +2,14 @@
 using Android.App;
 using Android.OS;
 using Android.Runtime;
-using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross.ViewModels;
 using XamarinNativeExamples.Core;
 
 namespace XamarinNativeExamples.Droid
 {
     [Application]
-    public class DroidApp : MvxAppCompatApplication<Setup, App>, Application.IActivityLifecycleCallbacks
+    public class DroidApp : MvxAndroidApplication<Setup, App>, Application.IActivityLifecycleCallbacks
     { 
         public DroidApp(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
         {

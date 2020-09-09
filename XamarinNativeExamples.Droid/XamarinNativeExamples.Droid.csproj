@@ -114,13 +114,13 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AppCenter.Analytics">
-      <Version>3.4.0</Version>
+      <Version>3.4.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Crashes">
-      <Version>3.4.0</Version>
+      <Version>3.4.1</Version>
     </PackageReference>
-    <PackageReference Include="MvvmCross.Droid.Support.V7.AppCompat">
-      <Version>6.4.2</Version>
+    <PackageReference Include="MvvmCross">
+      <Version>7.0.0</Version>
     </PackageReference>
     <PackageReference Include="Plugin.CurrentActivity">
       <Version>2.1.0.4</Version>
@@ -128,13 +128,14 @@
     <PackageReference Include="Xam.Plugins.Android.FoldingCell">
       <Version>1.2.1</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Android.Support.Constraint.Layout">
-      <Version>2.0.0-beta2</Version>
+    <PackageReference Include="Xamarin.AndroidX.ConstraintLayout">
+      <Version>1.1.3-preview02</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
-    <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="28.0.0.3" />
-    <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="28.0.0.3" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Xamarin.Google.Android.Material" Version="1.0.0-preview02" />
+    <PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.Utils" Version="1.0.0-preview02" />
+    <PackageReference Include="Xamarin.AndroidX.Browser" Version="1.0.0-preview02" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.0-preview03" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinNativeExamples.Core\XamarinNativeExamples.Core.csproj">
