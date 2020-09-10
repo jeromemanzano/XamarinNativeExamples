@@ -1,11 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text="home"
+        android:id="@+id/widget_header"
+        style="@style/HeaderTextStyle"
+        android:text="@string/ui"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <HorizontalScrollView
+        android:id="@+id/widget_scroll"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/widget_header">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/button_card_view"
+                style="@style/WidgetCardViewStyle"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <ImageView
+                    style="@style/WidgetImageStyle"
+                    app:MvxBind="Click OpenButtonCommand"
+                    android:src="@drawable/panel_button" />
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                style="@style/WidgetTextStyle"
+                android:textAlignment="center"
+                android:text="@string/button"
+                android:layout_marginTop="10dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/button_card_view"
+                app:layout_constraintEnd_toEndOf="@+id/button_card_view"
+                app:layout_constraintTop_toBottomOf="@+id/button_card_view"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </HorizontalScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

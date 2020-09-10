@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2c3e50</color>
-    <color name="colorPrimaryDark">#1B3147</color>
     <color name="colorAccent">#3498db</color>
+	<color name="prussianBlue">#1D3557</color>
+	<color name="prussianBlueDark">#041C3E</color>
+	<color name="powderBlue">#A8DADC</color>
+	<color name="celadonBlue">#457B9D</color>
+	<color name="honeyDew">#F1FAEE</color>
+	<color name="imperialRed">#E63946</color>
+
+	<color name="mustardYellow">#DE9E33</color>
+	<color name="mustardYellowDark">#C5851A</color>
+	<color name="stilletoRed">#98342E</color>
+	<color name="stilletoRedDark">#7F1B15</color>
+	<color name="delugePurple">#9257A2</color>
+	<color name="delugePurpleDark">#793E89</color>
+	<color name="comoGreen">#4E7760</color>
+	<color name="comoGreenDark">#355E47</color>
+
+	<color name="timberGreen">#303E2E</color>
+	
+	<color name="black">#292B2C</color>
 </resources>
