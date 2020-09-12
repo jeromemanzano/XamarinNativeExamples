@@ -117,17 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ButtonClickDescription" xml:space="preserve">
-    <value>MVVM Cross have built-in binding for click and long click. Try it with the button below!</value>
-  </data>
   <data name="ButtonClickHeader" xml:space="preserve">
     <value>Button click and long click</value>
   </data>
-  <data name="ButtonEnableDescription" xml:space="preserve">
-    <value>MVVM Cross has built-in binding for enabling/disabling button. Toggle switch below to try.</value>
-  </data>
   <data name="ButtonEnableHeader" xml:space="preserve">
     <value>Enable/disable button</value>
+  </data>
+  <data name="TextFilterDescription" xml:space="preserve">
+    <value>Below is a custom binding for implementing filter on your textbox using Regex. Try it the different examples below.</value>
+  </data>
+  <data name="TextFilterHeader" xml:space="preserve">
+    <value>Filtering text input</value>
+  </data>
+  <data name="TextFilterLowerCase" xml:space="preserve">
+    <value>Lower Case only</value>
+  </data>
+  <data name="TextFilterNumber" xml:space="preserve">
+    <value>Numbers only</value>
+  </data>
+  <data name="TextTextHeader" xml:space="preserve">
+    <value>Binding Text property</value>
   </data>
   <data name="TryMe" xml:space="preserve">
     <value>Try me!</value>
