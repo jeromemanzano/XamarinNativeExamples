@@ -1,9 +1,9 @@
 ﻿using MvvmCross.Commands;
 using XamarinNativeExamples.Core.ViewModels.Base;
 
-namespace XamarinNativeExamples.Core.ViewModels.Button.Items
+namespace XamarinNativeExamples.Core.ViewModels
 {
-    public abstract class ButtonItemViewModel : BaseItemViewModel
+    public abstract class CellItemViewModel : BaseItemViewModel
     {
         private IMvxCommand _toggleFoldStateCommand;
         public IMvxCommand ToggleFoldStateCommand
@@ -32,14 +32,7 @@ namespace XamarinNativeExamples.Core.ViewModels.Button.Items
             protected set => SetProperty(ref _description, value);
         }
 
-        private string _buttonText;
-        public string ButtonText
-        {
-            get => _buttonText;
-            protected set => SetProperty(ref _buttonText, value);
-        }
-
-        private void ToggleFoldState() 
+        private void ToggleFoldState()
         {
             InvokeOnMainThread(() => CellOpen = !CellOpen);
         }

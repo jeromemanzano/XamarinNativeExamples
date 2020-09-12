@@ -61,15 +61,6 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MVVM Cross have built-in binding for click and long click. Try it with the button below!.
-        /// </summary>
-        internal static string ButtonClickDescription {
-            get {
-                return ResourceManager.GetString("ButtonClickDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Button click and long click.
         /// </summary>
         internal static string ButtonClickHeader {
@@ -79,20 +70,56 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MVVM Cross has built-in binding for enabling/disabling button. Toggle switch below to try..
-        /// </summary>
-        internal static string ButtonEnableDescription {
-            get {
-                return ResourceManager.GetString("ButtonEnableDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Enable/disable button.
         /// </summary>
         internal static string ButtonEnableHeader {
             get {
                 return ResourceManager.GetString("ButtonEnableHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Below is a custom binding for implementing filter on your textbox using Regex. Try it the different examples below..
+        /// </summary>
+        internal static string TextFilterDescription {
+            get {
+                return ResourceManager.GetString("TextFilterDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filtering text input.
+        /// </summary>
+        internal static string TextFilterHeader {
+            get {
+                return ResourceManager.GetString("TextFilterHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lower Case only.
+        /// </summary>
+        internal static string TextFilterLowerCase {
+            get {
+                return ResourceManager.GetString("TextFilterLowerCase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Numbers only.
+        /// </summary>
+        internal static string TextFilterNumber {
+            get {
+                return ResourceManager.GetString("TextFilterNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Binding Text property.
+        /// </summary>
+        internal static string TextTextHeader {
+            get {
+                return ResourceManager.GetString("TextTextHeader", resourceCulture);
             }
         }
         

@@ -26,6 +26,12 @@
 		<item name="colorSecondary">@color/timberGreen</item>
 	</style>
 
+	<style name="TextPageTheme" parent="WidgetTheme">
+		<item name="colorPrimary">@color/comoGreen</item>
+		<item name="colorPrimaryDark">@color/comoGreenDark</item>
+		<item name="colorSecondary">@color/mountBattenPink</item>
+	</style>
+
 	<style name="WidgetImageStyle">
 		<item name="android:layout_height">match_parent</item>
 		<item name="android:layout_width">match_parent</item>

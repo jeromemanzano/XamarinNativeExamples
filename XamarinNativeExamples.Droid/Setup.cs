@@ -1,4 +1,5 @@
-﻿using Com.Ramotion.Foldingcell;
+﻿using Android.Widget;
+using Com.Ramotion.Foldingcell;
 using MvvmCross.Binding.Bindings.Target.Construction;
 using MvvmCross.Platforms.Android.Core;
 using XamarinNativeExamples.Core;
@@ -18,7 +19,7 @@ namespace XamarinNativeExamples.Droid
             base.FillTargetFactories(registry);
 
             registry.RegisterCustomBindingFactory<FoldingCell>("FoldingCellOpen", view => new FoldingCellStatusBinding(view));
-
+            registry.RegisterCustomBindingFactory<EditText>("EditTextFilter", view => new EditTextFilterBinding(view));
         }
     }
 }

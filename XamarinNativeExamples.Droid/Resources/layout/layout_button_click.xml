@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="70dp"
                 android:textSize="14sp"
-                app:MvxBind="Text ButtonClick.Description"
+                android:text="@string/button_click_description"
                 app:layout_constraintStart_toStartOf="@+id/left_guideline"
                 app:layout_constraintEnd_toEndOf="@+id/right_guideline"
                 app:layout_constraintTop_toTopOf="parent"/>

@@ -48,6 +48,27 @@
                 app:layout_constraintStart_toStartOf="@+id/button_card_view"
                 app:layout_constraintEnd_toEndOf="@+id/button_card_view"
                 app:layout_constraintTop_toBottomOf="@+id/button_card_view"/>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/text_card_view"
+                style="@style/WidgetCardViewStyle"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toEndOf="@+id/button_card_view"
+                app:layout_constraintTop_toTopOf="parent">
+                <ImageView
+                    style="@style/WidgetImageStyle"
+                    app:MvxBind="Click OpenTextCommand"
+                    android:src="@drawable/panel_text" />
+            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                style="@style/WidgetTextStyle"
+                android:textAlignment="center"
+                android:text="@string/text"
+                android:layout_marginTop="10dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/text_card_view"
+                app:layout_constraintEnd_toEndOf="@+id/text_card_view"
+                app:layout_constraintTop_toBottomOf="@+id/text_card_view"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </HorizontalScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
