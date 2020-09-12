@@ -4,7 +4,7 @@ using XamarinNativeExamples.Core.Properties;
 
 namespace XamarinNativeExamples.Core.ViewModels.Button.Items
 {
-    public class ButtonClickItemViewModel : ButtonItemViewModel
+    public class ButtonClickItemViewModel : CellItemViewModel
     {
         private IMvxCommand _clickCommand;
         public IMvxCommand ClickCommand
@@ -32,12 +32,18 @@ namespace XamarinNativeExamples.Core.ViewModels.Button.Items
             private set => SetProperty(ref _longClickCount, value);
         }
 
+        private string _buttonText;
+        public string ButtonText
+        {
+            get => _buttonText;
+            private set => SetProperty(ref _buttonText, value);
+        }
+
         public override Task Initialize()
         {
             InvokeOnMainThread(() =>
             {
                 Title = Resources.ButtonClickHeader;
-                Description = Resources.ButtonClickDescription;
                 ButtonText = Resources.TryMe;
             });
 
