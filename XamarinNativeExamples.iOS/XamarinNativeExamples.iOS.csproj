@@ -127,10 +127,12 @@
     <ImageAsset Include="Assets.xcassets\LogoIcon.imageset\xne_logo.pdf">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\PrussianBlue.colorset\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Views\Home\" />
+    <Folder Include="Assets.xcassets\PrussianBlue.colorset\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinNativeExamples.Core\XamarinNativeExamples.Core.csproj">
