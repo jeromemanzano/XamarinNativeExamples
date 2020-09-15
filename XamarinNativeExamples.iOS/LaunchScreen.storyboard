@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="HoneyDew"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1" verticalHuggingPriority="1" id="445" image="LogoIcon" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" ambiguous="YES">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1" verticalHuggingPriority="1" id="445" image="LogoIcon" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="87" y="304" width="240" height="128"/>
                             </imageView>
                         </subviews>
@@ -33,4 +33,7 @@
             <point key="canvasLocation" x="-200" y="-388"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LogoIcon" width="100" height="100"/>
+    </resources>
 </document>

@@ -121,6 +121,9 @@
     <ImageAsset Include="Assets.xcassets\LogoIcon.imageset\xne_logo.pdf">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\PrussianBlue.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

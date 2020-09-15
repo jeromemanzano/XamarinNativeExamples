@@ -2,11 +2,18 @@
 
 namespace XamarinNativeExamples.iOS.Utils
 {
-    public static class Theme
+    public struct Theme
     {
-        public static void Home()
+        public UIColor BarTintColor { get; set; }
+        public UIColor TitleForegroundColor { get; set; }
+    }
+
+    public class Themes
+    {
+        public static Theme Home => new Theme 
         {
-            UIView.Appearance.TintColor = UIColor.FromName("PrussianBlue");
-        }
+            BarTintColor = UIColor.FromName("PrussianBlue"),
+            TitleForegroundColor = UIColor.White
+        };
     }
 }

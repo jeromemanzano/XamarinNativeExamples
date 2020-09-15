@@ -2,6 +2,7 @@
 using MvvmCross.Platforms.Ios.Views;
 using UIKit;
 using XamarinNativeExamples.Core.ViewModels.Base;
+using XamarinNativeExamples.iOS.Utils;
 
 namespace XamarinNativeExamples.iOS.Views.Base
 {
@@ -16,6 +17,8 @@ namespace XamarinNativeExamples.iOS.Views.Base
             : base(nibName, null)
         {
         }
+
+        protected virtual Theme Theme { get; }
 
         protected bool IsKeyboardHandlerEnabled { get; set; } = true;
 
@@ -35,8 +38,15 @@ namespace XamarinNativeExamples.iOS.Views.Base
 
             Title = ViewModel?.Title;
 
+            SetTheme();
             InitializeControls();
             BindControls();
+        }
+
+        private void SetTheme() 
+        {
+            NavigationController.NavigationBar.BarTintColor = Theme.BarTintColor;
+            NavigationController.NavigationBar.TitleTextAttributes = new UIStringAttributes() { ForegroundColor = Theme.TitleForegroundColor };
         }
     }
 }
