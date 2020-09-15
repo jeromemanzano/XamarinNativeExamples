@@ -64,6 +64,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
+    <Compile Include="Utils\Theme.cs" />
     <Compile Include="Views\Base\BaseViewController.cs" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
