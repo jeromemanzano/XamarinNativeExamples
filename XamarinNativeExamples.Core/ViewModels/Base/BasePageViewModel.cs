@@ -21,7 +21,7 @@ namespace XamarinNativeExamples.Core.ViewModels.Base
             get => _backCommand ?? (_backCommand = new MvxAsyncCommand(BackAsync));
         }
 
-        public string Title { get; protected set; }
+        public virtual string Title { get; protected set; }
 
         protected virtual Task BackAsync()
         {

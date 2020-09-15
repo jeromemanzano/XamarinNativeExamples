@@ -123,6 +123,9 @@
   <data name="ButtonEnableHeader" xml:space="preserve">
     <value>Enable/disable button</value>
   </data>
+  <data name="HomeTitle" xml:space="preserve">
+    <value>Home</value>
+  </data>
   <data name="TextFilterDescription" xml:space="preserve">
     <value>Below is a custom binding for implementing filter on your textbox using Regex. Try it the different examples below.</value>
   </data>

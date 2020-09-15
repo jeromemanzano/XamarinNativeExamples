@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using MvvmCross.Commands;
+using XamarinNativeExamples.Core.Properties;
 using XamarinNativeExamples.Core.ViewModels.Base;
 using XamarinNativeExamples.Core.ViewModels.Button;
 using XamarinNativeExamples.Core.ViewModels.Text;
@@ -8,6 +9,8 @@ namespace XamarinNativeExamples.Core.ViewModels.Home
 {
     public class HomeViewModel : BasePageViewModel
     {
+        public override string Title => Resources.HomeTitle;
+
         private IMvxCommand _openButtonCommand;
         public IMvxCommand OpenButtonCommand
         {

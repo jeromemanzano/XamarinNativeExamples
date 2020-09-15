@@ -64,10 +64,17 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
+    <Compile Include="Utils\Theme.cs" />
+    <Compile Include="Views\Base\BaseViewController.cs" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Entitlements.plist" />
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Views\Home\HomeViewController.xib" />
+    <Compile Include="Views\Home\HomeViewController.cs" />
+    <Compile Include="Views\Home\HomeViewController.designer.cs">
+      <DependentUpon>HomeViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -84,43 +91,37 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\xne-redApp Icon - 60x60.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\xne-redApp Icon - 60x60@2x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\xne-redApp Icon - 60x60@3x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\xne-redSettings Icon - 29x29@2x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\xne-redSettings Icon - 29x29@3x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\xne-redSpotlight Icon - 40x40.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\xne-redSpotlight Icon - 40x40@2x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\xne-redSpotlight Icon - 40x40@3x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
+    <ImageAsset Include="Assets.xcassets\HoneyDew.colorset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
+    <ImageAsset Include="Assets.xcassets\LogoIcon.imageset\xne_logo.pdf">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
+    <ImageAsset Include="Assets.xcassets\PrussianBlue.colorset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
