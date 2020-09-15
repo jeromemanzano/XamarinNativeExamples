@@ -79,6 +79,15 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        internal static string HomeTitle {
+            get {
+                return ResourceManager.GetString("HomeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Below is a custom binding for implementing filter on your textbox using Regex. Try it the different examples below..
         /// </summary>
         internal static string TextFilterDescription {

@@ -1,12 +1,14 @@
 ﻿using System;
 
 using UIKit;
+using XamarinNativeExamples.Core.ViewModels.Home;
+using XamarinNativeExamples.iOS.Views.Base;
 
 namespace XamarinNativeExamples.iOS.Views.Home
 {
-    public partial class HomeViewController : UIViewController
+    public partial class HomeViewController : BaseViewController<HomeViewModel>
     {
-        public HomeViewController() : base("HomeViewController", null)
+        public HomeViewController() : base("HomeViewController")
         {
         }
 

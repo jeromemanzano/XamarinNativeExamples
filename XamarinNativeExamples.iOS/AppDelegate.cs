@@ -21,14 +21,11 @@ namespace XamarinNativeExamples.iOS
         [Export("application:didFinishLaunchingWithOptions:")]
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            // create a new window instance based on the screen size
-            Window = new UIWindow(UIScreen.MainScreen.Bounds);
-            Window.RootViewController = new UIViewController();
+            var result = base.FinishedLaunching(application, launchOptions);
 
-            // make the window visible
-            Window.MakeKeyAndVisible();
+            // here is where your custom code should be placed
 
-            return true;
+            return result;
         }
     }
 }
