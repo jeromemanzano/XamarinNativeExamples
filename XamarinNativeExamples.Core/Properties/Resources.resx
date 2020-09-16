@@ -123,6 +123,9 @@
   <data name="ButtonEnableHeader" xml:space="preserve">
     <value>Enable/disable button</value>
   </data>
+  <data name="ButtonTitle" xml:space="preserve">
+    <value>Button</value>
+  </data>
   <data name="HomeTitle" xml:space="preserve">
     <value>Home</value>
   </data>
@@ -143,5 +146,8 @@
   </data>
   <data name="TryMe" xml:space="preserve">
     <value>Try me!</value>
+  </data>
+  <data name="UserInterfaceHeader" xml:space="preserve">
+    <value>User Interface</value>
   </data>
 </root>

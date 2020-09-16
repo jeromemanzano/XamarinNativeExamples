@@ -79,6 +79,15 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Button.
+        /// </summary>
+        internal static string ButtonTitle {
+            get {
+                return ResourceManager.GetString("ButtonTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         internal static string HomeTitle {
@@ -138,6 +147,15 @@ namespace XamarinNativeExamples.Core.Properties {
         internal static string TryMe {
             get {
                 return ResourceManager.GetString("TryMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Interface.
+        /// </summary>
+        internal static string UserInterfaceHeader {
+            get {
+                return ResourceManager.GetString("UserInterfaceHeader", resourceCulture);
             }
         }
     }

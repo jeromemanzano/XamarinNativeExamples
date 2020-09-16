@@ -115,7 +115,16 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\xne-redSpotlight Icon - 40x40@3x.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ButtonPanel.imageset\button-panel.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\HoneyDew.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ButtonPanel.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LogoIcon.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LogoIcon.imageset\xne_logo.pdf">
