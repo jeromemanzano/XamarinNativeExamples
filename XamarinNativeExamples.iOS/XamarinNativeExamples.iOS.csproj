@@ -75,6 +75,11 @@
     <Compile Include="Views\Home\HomeViewController.designer.cs">
       <DependentUpon>HomeViewController.cs</DependentUpon>
     </Compile>
+    <InterfaceDefinition Include="Views\Button\ButtonViewController.xib" />
+    <Compile Include="Views\Button\ButtonViewController.cs" />
+    <Compile Include="Views\Button\ButtonViewController.designer.cs">
+      <DependentUpon>ButtonViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -136,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Views\Button\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinNativeExamples.Core\XamarinNativeExamples.Core.csproj">
