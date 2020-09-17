@@ -26,10 +26,6 @@ namespace XamarinNativeExamples.iOS.Views.Home
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel UserInterfaceLabel { get; set; }
 
-        [Action ("ButtonButton_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void ButtonButton_TouchUpInside (UIKit.UIButton sender);
-
         void ReleaseDesignerOutlets ()
         {
             if (ButtonButton != null) {

@@ -138,8 +138,12 @@
     <ImageAsset Include="Assets.xcassets\PrussianBlue.colorset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\MustardYellow.colorset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\TimberGreen.colorset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\MustardYellow.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\TimberGreen.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
