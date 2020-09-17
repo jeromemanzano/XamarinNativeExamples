@@ -138,10 +138,14 @@
     <ImageAsset Include="Assets.xcassets\PrussianBlue.colorset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\MustardYellow.colorset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\TimberGreen.colorset\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Views\Button\" />
+    <Folder Include="Assets.xcassets\MustardYellow.colorset\" />
+    <Folder Include="Assets.xcassets\TimberGreen.colorset\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinNativeExamples.Core\XamarinNativeExamples.Core.csproj">
