@@ -80,6 +80,16 @@
     <Compile Include="Views\Button\ButtonViewController.designer.cs">
       <DependentUpon>ButtonViewController.cs</DependentUpon>
     </Compile>
+    <InterfaceDefinition Include="Views\Button\ButtonClickViewController.xib" />
+    <Compile Include="Views\Button\ButtonClickViewController.cs" />
+    <Compile Include="Views\Button\ButtonClickViewController.designer.cs">
+      <DependentUpon>ButtonClickViewController.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Button\ButtonEnableViewController.xib" />
+    <Compile Include="Views\Button\ButtonEnableViewController.cs" />
+    <Compile Include="Views\Button\ButtonEnableViewController.designer.cs">
+      <DependentUpon>ButtonEnableViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
