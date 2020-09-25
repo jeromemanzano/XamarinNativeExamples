@@ -160,6 +160,15 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Text.
+        /// </summary>
+        internal static string TextTitle {
+            get {
+                return ResourceManager.GetString("TextTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Try me!.
         /// </summary>
         internal static string TryMe {
