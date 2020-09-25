@@ -58,7 +58,7 @@ namespace XamarinNativeExamples.iOS.Utils
                 BackgroundColor = UIColor.FromName("MustardYellow"),
                 TextColor = UIColor.White,
                 PrefersLargeTitles = true,
-                BackgroundImage = UIImage.FromBundle("ButtonPanel").SetAlpha(0.6f, CoreGraphics.CGBlendMode.Screen),
+                BackgroundImage = UIImage.FromBundle("ButtonPanel").Blend(0.6f, UIColor.FromName("MustardYellow").CGColor),
             },
             ButtonTheme = new ButtonTheme 
             {

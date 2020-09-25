@@ -5,11 +5,20 @@ namespace UIKit
 {
     public static class UIExtensions
     {
-        public static UIImage SetAlpha(this UIImage image, nfloat alpha, CGBlendMode blendMode = CGBlendMode.Normal)
+        public static UIImage Blend(this UIImage image, nfloat alpha, CGColor fillColor, CGBlendMode blendMode = CGBlendMode.Normal)
         {
             UIGraphics.BeginImageContextWithOptions(image.Size, false, 0);
 
-            image.Draw(new CGRect(0,0,image.Size.Width, image.Size.Height), blendMode, alpha);
+            var rect = new CGRect(0, 0, image.Size.Width, image.Size.Height);
+
+            if (fillColor != null)
+            {
+                var context = UIGraphics.GetCurrentContext();
+                context.SetFillColor(fillColor);
+                context.FillRect(rect);
+            }
+
+            image.Draw(rect, blendMode, alpha);
 
             var newImage = UIGraphics.GetImageFromCurrentImageContext();
             UIGraphics.EndImageContext();
