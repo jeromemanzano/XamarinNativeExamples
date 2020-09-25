@@ -190,15 +190,16 @@
     <ImageAsset Include="Assets.xcassets\TimberGreen.colorset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\ComoGreen.colorset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\MountBattenPink.colorset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ComoGreen.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\MountBattenPink.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\MustardYellow.colorset\" />
     <Folder Include="Assets.xcassets\TimberGreen.colorset\" />
-    <Folder Include="Views\Text\" />
-    <Folder Include="Assets.xcassets\ComoGreen.colorset\" />
-    <Folder Include="Assets.xcassets\MountBattenPink.colorset\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinNativeExamples.Core\XamarinNativeExamples.Core.csproj">
