@@ -60,11 +60,19 @@
     <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ThemeExtensions.cs" />
+    <Compile Include="Extensions\UIExtensions.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="Views\Gestures\MvxLongPressGestureRecognizerBehavior.cs" />
+    <Compile Include="Controls\AccordionView.cs" />
+    <Compile Include="CustomPresenter.cs" />
+    <Compile Include="Extensions\MvxBehaviorExtensions.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Utils\Theme.cs" />
+    <Compile Include="Views\Base\BaseItemViewController.cs" />
     <Compile Include="Views\Base\BaseViewController.cs" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
