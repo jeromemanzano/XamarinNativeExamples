@@ -1,4 +1,6 @@
 ﻿using CoreGraphics;
+using MvvmCross;
+using MvvmCross.Platforms.Ios.Presenters;
 using MvvmCross.Platforms.Ios.Views;
 using UIKit;
 using XamarinNativeExamples.Core.ViewModels.Base;
@@ -18,9 +20,11 @@ namespace XamarinNativeExamples.iOS.Views.Base
         {
         }
 
-        protected virtual Theme Theme { get; }
+        protected virtual ViewControllerTheme Theme { get; }
 
         protected bool IsKeyboardHandlerEnabled { get; set; } = true;
+
+        protected CustomPresenter Presenter => Mvx.IoCProvider.Resolve<IMvxIosViewPresenter>() as CustomPresenter;
 
         protected virtual void InitializeControls() 
         {
@@ -47,28 +51,7 @@ namespace XamarinNativeExamples.iOS.Views.Base
         {
             base.ViewWillAppear(animated);
 
-            SetTheme();
-        }
-
-        private void SetTheme() 
-        {
-            NavigationController.NavigationBar.PrefersLargeTitles = Theme.LargeTitleNavigationBackground != null;
-
-            var regularNavigationAppearance = new UINavigationBarAppearance();
-            regularNavigationAppearance.BackgroundColor = Theme.NavigationBackground;
-            regularNavigationAppearance.TitleTextAttributes = new UIStringAttributes() { ForegroundColor = Theme.NavigationTextColor };
-            NavigationController.NavigationBar.StandardAppearance = regularNavigationAppearance;
-
-            if (Theme.LargeTitleNavigationBackground != null)
-            {
-                var largeNavigationAppearance = new UINavigationBarAppearance();
-                largeNavigationAppearance.BackgroundImageContentMode = UIViewContentMode.ScaleAspectFill;
-                largeNavigationAppearance.BackgroundImage = Theme.LargeTitleNavigationBackground;
-                largeNavigationAppearance.LargeTitleTextAttributes = new UIStringAttributes() { ForegroundColor = Theme.NavigationTextColor };
-                NavigationController.NavigationBar.ScrollEdgeAppearance = largeNavigationAppearance;
-            }
-
-            NavigationController.NavigationBar.TintColor = Theme.NavigationTextColor;
+            NavigationController.NavigationBar.ApplyTheme(Theme.NavigationTheme);
         }
     }
 }
