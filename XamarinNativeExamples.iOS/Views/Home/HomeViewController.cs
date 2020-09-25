@@ -1,4 +1,5 @@
-﻿using UIKit;
+﻿using MvvmCross.Binding.BindingContext;
+using UIKit;
 using XamarinNativeExamples.Core.ViewModels.Home;
 using XamarinNativeExamples.iOS.Utils;
 using XamarinNativeExamples.iOS.Views.Base;
@@ -7,20 +8,31 @@ namespace XamarinNativeExamples.iOS.Views.Home
 {
     public partial class HomeViewController : BaseViewController<HomeViewModel>
     {
-        protected override Theme Theme => Themes.Home;
+        protected override ViewControllerTheme Theme => Themes.Home;
 
         public HomeViewController() : base("HomeViewController")
         {
         }
-
-        public override void ViewDidLoad()
+        protected override void InitializeControls()
         {
-            base.ViewDidLoad();
+            base.InitializeControls();
+
+            EdgesForExtendedLayout = UIRectEdge.None;
+
+            ButtonButton.Bounds = new CoreGraphics.CGRect(0, 0, 100, 160);
+            ButtonButton.ImageView.ContentMode = UIViewContentMode.ScaleAspectFill;
         }
 
-        public override void DidReceiveMemoryWarning()
+        protected override void BindControls()
         {
-            base.DidReceiveMemoryWarning();
+            base.BindControls();
+
+            var set = this.CreateBindingSet<HomeViewController, HomeViewModel>();
+            set.Bind(ButtonLabel).To(vm => vm.ButtonTitle);
+            set.Bind(UserInterfaceLabel).To(vm => vm.UserInterfaceHeader);
+            set.Bind(ButtonButton).To(vm => vm.OpenButtonCommand);
+
+            set.Apply();
         }
     }
 }

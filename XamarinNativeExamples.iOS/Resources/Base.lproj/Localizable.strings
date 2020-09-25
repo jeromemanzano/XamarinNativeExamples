@@ -1,0 +1,5 @@
+﻿"ButtonClickDescription" = "Default binding for UIButton in MVVM-Cross is click (TouchUpInside) while long click can be bound by adding a gesture for UILongPressGestureRecognizer. Try it with the button below!";
+"ButtonEnableDescription" = "You can bind the Enabled property to enable or disable your UIButton. Try it with the button below!";
+"AccordionClose" = "Close";
+"AccordionOpen" = "Open";
+"ButtonEnable" = "Enable";

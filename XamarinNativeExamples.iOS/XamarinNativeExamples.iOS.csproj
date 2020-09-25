@@ -60,11 +60,19 @@
     <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ThemeExtensions.cs" />
+    <Compile Include="Extensions\UIExtensions.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="Views\Gestures\MvxLongPressGestureRecognizerBehavior.cs" />
+    <Compile Include="Controls\AccordionView.cs" />
+    <Compile Include="CustomPresenter.cs" />
+    <Compile Include="Extensions\MvxBehaviorExtensions.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Utils\Theme.cs" />
+    <Compile Include="Views\Base\BaseItemViewController.cs" />
     <Compile Include="Views\Base\BaseViewController.cs" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,6 +83,22 @@
     <Compile Include="Views\Home\HomeViewController.designer.cs">
       <DependentUpon>HomeViewController.cs</DependentUpon>
     </Compile>
+    <InterfaceDefinition Include="Views\Button\ButtonViewController.xib" />
+    <Compile Include="Views\Button\ButtonViewController.cs" />
+    <Compile Include="Views\Button\ButtonViewController.designer.cs">
+      <DependentUpon>ButtonViewController.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Button\ButtonClickViewController.xib" />
+    <Compile Include="Views\Button\ButtonClickViewController.cs" />
+    <Compile Include="Views\Button\ButtonClickViewController.designer.cs">
+      <DependentUpon>ButtonClickViewController.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Button\ButtonEnableViewController.xib" />
+    <Compile Include="Views\Button\ButtonEnableViewController.cs" />
+    <Compile Include="Views\Button\ButtonEnableViewController.designer.cs">
+      <DependentUpon>ButtonEnableViewController.cs</DependentUpon>
+    </Compile>
+    <BundleResource Include="Resources\Base.lproj\Localizable.strings" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -115,7 +139,22 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\xne-redSpotlight Icon - 40x40@3x.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ButtonPanel.imageset\button-panel.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\DownArrow.imageset\down-arrow.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\HoneyDew.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ButtonPanel.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\DownArrow.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LogoIcon.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LogoIcon.imageset\xne_logo.pdf">
@@ -124,9 +163,16 @@
     <ImageAsset Include="Assets.xcassets\PrussianBlue.colorset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\MustardYellow.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\TimberGreen.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\MustardYellow.colorset\" />
+    <Folder Include="Assets.xcassets\TimberGreen.colorset\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinNativeExamples.Core\XamarinNativeExamples.Core.csproj">

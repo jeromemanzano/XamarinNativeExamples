@@ -1,4 +1,6 @@
 ﻿using CoreGraphics;
+using MvvmCross;
+using MvvmCross.Platforms.Ios.Presenters;
 using MvvmCross.Platforms.Ios.Views;
 using UIKit;
 using XamarinNativeExamples.Core.ViewModels.Base;
@@ -18,11 +20,16 @@ namespace XamarinNativeExamples.iOS.Views.Base
         {
         }
 
-        protected virtual Theme Theme { get; }
+        protected virtual ViewControllerTheme Theme { get; }
 
         protected bool IsKeyboardHandlerEnabled { get; set; } = true;
 
-        protected virtual void InitializeControls() { }
+        protected CustomPresenter Presenter => Mvx.IoCProvider.Resolve<IMvxIosViewPresenter>() as CustomPresenter;
+
+        protected virtual void InitializeControls() 
+        {
+            Title = ViewModel?.Title;
+        }
 
         protected virtual void BindControls() { }
 
@@ -36,17 +43,15 @@ namespace XamarinNativeExamples.iOS.Views.Base
         {
             base.ViewDidLoad();
 
-            Title = ViewModel?.Title;
-
-            SetTheme();
             InitializeControls();
             BindControls();
         }
 
-        private void SetTheme() 
+        public override void ViewWillAppear(bool animated)
         {
-            NavigationController.NavigationBar.BarTintColor = Theme.BarTintColor;
-            NavigationController.NavigationBar.TitleTextAttributes = new UIStringAttributes() { ForegroundColor = Theme.TitleForegroundColor };
+            base.ViewWillAppear(animated);
+
+            NavigationController.NavigationBar.ApplyTheme(Theme.NavigationTheme);
         }
     }
 }

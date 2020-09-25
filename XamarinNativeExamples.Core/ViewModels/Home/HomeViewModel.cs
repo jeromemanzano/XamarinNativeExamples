@@ -11,6 +11,10 @@ namespace XamarinNativeExamples.Core.ViewModels.Home
     {
         public override string Title => Resources.HomeTitle;
 
+        public string ButtonTitle { get; } = Resources.ButtonTitle;
+
+        public string UserInterfaceHeader { get; } = Resources.UserInterfaceHeader;
+
         private IMvxCommand _openButtonCommand;
         public IMvxCommand OpenButtonCommand
         {

@@ -32,19 +32,17 @@ namespace XamarinNativeExamples.Core.ViewModels.Button.Items
             private set => SetProperty(ref _longClickCount, value);
         }
 
-        private string _buttonText;
-        public string ButtonText
-        {
-            get => _buttonText;
-            private set => SetProperty(ref _buttonText, value);
-        }
+        public string ButtonText => Resources.TryMe;
+
+        public string LongClickLabel => Resources.LongClickCountLabel;
+
+        public string ClickLabel => Resources.ClickCountLabel;
 
         public override Task Initialize()
         {
             InvokeOnMainThread(() =>
             {
                 Title = Resources.ButtonClickHeader;
-                ButtonText = Resources.TryMe;
             });
 
             return base.Initialize();
