@@ -26,19 +26,16 @@ namespace XamarinNativeExamples.Core.ViewModels.Button.Items
             private set => SetProperty(ref _buttonEnabled, value);
         }
 
-        private string _buttonText;
-        public string ButtonText
-        {
-            get => _buttonText;
-            private set => SetProperty(ref _buttonText, value);
-        }
+        public string ButtonText => Resources.TryMe;
+
+        public string ClickLabel => Resources.ClickCountLabel;
 
         public override Task Initialize()
         {
             InvokeOnMainThread(() =>
             {
                 Title = Resources.ButtonEnableHeader;
-                ButtonText = Resources.TryMe;
+                ButtonEnabled = true;
             });
 
             return base.Initialize();
