@@ -99,6 +99,21 @@
       <DependentUpon>ButtonEnableViewController.cs</DependentUpon>
     </Compile>
     <BundleResource Include="Resources\Base.lproj\Localizable.strings" />
+    <InterfaceDefinition Include="Views\Text\TextViewController.xib" />
+    <Compile Include="Views\Text\TextViewController.cs" />
+    <Compile Include="Views\Text\TextViewController.designer.cs">
+      <DependentUpon>TextViewController.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Text\TextTextViewController.xib" />
+    <Compile Include="Views\Text\TextTextViewController.cs" />
+    <Compile Include="Views\Text\TextTextViewController.designer.cs">
+      <DependentUpon>TextTextViewController.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Text\TextFilterViewController.xib" />
+    <Compile Include="Views\Text\TextFilterViewController.cs" />
+    <Compile Include="Views\Text\TextFilterViewController.designer.cs">
+      <DependentUpon>TextFilterViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
