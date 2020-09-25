@@ -98,6 +98,7 @@
     <Compile Include="Views\Button\ButtonEnableViewController.designer.cs">
       <DependentUpon>ButtonEnableViewController.cs</DependentUpon>
     </Compile>
+    <BundleResource Include="Resources\Base.lproj\Localizable.strings" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -141,10 +142,16 @@
     <ImageAsset Include="Assets.xcassets\ButtonPanel.imageset\button-panel.pdf">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\DownArrow.imageset\down-arrow.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\HoneyDew.colorset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\ButtonPanel.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\DownArrow.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LogoIcon.imageset\Contents.json">
@@ -164,8 +171,6 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
-    <Folder Include="Views\Button\" />
     <Folder Include="Assets.xcassets\MustardYellow.colorset\" />
     <Folder Include="Assets.xcassets\TimberGreen.colorset\" />
   </ItemGroup>

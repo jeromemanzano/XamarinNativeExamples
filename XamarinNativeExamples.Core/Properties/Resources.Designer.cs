@@ -88,11 +88,29 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Click Count:.
+        /// </summary>
+        internal static string ClickCountLabel {
+            get {
+                return ResourceManager.GetString("ClickCountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         internal static string HomeTitle {
             get {
                 return ResourceManager.GetString("HomeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Long Click Count:.
+        /// </summary>
+        internal static string LongClickCountLabel {
+            get {
+                return ResourceManager.GetString("LongClickCountLabel", resourceCulture);
             }
         }
         

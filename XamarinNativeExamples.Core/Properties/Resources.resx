@@ -126,8 +126,14 @@
   <data name="ButtonTitle" xml:space="preserve">
     <value>Button</value>
   </data>
+  <data name="ClickCountLabel" xml:space="preserve">
+    <value>Click Count:</value>
+  </data>
   <data name="HomeTitle" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="LongClickCountLabel" xml:space="preserve">
+    <value>Long Click Count:</value>
   </data>
   <data name="TextFilterDescription" xml:space="preserve">
     <value>Below is a custom binding for implementing filter on your textbox using Regex. Try it the different examples below.</value>
