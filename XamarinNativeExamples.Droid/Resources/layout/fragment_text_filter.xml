@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/WidgetItemCardViewStyle"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:layout_marginTop="40dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardElevation="5dp"
-    app:cardCornerRadius="5dp">
+    android:layout_height="wrap_content">
     <TextView
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        app:MvxBind="Text TextText.Title"
+        app:MvxBind="Text Title"
         android:paddingTop="20dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -25,7 +18,7 @@
         app:animationDuration="500"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:MvxBind="FoldingCellOpen TextText.CellOpen">
+        app:MvxBind="FoldingCellOpen CellOpen">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,49 +42,48 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="70dp"
                 android:textSize="14sp"
-                android:text="@string/text_text_binding_description"
+                app:MvxBind="Text Description"
                 app:layout_constraintStart_toStartOf="@+id/left_guideline"
                 app:layout_constraintEnd_toEndOf="@+id/right_guideline"
                 app:layout_constraintTop_toTopOf="parent"/>
-            <EditText
-                android:id="@+id/input_text"
+            <MvxSpinner
+                style="spinner"
+                android:id="@+id/filter_spinner"
                 android:text="@string/button_long_click_count_label"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:hint="@string/text_hint_type_here"
-                app:MvxBind="Text TextText.Text"
-                android:textColor="@color/black"
+                android:spinnerMode="dropdown"
+                app:MvxDropDownItemTemplate="@layout/item_spinner_text_filter"
+                app:MvxItemTemplate="@layout/item_spinner_text_filter"
+                app:MvxBind="ItemsSource Filters; SelectedItem SelectedFilter; HandleItemSelected FilterSelectedCommand"
                 app:layout_constraintTop_toBottomOf="@+id/description"
-                app:layout_constraintEnd_toEndOf="@+id/right_guideline"
+                app:layout_constraintEnd_toEndOf="@+id/right_guideline" 
                 app:layout_constraintStart_toStartOf="@+id/left_guideline"/>
             <TextView
-                android:id="@+id/text_label"
-                android:text="@string/button_click_count_label"
+                android:id="@+id/text_filter"
+                android:text="2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
                 android:textSize="16sp"
-                android:textStyle="bold"
                 android:textColor="@color/black"
-                app:MvxBind="Text TextText.Text"
-                app:layout_constraintTop_toBottomOf="@+id/input_text"
-                app:layout_constraintStart_toStartOf="@+id/input_text"/>
-            <Button
-                android:id="@+id/click_button"
+                app:MvxBind="Text Regex"
+                app:layout_constraintTop_toBottomOf="@+id/filter_spinner"
+                app:layout_constraintStart_toStartOf="@+id/filter_spinner"/>
+            <EditText
+                android:id="@+id/edit_text_user_input"
                 android:padding="10dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="60dp"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                app:MvxBind="Text TextText.Text"
-                app:layout_constraintTop_toBottomOf="@+id/text_label"
+                android:hint="@string/text_hint_type_here"
+                app:MvxBind="EditTextFilter Regex; Text InputText"
+                app:layout_constraintTop_toBottomOf="@+id/text_filter"
                 app:layout_constraintEnd_toEndOf="@+id/right_guideline"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/close"
                 app:layout_constraintStart_toStartOf="@+id/left_guideline"/>
             <TextView
                 android:background="@color/comoGreen"
@@ -104,9 +96,9 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
-                app:MvxBind="Click TextText.ToggleFoldStateCommand"
+                app:MvxBind="Click ToggleFoldStateCommand"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_user_input"
                 app:layout_constraintStart_toStartOf="parent"/>
             <ImageView
                 android:layout_width="30dp"
@@ -132,7 +124,7 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="75dp"
-                app:MvxBind="Click TextText.ToggleFoldStateCommand"
+                app:MvxBind="Click ToggleFoldStateCommand"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
@@ -147,4 +139,4 @@
                 app:layout_constraintEnd_toEndOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.ramotion.foldingcell.FoldingCell>
-</com.google.android.material.card.MaterialCardView>
+</FrameLayout>

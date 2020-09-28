@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/WidgetItemCardViewStyle"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:layout_marginBottom="20dp"
-    android:layout_marginTop="40dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <TextView
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        app:MvxBind="Text ButtonEnable.Title"
+        app:MvxBind="Text Title"
         android:paddingTop="20dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -24,7 +18,7 @@
         app:animationDuration="500"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:MvxBind="FoldingCellOpen ButtonEnable.CellOpen">
+        app:MvxBind="FoldingCellOpen CellOpen">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,7 +51,7 @@
                 android:id="@+id/enable_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:MvxBind="Checked ButtonEnable.ButtonEnabled"
+                app:MvxBind="Checked ButtonEnabled"
                 app:layout_constraintEnd_toEndOf="@+id/right_guideline"
                 app:layout_constraintTop_toBottomOf="@+id/description"/>
             <TextView
@@ -89,7 +83,7 @@
                 android:layout_marginStart="5dp"
                 android:textSize="16sp"
                 android:textColor="@color/black"
-                app:MvxBind="Text ButtonEnable.ClickCount"
+                app:MvxBind="Text ClickCount"
                 app:layout_constraintTop_toTopOf="@+id/click_counter_label"
                 app:layout_constraintStart_toEndOf="@+id/click_counter_label"/>
             <Button
@@ -100,9 +94,9 @@
                 android:layout_marginTop="20dp"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                app:MvxBind="Click ButtonEnable.ClickCommand; 
-                    Enabled ButtonEnable.ButtonEnabled;
-                    Text ButtonEnable.ButtonText"
+                app:MvxBind="Click ClickCommand; 
+                    Enabled ButtonEnabled;
+                    Text ButtonText"
                 app:layout_constraintTop_toBottomOf="@+id/click_counter_label"
                 app:layout_constraintEnd_toEndOf="@+id/right_guideline"
                 app:layout_constraintBottom_toTopOf="@+id/close"
@@ -118,7 +112,7 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
-                app:MvxBind="Click ButtonEnable.ToggleFoldStateCommand"
+                app:MvxBind="Click ToggleFoldStateCommand"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/click_button"
                 app:layout_constraintStart_toStartOf="parent"/>
@@ -146,7 +140,7 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="75dp"
-                app:MvxBind="Click ButtonEnable.ToggleFoldStateCommand"
+                app:MvxBind="Click ToggleFoldStateCommand"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
@@ -161,4 +155,4 @@
                 app:layout_constraintEnd_toEndOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.ramotion.foldingcell.FoldingCell>
-</com.google.android.material.card.MaterialCardView>
+</FrameLayout>

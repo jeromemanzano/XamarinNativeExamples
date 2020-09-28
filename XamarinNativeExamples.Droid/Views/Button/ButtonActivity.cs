@@ -1,7 +1,9 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using MvvmCross.ViewModels;
 using XamarinNativeExamples.Core.ViewModels.Button;
+using XamarinNativeExamples.Core.ViewModels.Button.Items;
 using XamarinNativeExamples.Droid.Views.Base;
 
 namespace XamarinNativeExamples.Droid.Views.Button
@@ -16,6 +18,9 @@ namespace XamarinNativeExamples.Droid.Views.Button
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+            Presenter.Show(new MvxViewModelRequest(typeof(ButtonClickItemViewModel)));
+            Presenter.Show(new MvxViewModelRequest(typeof(ButtonEnableItemViewModel)));
         }
     }
 }
