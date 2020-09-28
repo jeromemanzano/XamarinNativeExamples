@@ -3,3 +3,6 @@
 "AccordionClose" = "Close";
 "AccordionOpen" = "Open";
 "ButtonEnable" = "Enable";
+"TextTypeHint" = "Type here";
+"TextTextDescription" = "Default binding for UILabel and UITextField in MVVM-Cross is Text property. For button text, you can bind to the Title property. Try it with the text field below!";
+"SelectFilter" = "Select Filter";

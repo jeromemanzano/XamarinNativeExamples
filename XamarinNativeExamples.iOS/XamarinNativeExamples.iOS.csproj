@@ -60,6 +60,7 @@
     <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Bindings\TextFieldFilterBinding.cs" />
     <Compile Include="Extensions\ThemeExtensions.cs" />
     <Compile Include="Extensions\UIExtensions.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
@@ -100,6 +101,7 @@
     </Compile>
     <BundleResource Include="Resources\Base.lproj\Localizable.strings" />
     <InterfaceDefinition Include="Views\Text\TextViewController.xib" />
+    <Compile Include="Views\Text\FilterMvxPickerViewModel.cs" />
     <Compile Include="Views\Text\TextViewController.cs" />
     <Compile Include="Views\Text\TextViewController.designer.cs">
       <DependentUpon>TextViewController.cs</DependentUpon>

@@ -78,5 +78,33 @@ namespace XamarinNativeExamples.iOS.Utils
                 CornerRadius = 5f
             }
         };
+
+        public static ViewControllerTheme Text => new ViewControllerTheme
+        {
+            NavigationTheme = new NavigationTheme
+            {
+                BackgroundColor = UIColor.FromName("ComoGreen"),
+                TextColor = UIColor.White,
+                PrefersLargeTitles = true,
+                BackgroundImage = UIImage.FromBundle("TextPanel").Blend(0.6f, UIColor.FromName("ComoGreen").CGColor),
+            },
+            ButtonTheme = new ButtonTheme
+            {
+                BackgroundColor = UIColor.FromName("MountBattenPink"),
+                TextColor = UIColor.White,
+                DisabledBackgroundColor = UIColor.LightGray,
+                DisabledTextColor = UIColor.DarkTextColor,
+                CornerRadius = 5f,
+                Font = UIFont.SystemFontOfSize(20f, UIFontWeight.Bold)
+            },
+            AccordionTheme = new AccordionTheme
+            {
+                TitleTextColor = UIColor.Black,
+                TitleFont = UIFont.SystemFontOfSize(20f, UIFontWeight.Bold),
+                ToggleBackgroundColor = UIColor.FromName("ComoGreen"),
+                ToggleTextColor = UIColor.White,
+                CornerRadius = 5f
+            }
+        };
     }
 }
