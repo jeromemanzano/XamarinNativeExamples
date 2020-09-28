@@ -19,8 +19,8 @@ namespace XamarinNativeExamples.iOS.Views.Home
 
             EdgesForExtendedLayout = UIRectEdge.None;
 
-            ButtonButton.Bounds = new CoreGraphics.CGRect(0, 0, 100, 160);
             ButtonButton.ImageView.ContentMode = UIViewContentMode.ScaleAspectFill;
+            TextButton.ImageView.ContentMode = UIViewContentMode.ScaleAspectFill;
         }
 
         protected override void BindControls()
@@ -29,8 +29,13 @@ namespace XamarinNativeExamples.iOS.Views.Home
 
             var set = this.CreateBindingSet<HomeViewController, HomeViewModel>();
             set.Bind(ButtonLabel).To(vm => vm.ButtonTitle);
-            set.Bind(UserInterfaceLabel).To(vm => vm.UserInterfaceHeader);
             set.Bind(ButtonButton).To(vm => vm.OpenButtonCommand);
+
+            set.Bind(UserInterfaceLabel).To(vm => vm.UserInterfaceHeader);
+
+            set.Bind(TextLabel).To(vm => vm.TextTitle);
+            set.Bind(UserInterfaceLabel).To(vm => vm.UserInterfaceHeader);
+            set.Bind(TextButton).To(vm => vm.OpenTextCommand);
 
             set.Apply();
         }

@@ -150,6 +150,9 @@
   <data name="TextTextHeader" xml:space="preserve">
     <value>Binding Text property</value>
   </data>
+  <data name="TextTitle" xml:space="preserve">
+    <value>Text</value>
+  </data>
   <data name="TryMe" xml:space="preserve">
     <value>Try me!</value>
   </data>

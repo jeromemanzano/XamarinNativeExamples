@@ -60,6 +60,7 @@
     <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Bindings\TextFieldFilterBinding.cs" />
     <Compile Include="Extensions\ThemeExtensions.cs" />
     <Compile Include="Extensions\UIExtensions.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
@@ -99,6 +100,22 @@
       <DependentUpon>ButtonEnableViewController.cs</DependentUpon>
     </Compile>
     <BundleResource Include="Resources\Base.lproj\Localizable.strings" />
+    <InterfaceDefinition Include="Views\Text\TextViewController.xib" />
+    <Compile Include="Views\Text\FilterMvxPickerViewModel.cs" />
+    <Compile Include="Views\Text\TextViewController.cs" />
+    <Compile Include="Views\Text\TextViewController.designer.cs">
+      <DependentUpon>TextViewController.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Text\TextTextViewController.xib" />
+    <Compile Include="Views\Text\TextTextViewController.cs" />
+    <Compile Include="Views\Text\TextTextViewController.designer.cs">
+      <DependentUpon>TextTextViewController.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Text\TextFilterViewController.xib" />
+    <Compile Include="Views\Text\TextFilterViewController.cs" />
+    <Compile Include="Views\Text\TextFilterViewController.designer.cs">
+      <DependentUpon>TextFilterViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -154,6 +171,9 @@
     <ImageAsset Include="Assets.xcassets\DownArrow.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\TextPanel.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LogoIcon.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -166,7 +186,16 @@
     <ImageAsset Include="Assets.xcassets\MustardYellow.colorset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\TextPanel.imageset\text-panel.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\TimberGreen.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ComoGreen.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\MountBattenPink.colorset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>

@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using MvvmCross;
 using MvvmCross.ViewModels;
+using XamarinNativeExamples.Core.Properties;
 using XamarinNativeExamples.Core.ViewModels.Base;
 using XamarinNativeExamples.Core.ViewModels.Text.Items;
 
@@ -8,7 +9,10 @@ namespace XamarinNativeExamples.Core.ViewModels.Text
 {
     public class TextViewModel : BasePageViewModel
     {
+        public override string Title => Resources.TextTitle;
+
         private readonly IMvxViewModelLoader _viewModelLoader;
+
         public TextViewModel()
         {
             _viewModelLoader = Mvx.IoCProvider.Resolve<IMvxViewModelLoader>();

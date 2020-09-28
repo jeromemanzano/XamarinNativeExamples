@@ -24,6 +24,14 @@ namespace XamarinNativeExamples.iOS.Views.Home
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton TextButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel TextLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel UserInterfaceLabel { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -36,6 +44,16 @@ namespace XamarinNativeExamples.iOS.Views.Home
             if (ButtonLabel != null) {
                 ButtonLabel.Dispose ();
                 ButtonLabel = null;
+            }
+
+            if (TextButton != null) {
+                TextButton.Dispose ();
+                TextButton = null;
+            }
+
+            if (TextLabel != null) {
+                TextLabel.Dispose ();
+                TextLabel = null;
             }
 
             if (UserInterfaceLabel != null) {
