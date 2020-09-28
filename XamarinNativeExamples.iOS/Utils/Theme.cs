@@ -42,7 +42,7 @@ namespace XamarinNativeExamples.iOS.Utils
 
     public static class Themes
     {
-        public static ViewControllerTheme Home => new ViewControllerTheme 
+        public static ViewControllerTheme Home { get; } = new ViewControllerTheme 
         {
             NavigationTheme = new NavigationTheme 
             { 
@@ -51,7 +51,7 @@ namespace XamarinNativeExamples.iOS.Utils
             }
         };
 
-        public static ViewControllerTheme Button => new ViewControllerTheme
+        public static ViewControllerTheme Button { get; } = new ViewControllerTheme
         {
             NavigationTheme = new NavigationTheme
             {
@@ -60,7 +60,7 @@ namespace XamarinNativeExamples.iOS.Utils
                 PrefersLargeTitles = true,
                 BackgroundImage = UIImage.FromBundle("ButtonPanel").Blend(0.6f, UIColor.FromName("MustardYellow").CGColor),
             },
-            ButtonTheme = new ButtonTheme 
+            ButtonTheme = new ButtonTheme
             {
                 BackgroundColor = UIColor.FromName("TimberGreen"),
                 TextColor = UIColor.White,
@@ -69,17 +69,17 @@ namespace XamarinNativeExamples.iOS.Utils
                 CornerRadius = 5f,
                 Font = UIFont.SystemFontOfSize(20f, UIFontWeight.Bold)
             },
-            AccordionTheme = new AccordionTheme 
-            { 
+            AccordionTheme = new AccordionTheme
+            {
                 TitleTextColor = UIColor.Black,
-                TitleFont  = UIFont.SystemFontOfSize(20f, UIFontWeight.Bold),
+                TitleFont = UIFont.SystemFontOfSize(20f, UIFontWeight.Bold),
                 ToggleBackgroundColor = UIColor.FromName("MustardYellow"),
                 ToggleTextColor = UIColor.White,
                 CornerRadius = 5f
             }
         };
 
-        public static ViewControllerTheme Text => new ViewControllerTheme
+        public static ViewControllerTheme Text { get; } = new ViewControllerTheme
         {
             NavigationTheme = new NavigationTheme
             {
