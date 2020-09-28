@@ -1,6 +1,8 @@
 ﻿using Android.OS;
 using Android.Views;
 using AndroidX.AppCompat.Widget;
+using MvvmCross;
+using MvvmCross.Platforms.Android.Presenters;
 using MvvmCross.Platforms.Android.Views;
 using Plugin.CurrentActivity;
 using Xamarin.Essentials;
@@ -14,6 +16,8 @@ namespace XamarinNativeExamples.Droid.Views.Base
         protected abstract int LayoutResource { get; }
 
         protected virtual int? ToolbarTitle { get; }
+
+        protected CustomPresenter Presenter => Mvx.IoCProvider.Resolve<IMvxAndroidViewPresenter>() as CustomPresenter;
 
         protected override void OnCreate(Bundle bundle)
         {

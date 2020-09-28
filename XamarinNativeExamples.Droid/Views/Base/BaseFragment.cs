@@ -2,12 +2,12 @@
 using Android.Views;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Views.Fragments;
-using XamarinNativeExamples.Core.ViewModels.Base;
+using MvvmCross.ViewModels;
 
 namespace XamarinNativeExamples.Droid.Views.Base
 {
     public abstract class BaseFragment<TViewModel>
-    : MvxFragment<TViewModel> where TViewModel : class, IPageViewModel
+    : MvxFragment<TViewModel> where TViewModel : class, IMvxViewModel
     { 
         protected abstract int LayoutResource { get; }
 

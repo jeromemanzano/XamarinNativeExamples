@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Binders\EditTextFilterBinding.cs" />
     <Compile Include="Binders\FoldingCellStatusBinding.cs" />
+    <Compile Include="CustomPresenter.cs" />
     <Compile Include="DroidApp.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="SplashActivity.cs" />
@@ -80,8 +81,12 @@
     <Compile Include="Views\Base\BaseActivity.cs" />
     <Compile Include="Views\Base\BaseFragment.cs" />
     <Compile Include="Views\Button\ButtonActivity.cs" />
+    <Compile Include="Views\Button\ButtonClickFragment.cs" />
+    <Compile Include="Views\Button\ButtonEnableFragment.cs" />
     <Compile Include="Views\Home\HomeActivity.cs" />
     <Compile Include="Views\Text\TextActivity.cs" />
+    <Compile Include="Views\Text\TextFilterFragment.cs" />
+    <Compile Include="Views\Text\TextTextFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -232,12 +237,12 @@
     <AndroidResource Include="Resources\values\dimens.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\layout_button_click.xml">
+    <AndroidResource Include="Resources\layout\fragment_button_click.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\layout_button_enable.xml">
+    <AndroidResource Include="Resources\layout\fragment_button_enable.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -248,12 +253,12 @@
     <AndroidResource Include="Resources\drawable\ic_arrow_up.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\layout_text_text.xml">
+    <AndroidResource Include="Resources\layout\fragment_text_text.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\layout_text_filter.xml">
+    <AndroidResource Include="Resources\layout\fragment_text_filter.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
