@@ -56,7 +56,7 @@
                 android:spinnerMode="dropdown"
                 app:MvxDropDownItemTemplate="@layout/item_spinner_text_filter"
                 app:MvxItemTemplate="@layout/item_spinner_text_filter"
-                app:MvxBind="ItemsSource Filters; SelectedItem SelectedFilter; HandleItemSelected FilterSelectedCommand"
+                app:MvxBind="ItemsSource Filters; HandleItemSelected FilterSelectedCommand"
                 app:layout_constraintTop_toBottomOf="@+id/description"
                 app:layout_constraintEnd_toEndOf="@+id/right_guideline" 
                 app:layout_constraintStart_toStartOf="@+id/left_guideline"/>

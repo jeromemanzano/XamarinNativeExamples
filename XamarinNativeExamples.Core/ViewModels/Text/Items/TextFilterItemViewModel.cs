@@ -30,13 +30,6 @@ namespace XamarinNativeExamples.Core.ViewModels.Text.Items
             private set => SetProperty(ref _regex, value);
         }
 
-        private FilterItemViewModel _selectedFilter;
-        public FilterItemViewModel SelectedFilter
-        {
-            get => _selectedFilter;
-            private set => SetProperty(ref _selectedFilter, value);
-        }
-
         public override Task Initialize()
         {
             InvokeOnMainThread(() =>
@@ -45,7 +38,6 @@ namespace XamarinNativeExamples.Core.ViewModels.Text.Items
                 Description = Resources.TextFilterDescription;
                 Filters.Add(new FilterItemViewModel(Resources.TextFilterNumber, @"^[0-9]*$"));
                 Filters.Add(new FilterItemViewModel(Resources.TextFilterLowerCase, @"^[a-z]*$"));
-                SelectedFilter = Filters.First();
             });
 
             return base.Initialize();
