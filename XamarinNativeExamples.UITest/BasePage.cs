@@ -72,6 +72,8 @@ namespace XamarinNativeExamples.UITest
                 .Marked(openId));
             App.ScrollDownTo(closeButton);
             App.WaitForElement(closeButton);
+
+            App.Screenshot($"Container {containerId} opened");
         }
     }
 }
