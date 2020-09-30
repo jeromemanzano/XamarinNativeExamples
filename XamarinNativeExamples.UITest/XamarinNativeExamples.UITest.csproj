@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -8,7 +7,9 @@
     <OutputType>Library</OutputType>
     <RootNamespace>XamarinNativeExamples.UITest</RootNamespace>
     <AssemblyName>XamarinNativeExamples.UITest</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,12 +28,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.UITest">
-      <HintPath>..\packages\Xamarin.UITest.3.0.5\lib\net45\Xamarin.UITest.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\ButtonPage.cs" />
@@ -45,19 +40,12 @@
     <Compile Include="PlatformQuery.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="Xamarin.UITest" Version="3.0.5" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Pages\" />
-    <Folder Include="Tests\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\XamarinNativeExamples.iOS\XamarinNativeExamples.iOS.csproj">
-      <Project>{76A13137-41C6-44A9-B433-7956880DDA76}</Project>
-      <Name>XamarinNativeExamples.iOS</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
     <ProjectReference Include="..\XamarinNativeExamples.Core\XamarinNativeExamples.Core.csproj">
       <Project>{32057588-4C34-4DB2-9911-170060E72EDE}</Project>
       <Name>XamarinNativeExamples.Core</Name>

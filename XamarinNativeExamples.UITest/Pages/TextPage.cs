@@ -81,7 +81,7 @@ namespace XamarinNativeExamples.UITest.Pages
         {
             Query selectionQuery = x => x.Marked(type == FilterTypes.LowercaseOnly
                 ? "Lower Case only" : "Numbers only");
-            var selectionElement = App.WaitForElement(selectionQuery);
+            var selectionElement = App.Query(selectionQuery);
 
             if (!selectionElement.Any())
             {
