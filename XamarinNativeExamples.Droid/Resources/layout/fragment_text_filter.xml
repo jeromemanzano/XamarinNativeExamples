@@ -72,7 +72,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/filter_spinner"
                 app:layout_constraintStart_toStartOf="@+id/filter_spinner"/>
             <EditText
-                android:id="@+id/edit_text_user_input"
+                android:id="@+id/input_text"
                 android:padding="10dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                 android:layout_marginTop="20dp"
                 app:MvxBind="Click ToggleFoldStateCommand"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edit_text_user_input"
+                app:layout_constraintTop_toBottomOf="@+id/input_text"
                 app:layout_constraintStart_toStartOf="parent"/>
             <ImageView
                 android:layout_width="30dp"

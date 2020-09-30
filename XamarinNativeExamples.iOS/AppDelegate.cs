@@ -21,6 +21,10 @@ namespace XamarinNativeExamples.iOS
         [Export("application:didFinishLaunchingWithOptions:")]
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
+            #if ENABLE_TEST_CLOUD
+              Xamarin.Calabash.Start();
+            #endif
+
             var result = base.FinishedLaunching(application, launchOptions);
 
             // here is where your custom code should be placed
