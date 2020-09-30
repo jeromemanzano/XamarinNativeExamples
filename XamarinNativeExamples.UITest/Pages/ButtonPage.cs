@@ -35,7 +35,12 @@ namespace XamarinNativeExamples.UITest.Pages
 
             if (OniOS)
             {
-                //TODO
+                clickButton = x => x.Marked("ClickButton");
+                clickCountLabel = x => x.Marked("ClickCountLabel");
+                longClickCountLabel = x => x.Marked("LongClickCountLabel");
+                enableSwitch = x => x.Marked("EnableSwitch");
+                clickContainerId = "ButtonClickViewController";
+                enableContainerId = "ButtonEnableViewController";
             }
         }
 

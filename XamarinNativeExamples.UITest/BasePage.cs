@@ -23,7 +23,7 @@ namespace XamarinNativeExamples.UITest
             if (OnAndroid)
             {
                 openId = "open";
-                closeButton = x => x.Id("close");
+                closeButton = x => x.Marked("close");
             }
 
             if (OniOS)
@@ -64,12 +64,12 @@ namespace XamarinNativeExamples.UITest
         /// <param name="containerId">Id that will be used to locate the container</param>
         protected void OpenContainer(string containerId) 
         {
-            Query container = x => x.Id(containerId);
+            Query container = x => x.Marked(containerId);
             App.ScrollDownTo(container);
             App.WaitForElement(container);
-            App.Tap(c => c.Id(containerId)
+            App.Tap(c => c.Marked(containerId)
                 .Descendant()
-                .Id(openId));
+                .Marked(openId));
             App.ScrollDownTo(closeButton);
             App.WaitForElement(closeButton);
         }

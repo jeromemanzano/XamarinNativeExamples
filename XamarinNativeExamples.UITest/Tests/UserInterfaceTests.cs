@@ -14,12 +14,6 @@ namespace XamarinNativeExamples.UITest.Tests
         [Test]
         public void ButtonClickAndLongClickTest() 
         {
-            if (OniOS)
-            {
-                Assert.Ignore("Not implemented");
-                return;
-            }
-
             var clickCount = 1;
             var longClickCount = 1;
             new HomePage()

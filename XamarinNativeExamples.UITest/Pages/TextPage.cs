@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using XamarinNativeExamples.Core.Properties;
+using System.Linq;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
@@ -34,7 +35,12 @@ namespace XamarinNativeExamples.UITest.Pages
 
             if (OniOS)
             {
-                //TODO
+                inputField = x => x.Marked("InputTextField");
+                displayedLabel = x => x.Marked("InputDisplayLabel");
+                displayedButton = x => x.Marked("InputDisplayButton");
+                filterDropDown = x => x.Marked("FilterInputPickerTextField");
+                textContainerId = "TextTextViewController";
+                textFilterContainerId = "TextFilterViewController";
             }
         }
 
@@ -73,9 +79,15 @@ namespace XamarinNativeExamples.UITest.Pages
 
         public TextPage SelectFilter(FilterTypes type) 
         {
-            App.Tap(filterDropDown);
-            App.Tap(x => x.Marked(type == FilterTypes.LowercaseOnly 
-                ? "Lower Case only" : "Numbers only"));
+            Query selectionQuery = x => x.Marked(type == FilterTypes.LowercaseOnly
+                ? "Lower Case only" : "Numbers only");
+            var selectionElement = App.WaitForElement(selectionQuery);
+
+            if (!selectionElement.Any())
+            {
+                App.Tap(filterDropDown);
+                App.Tap(selectionQuery);
+            }
 
             return this;
         }

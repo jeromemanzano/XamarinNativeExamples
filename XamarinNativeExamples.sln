@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinNativeExamples.iOS",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinNativeExamples.Droid", "XamarinNativeExamples.Droid\XamarinNativeExamples.Droid.csproj", "{43819241-1629-49A4-ABA3-3F6D16E65FAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinNativeExamples.UITest", "XamarinNativeExamples.UITest\XamarinNativeExamples.UITest.csproj", "{9D9FA6C1-1754-44A7-B201-EC206FE2150F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinNativeExamples.UITest", "XamarinNativeExamples.UITest\XamarinNativeExamples.UITest.csproj", "{77D0A5A4-A958-4872-919C-3272BA9376A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

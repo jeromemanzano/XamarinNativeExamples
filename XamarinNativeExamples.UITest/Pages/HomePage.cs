@@ -31,7 +31,8 @@ namespace XamarinNativeExamples.UITest.Pages
 
             if (OniOS)
             {
-                //TODO
+                buttonClickButton = x => x.Marked("ButtonButton");
+                buttonEnableButton = x => x.Marked("TextButton");
             }
         }
 

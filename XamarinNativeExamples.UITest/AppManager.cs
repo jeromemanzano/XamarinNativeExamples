@@ -7,8 +7,9 @@ namespace XamarinNativeExamples.UITest
     public static class AppManager
     {
         private const string RelativeApkPath = @"..\..\..\XamarinNativeExamples.Droid\bin\Debug\com.astromobilesolutions.xamarinnativeexamples.droid.apk";
-        private const string AppPath = "../../..";
-        private const string IpaBundleId = "com.astromobilesolutions.xamarinnativeexamples.ios";
+        private const string AppPath = "../../../XamarinNativeExamples.iOS/bin/iphoneSimulator/Debug/XamarinNativeExamples.iOS.app";
+        private const string IpaBundleId = "com.astromobilesolutions.XamarinNativeExamples.iOS";
+        private const string DeviceId = "BC13F37F-0BDD-4C84-B565-DF4604F62640";
 
         static IApp app;
         public static IApp App
@@ -56,9 +57,9 @@ namespace XamarinNativeExamples.UITest
             {
                 app = ConfigureApp
                     .iOS
-                    .EnableLocalScreenshots()
                     .AppBundle(AppPath)
-                    .StartApp();
+                    .DeviceIdentifier(DeviceId)
+                    .StartApp(Xamarin.UITest.Configuration.AppDataMode.Clear);
             }
         }
     }
