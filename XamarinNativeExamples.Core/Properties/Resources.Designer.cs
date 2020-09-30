@@ -22,7 +22,7 @@ namespace XamarinNativeExamples.Core.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace XamarinNativeExamples.Core.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("XamarinNativeExamples.Core.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace XamarinNativeExamples.Core.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace XamarinNativeExamples.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Button click and long click.
         /// </summary>
-        internal static string ButtonClickHeader {
+        public static string ButtonClickHeader {
             get {
                 return ResourceManager.GetString("ButtonClickHeader", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace XamarinNativeExamples.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Enable/disable button.
         /// </summary>
-        internal static string ButtonEnableHeader {
+        public static string ButtonEnableHeader {
             get {
                 return ResourceManager.GetString("ButtonEnableHeader", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace XamarinNativeExamples.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Button.
         /// </summary>
-        internal static string ButtonTitle {
+        public static string ButtonTitle {
             get {
                 return ResourceManager.GetString("ButtonTitle", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace XamarinNativeExamples.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Click Count:.
         /// </summary>
-        internal static string ClickCountLabel {
+        public static string ClickCountLabel {
             get {
                 return ResourceManager.GetString("ClickCountLabel", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace XamarinNativeExamples.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
-        internal static string HomeTitle {
+        public static string HomeTitle {
             get {
                 return ResourceManager.GetString("HomeTitle", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace XamarinNativeExamples.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Long Click Count:.
         /// </summary>
-        internal static string LongClickCountLabel {
+        public static string LongClickCountLabel {
             get {
                 return ResourceManager.GetString("LongClickCountLabel", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace XamarinNativeExamples.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Below is a custom binding for implementing filter on your textbox using Regex. Try it the different examples below..
         /// </summary>
-        internal static string TextFilterDescription {
+        public static string TextFilterDescription {
             get {
                 return ResourceManager.GetString("TextFilterDescription", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace XamarinNativeExamples.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Filtering text input.
         /// </summary>
-        internal static string TextFilterHeader {
+        public static string TextFilterHeader {
             get {
                 return ResourceManager.GetString("TextFilterHeader", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace XamarinNativeExamples.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Lower Case only.
         /// </summary>
-        internal static string TextFilterLowerCase {
+        public static string TextFilterLowerCase {
             get {
                 return ResourceManager.GetString("TextFilterLowerCase", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace XamarinNativeExamples.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Numbers only.
         /// </summary>
-        internal static string TextFilterNumber {
+        public static string TextFilterNumber {
             get {
                 return ResourceManager.GetString("TextFilterNumber", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace XamarinNativeExamples.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Binding Text property.
         /// </summary>
-        internal static string TextTextHeader {
+        public static string TextTextHeader {
             get {
                 return ResourceManager.GetString("TextTextHeader", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace XamarinNativeExamples.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Text.
         /// </summary>
-        internal static string TextTitle {
+        public static string TextTitle {
             get {
                 return ResourceManager.GetString("TextTitle", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace XamarinNativeExamples.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Try me!.
         /// </summary>
-        internal static string TryMe {
+        public static string TryMe {
             get {
                 return ResourceManager.GetString("TryMe", resourceCulture);
             }
@@ -180,7 +180,7 @@ namespace XamarinNativeExamples.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to User Interface.
         /// </summary>
-        internal static string UserInterfaceHeader {
+        public static string UserInterfaceHeader {
             get {
                 return ResourceManager.GetString("UserInterfaceHeader", resourceCulture);
             }

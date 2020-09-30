@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D9FA6C1-1754-44A7-B201-EC206FE2150F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>XamarinNativeExamples.UITest</RootNamespace>
+    <AssemblyName>XamarinNativeExamples.UITest</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="Xamarin.UITest" Version="3.0.7" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppManager.cs" />
+    <Compile Include="BasePage.cs" />
+    <Compile Include="BaseTestFixture.cs" />
+    <Compile Include="Pages\ButtonPage.cs" />
+    <Compile Include="Pages\HomePage.cs" />
+    <Compile Include="Pages\TextPage.cs" />
+    <Compile Include="PlatformQuery.cs" />
+    <Compile Include="Tests\UserInterfaceTests.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\XamarinNativeExamples.Core\XamarinNativeExamples.Core.csproj">
+      <Project>{32057588-4c34-4db2-9911-170060e72ede}</Project>
+      <Name>XamarinNativeExamples.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XamarinNativeExamples.Droid\XamarinNativeExamples.Droid.csproj">
+      <Project>{43819241-1629-49a4-aba3-3f6d16e65fab}</Project>
+      <Name>XamarinNativeExamples.Droid</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
