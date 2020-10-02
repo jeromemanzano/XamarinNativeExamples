@@ -98,9 +98,9 @@
                 android:layout_marginTop="20dp"
                 android:textStyle="bold"
                 android:textSize="16sp"
-                app:MvxBind="Click ClickCommand; 
-                    LongClick LongClickCommand;
-                    Text ButtonText"
+                app:MvxBind="Text ButtonText;
+                    Click ClickCommand; 
+                    LongClick LongClickCommand"
                 app:layout_constraintTop_toBottomOf="@+id/click_counter_label"
                 app:layout_constraintEnd_toEndOf="@+id/right_guideline"
                 app:layout_constraintBottom_toTopOf="@+id/close"
