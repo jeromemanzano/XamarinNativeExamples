@@ -31,6 +31,7 @@ namespace XamarinNativeExamples.Droid
         public void Include(Button button)
         {
             button.Click += (s, e) => button.Text = button.Text + "";
+            button.LongClick += (s, e) => button.Text = button.Text + "";
         }
 
         public void Include(CheckBox checkBox)
