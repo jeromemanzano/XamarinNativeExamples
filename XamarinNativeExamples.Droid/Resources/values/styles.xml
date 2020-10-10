@@ -41,7 +41,7 @@
 	<style name="HttpPageTheme" parent="PageTheme">
 		<item name="colorPrimary">@color/pacificBlue</item>
 		<item name="colorPrimaryDark">@color/pacificBlueDark</item>
-		<item name="colorSecondary">@color/opal</item>
+		<item name="colorSecondary">@color/davysGrey</item>
 	</style>
 
 	<style name="WidgetImageStyle">

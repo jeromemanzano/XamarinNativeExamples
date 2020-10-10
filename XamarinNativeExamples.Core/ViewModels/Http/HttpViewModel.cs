@@ -31,7 +31,11 @@ namespace XamarinNativeExamples.Core.ViewModels.Http
         public string StockSymbol
         {
             get => _stockSymbol;
-            private set => SetProperty(ref _stockSymbol, value);
+            private set
+            {
+                SetProperty(ref _stockSymbol, value);
+                ButtonEnabled = !value.IsNullOrEmpty();
+            }
         }
 
         private string _sentimentValue;
@@ -61,7 +65,14 @@ namespace XamarinNativeExamples.Core.ViewModels.Http
             get => _sentimentsVisible;
             private set => SetProperty(ref _sentimentsVisible, value);
         }
-        
+
+        private bool _buttonEnabled;
+        public bool ButtonEnabled
+        {
+            get => _buttonEnabled;
+            private set => SetProperty(ref _buttonEnabled, value);
+        }
+
         public string GetNewsSentimentText => Resources.SendRequest;
 
         public string SentimentLabel => Resources.Sentiments;

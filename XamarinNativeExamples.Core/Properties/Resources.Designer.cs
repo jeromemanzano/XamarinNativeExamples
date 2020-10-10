@@ -142,7 +142,7 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to We are unable to request data from {0} at the moment. Please check your connection and try again..
+        ///   Looks up a localized string similar to We are unable to reach {0} at the moment. Please check your connection and try again..
         /// </summary>
         public static string HttpErrorMessage {
             get {
@@ -223,7 +223,7 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to We are unable to receive any data  for {0}. Please check if you have the correct stock symbol and try again..
+        ///   Looks up a localized string similar to No data received for ${0}. Please check if you have the correct stock symbol and try again..
         /// </summary>
         public static string StockEmptyErrorMessage {
             get {

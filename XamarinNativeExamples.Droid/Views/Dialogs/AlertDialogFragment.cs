@@ -4,12 +4,10 @@ using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using AndroidX.AppCompat.App;
 using AndroidX.Fragment.App;
 using System;
 using System.Threading.Tasks;
 using XamarinNativeExamples.Droid.Controls;
-using XamarinNativeExamples.Droid.Utils;
 
 namespace XamarinNativeExamples.Droid.Views.Dialogs
 {

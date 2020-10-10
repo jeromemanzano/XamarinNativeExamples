@@ -145,7 +145,7 @@
     <value>XNE</value>
   </data>
   <data name="HttpErrorMessage" xml:space="preserve">
-    <value>We are unable to request data from {0} at the moment. Please check your connection and try again.</value>
+    <value>We are unable to reach {0} at the moment. Please check your connection and try again.</value>
   </data>
   <data name="LastWeekArticlesFormat" xml:space="preserve">
     <value>Last week articles count: {0}</value>
@@ -172,7 +172,7 @@
     <value>Sentiments:</value>
   </data>
   <data name="StockEmptyErrorMessage" xml:space="preserve">
-    <value>We are unable to receive any data  for {0}. Please check if you have the correct stock symbol and try again.</value>
+    <value>No data received for ${0}. Please check if you have the correct stock symbol and try again.</value>
   </data>
   <data name="StockSymbol" xml:space="preserve">
     <value>Stock symbol:</value>
