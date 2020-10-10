@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">XNE</string>
 	<string name="home">Home</string>
-	<string name="button">Button</string>
-	<string name="ui">User Interface</string>
-	<string name="text">Text</string>
 
 	<string name="button_click_description">MVVM Cross have built-in binding for click and long click. Try it with the button below!</string>
 	<string name="button_enable_description">MVVM Cross has built-in binding for enabling/disabling button. Toggle switch below to try.</string>

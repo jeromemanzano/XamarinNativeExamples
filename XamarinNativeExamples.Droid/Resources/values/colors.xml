@@ -10,15 +10,23 @@
 
 	<color name="mustardYellow">#DE9E33</color>
 	<color name="mustardYellowDark">#C5851A</color>
-	<color name="stilletoRed">#98342E</color>
-	<color name="stilletoRedDark">#7F1B15</color>
-	<color name="delugePurple">#9257A2</color>
-	<color name="delugePurpleDark">#793E89</color>
+	<color name="timberGreen">#303E2E</color>
+
 	<color name="comoGreen">#4E7760</color>
 	<color name="comoGreenDark">#355E47</color>
 	<color name="mountBattenPink">#A1869E</color>
 
-	<color name="timberGreen">#303E2E</color>
+	<color name="pacificBlue">#46B1C9</color>
+	<color name="pacificBlueDark">#349bb2</color>
+	<color name="davysGrey">#545454</color>
 	
+	<color name="stilletoRed">#98342E</color>
+	<color name="stilletoRedDark">#7F1B15</color>
+	<color name="delugePurple">#9257A2</color>
+	<color name="delugePurpleDark">#793E89</color>
+
+	<color name="matrixGreen">#008F11</color>
+
+	<color name="defaultOverlayColor">#AAFFFFFF</color>
 	<color name="black">#292B2C</color>
 </resources>

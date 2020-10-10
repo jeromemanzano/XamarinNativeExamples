@@ -3,7 +3,6 @@ using XamarinNativeExamples.Core.Properties;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
-
 namespace XamarinNativeExamples.UITest.Pages
 {
     public class ButtonPage : BasePage

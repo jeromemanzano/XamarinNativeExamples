@@ -32,6 +32,7 @@ namespace XamarinNativeExamples.Droid
         {
             button.Click += (s, e) => button.Text = button.Text + "";
             button.LongClick += (s, e) => button.Text = button.Text + "";
+            button.Visibility = button.Visibility;
         }
 
         public void Include(CheckBox checkBox)
@@ -47,12 +48,15 @@ namespace XamarinNativeExamples.Droid
         public void Include(View view)
         {
             view.Click += (s, e) => view.ContentDescription = view.ContentDescription + "";
+            view.Visibility = view.Visibility;
         }
 
         public void Include(TextView text)
         {
             text.AfterTextChanged += (sender, args) => text.Text = "" + text.Text;
             text.Hint = "" + text.Hint;
+            text.Typeface = text.Typeface;
+            text.Visibility = text.Visibility;
         }
 
         public void Include(CheckedTextView text)

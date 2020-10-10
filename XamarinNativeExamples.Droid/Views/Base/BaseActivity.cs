@@ -32,7 +32,7 @@ namespace XamarinNativeExamples.Droid.Views.Base
 
         protected virtual void SetupTitle()
         {
-            if (!ToolbarTitle.HasValue)
+            if (ViewModel.Title == null)
             {
                 return;
             }
@@ -40,9 +40,8 @@ namespace XamarinNativeExamples.Droid.Views.Base
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             if (toolbar != null)
             {
-                toolbar.SetTitle(ToolbarTitle.Value);
                 SetSupportActionBar(toolbar);
-                SupportActionBar.Title = Title;
+                SupportActionBar.Title = ViewModel.Title;
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             }
         }
