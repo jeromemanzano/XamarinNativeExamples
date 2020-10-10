@@ -61,6 +61,33 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Articles.
+        /// </summary>
+        public static string Articles {
+            get {
+                return ResourceManager.GetString("Articles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bearish.
+        /// </summary>
+        public static string Bearish {
+            get {
+                return ResourceManager.GetString("Bearish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bullish.
+        /// </summary>
+        public static string Bullish {
+            get {
+                return ResourceManager.GetString("Bullish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Button click and long click.
         /// </summary>
         public static string ButtonClickHeader {
@@ -97,11 +124,38 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Home.
+        ///   Looks up a localized string similar to Communication.
+        /// </summary>
+        public static string ConnectivityHeader {
+            get {
+                return ResourceManager.GetString("ConnectivityHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XNE.
         /// </summary>
         public static string HomeTitle {
             get {
                 return ResourceManager.GetString("HomeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We are unable to request data from {0} at the moment. Please check your connection and try again..
+        /// </summary>
+        public static string HttpErrorMessage {
+            get {
+                return ResourceManager.GetString("HttpErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last week articles count: {0}.
+        /// </summary>
+        public static string LastWeekArticlesFormat {
+            get {
+                return ResourceManager.GetString("LastWeekArticlesFormat", resourceCulture);
             }
         }
         
@@ -111,6 +165,87 @@ namespace XamarinNativeExamples.Core.Properties {
         public static string LongClickCountLabel {
             get {
                 return ResourceManager.GetString("LongClickCountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Neutral.
+        /// </summary>
+        public static string Neutral {
+            get {
+                return ResourceManager.GetString("Neutral", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Got it!.
+        /// </summary>
+        public static string Ok {
+            get {
+                return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ooops!.
+        /// </summary>
+        public static string OoopsTitle {
+            get {
+                return ResourceManager.GetString("OoopsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rest service.
+        /// </summary>
+        public static string RestTitle {
+            get {
+                return ResourceManager.GetString("RestTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send Request.
+        /// </summary>
+        public static string SendRequest {
+            get {
+                return ResourceManager.GetString("SendRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sentiments:.
+        /// </summary>
+        public static string Sentiments {
+            get {
+                return ResourceManager.GetString("Sentiments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We are unable to receive any data  for {0}. Please check if you have the correct stock symbol and try again..
+        /// </summary>
+        public static string StockEmptyErrorMessage {
+            get {
+                return ResourceManager.GetString("StockEmptyErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stock symbol:.
+        /// </summary>
+        public static string StockSymbol {
+            get {
+                return ResourceManager.GetString("StockSymbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to e.g. (AAPL, GOOGL etc).
+        /// </summary>
+        public static string StockSymbolHint {
+            get {
+                return ResourceManager.GetString("StockSymbolHint", resourceCulture);
             }
         }
         
@@ -178,11 +313,29 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Something weird happened while requesting for data. Please try again..
+        /// </summary>
+        public static string UnknownErrorMessage {
+            get {
+                return ResourceManager.GetString("UnknownErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User Interface.
         /// </summary>
         public static string UserInterfaceHeader {
             get {
                 return ResourceManager.GetString("UserInterfaceHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weekly articles count: {0}.
+        /// </summary>
+        public static string WeeklyArticlesFormat {
+            get {
+                return ResourceManager.GetString("WeeklyArticlesFormat", resourceCulture);
             }
         }
     }

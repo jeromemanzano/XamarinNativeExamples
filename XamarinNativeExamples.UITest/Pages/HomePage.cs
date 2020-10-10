@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using XamarinNativeExamples.Core.Properties;
+﻿using XamarinNativeExamples.Core.Properties;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
@@ -11,8 +6,9 @@ namespace XamarinNativeExamples.UITest.Pages
 {
     public class HomePage : BasePage
     {
-        private readonly Query buttonClickButton;
-        private readonly Query buttonEnableButton;
+        private readonly Query buttonCard;
+        private readonly Query textCard;
+        private readonly Query httpCard;
 
         protected override PlatformQuery Trait => new PlatformQuery
         {
@@ -25,27 +21,36 @@ namespace XamarinNativeExamples.UITest.Pages
 
             if (OnAndroid)
             {
-                buttonClickButton = x => x.Id("button_card_view");
-                buttonEnableButton = x => x.Id("text_card_view");
+                buttonCard = x => x.Id("button_card_view");
+                textCard = x => x.Id("text_card_view");
+                httpCard = x => x.Id("http_card_view");
             }
 
             if (OniOS)
             {
-                buttonClickButton = x => x.Marked("ButtonButton");
-                buttonEnableButton = x => x.Marked("TextButton");
+                buttonCard = x => x.Marked("ButtonButton");
+                textCard = x => x.Marked("TextButton");
+                //TODO:
+                //httpCard = x => x.Id("HttpButton");
             }
         }
 
         public void NavigateToButtonPage() 
         {
-            App.WaitForElement(buttonClickButton);
-            App.Tap(buttonClickButton);
+            App.WaitForElement(buttonCard);
+            App.Tap(buttonCard);
         }
 
         public void NavigateToTextPage()
         {
-            App.WaitForElement(buttonEnableButton);
-            App.Tap(buttonEnableButton);
+            App.WaitForElement(textCard);
+            App.Tap(textCard);
+        }
+
+        public void NavigateToHttpPage()
+        {
+            App.WaitForElement(httpCard);
+            App.Tap(httpCard);
         }
     }
 }
