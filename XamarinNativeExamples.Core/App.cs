@@ -5,6 +5,7 @@ using XamarinNativeExamples.Core.Managers.Interactions;
 using XamarinNativeExamples.Core.Managers.Stocks;
 using XamarinNativeExamples.Core.Services.RestServices;
 using XamarinNativeExamples.Core.Services.RestServices.Base;
+using XamarinNativeExamples.Core.Services.Storage;
 using XamarinNativeExamples.Core.Utils.Mappers;
 
 namespace XamarinNativeExamples.Core
@@ -24,6 +25,7 @@ namespace XamarinNativeExamples.Core
         {
             Mvx.IoCProvider.RegisterSingleton<IStockManager>(() => Mvx.IoCProvider.IoCConstruct<StockManager>());
             Mvx.IoCProvider.RegisterSingleton<IInteractionManager>(() => Mvx.IoCProvider.IoCConstruct<InteractionManager>());
+            Mvx.IoCProvider.RegisterSingleton<ISecuredStorage>(() => Mvx.IoCProvider.IoCConstruct<SecuredStorage>());
         }
 
         private void RegisterServices() 
