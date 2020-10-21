@@ -1,6 +1,8 @@
 ﻿using Android.OS;
 using Android.Views;
 using AndroidX.AppCompat.Widget;
+using MvvmCross;
+using MvvmCross.Platforms.Android.Presenters;
 using MvvmCross.Platforms.Android.Views;
 using Plugin.CurrentActivity;
 using Xamarin.Essentials;
@@ -15,6 +17,8 @@ namespace XamarinNativeExamples.Droid.Views.Base
 
         protected virtual int? ToolbarTitle { get; }
 
+        protected CustomPresenter Presenter => Mvx.IoCProvider.Resolve<IMvxAndroidViewPresenter>() as CustomPresenter;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -28,7 +32,7 @@ namespace XamarinNativeExamples.Droid.Views.Base
 
         protected virtual void SetupTitle()
         {
-            if (!ToolbarTitle.HasValue)
+            if (ViewModel.Title == null)
             {
                 return;
             }
@@ -36,9 +40,8 @@ namespace XamarinNativeExamples.Droid.Views.Base
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             if (toolbar != null)
             {
-                toolbar.SetTitle(ToolbarTitle.Value);
                 SetSupportActionBar(toolbar);
-                SupportActionBar.Title = Title;
+                SupportActionBar.Title = ViewModel.Title;
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             }
         }

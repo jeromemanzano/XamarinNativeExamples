@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ButtonEnableViewController">
+            <connections>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+                <outlet property="ContainerView" destination="1494" id="name-outlet-1494"/>
+                <outlet property="DescriptionLabel" destination="1903" id="name-outlet-1903"/>
+                <outlet property="EnableLabel" destination="2107" id="name-outlet-2107"/>
+                <outlet property="ClickLabel" destination="2438" id="name-outlet-2438"/>
+                <outlet property="ClickCountLabel" destination="2616" id="name-outlet-2616"/>
+                <outlet property="ClickButton" destination="1672" id="name-outlet-1672"/>
+                <outlet property="EnableSwitch" destination="2260" id="name-outlet-2260"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="1494" translatesAutoresizingMaskIntoConstraints="NO" ambiguous="YES">
+                    <rect key="frame" x="0.0" y="219" width="414" height="306"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1672" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                            <rect key="frame" x="20" y="201" width="374" height="35"/>
+                            <state key="normal" title="Button"/>
+                            <constraints>
+                                <constraint id="1673" firstAttribute="height" constant="35"/>
+                            </constraints>
+                            <state key="disabled">
+                                <color key="titleColor" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" white="0.333333333333333" alpha="1"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1903" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" numberOfLines="0.0">
+                            <rect key="frame" x="8" y="8" width="374" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17" weight="light"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2107" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                            <rect key="frame" x="8" y="58" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="2260" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                            <rect key="frame" x="331" y="53" width="51" height="31"/>
+                        </switch>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2438" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                            <rect key="frame" x="8" y="105" width="42" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2616" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                            <rect key="frame" x="82" y="115" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint id="1725" firstItem="1672" firstAttribute="leading" secondItem="1494" secondAttribute="leading" constant="20"/>
+                        <constraint id="1751" firstAttribute="bottom" secondItem="1672" secondAttribute="bottom" constant="20"/>
+                        <constraint id="1777" firstAttribute="trailing" secondItem="1672" secondAttribute="trailing" constant="20"/>
+                        <constraint id="1929" firstItem="1903" firstAttribute="leading" secondItem="1494" secondAttribute="leading" constant="20"/>
+                        <constraint id="1955" firstAttribute="trailing" secondItem="1903" secondAttribute="trailing" constant="20"/>
+                        <constraint id="1981" firstItem="1903" firstAttribute="top" secondItem="1494" secondAttribute="top" constant="10"/>
+                        <constraint id="2158" firstItem="2107" firstAttribute="leading" secondItem="1903" secondAttribute="leading"/>
+                        <constraint id="2184" firstItem="2107" firstAttribute="top" secondItem="1903" secondAttribute="bottom" constant="20"/>
+                        <constraint id="2337" firstItem="2260" firstAttribute="centerY" secondItem="2107" secondAttribute="centerY"/>
+                        <constraint id="2489" firstItem="2438" firstAttribute="leading" secondItem="2107" secondAttribute="leading"/>
+                        <constraint id="2515" firstItem="2438" firstAttribute="top" secondItem="2107" secondAttribute="bottom" constant="15"/>
+                        <constraint id="2817" firstItem="2616" firstAttribute="bottom" secondItem="2438" secondAttribute="bottom"/>
+                        <constraint id="2843" firstItem="2616" firstAttribute="leading" secondItem="2438" secondAttribute="trailing" constant="10"/>
+                        <constraint id="2944" firstItem="1672" firstAttribute="top" secondItem="2616" secondAttribute="bottom" constant="20"/>
+                        <constraint id="3252" firstItem="1903" firstAttribute="trailing" secondItem="2260" secondAttribute="trailing"/>
+                    </constraints>
+                </view>
+            </subviews>
+        </view>
+    </objects>
+</document>

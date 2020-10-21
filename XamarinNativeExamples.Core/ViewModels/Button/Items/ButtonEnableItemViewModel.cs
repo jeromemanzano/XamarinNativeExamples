@@ -4,7 +4,7 @@ using XamarinNativeExamples.Core.Properties;
 
 namespace XamarinNativeExamples.Core.ViewModels.Button.Items
 {
-    public class ButtonEnableItemViewModel : ButtonItemViewModel
+    public class ButtonEnableItemViewModel : CellItemViewModel
     {
         private IMvxCommand _clickCommand;
         public IMvxCommand ClickCommand
@@ -26,13 +26,16 @@ namespace XamarinNativeExamples.Core.ViewModels.Button.Items
             private set => SetProperty(ref _buttonEnabled, value);
         }
 
+        public string ButtonText => Resources.TryMe;
+
+        public string ClickLabel => Resources.ClickCountLabel;
+
         public override Task Initialize()
         {
             InvokeOnMainThread(() =>
             {
                 Title = Resources.ButtonEnableHeader;
-                Description = Resources.ButtonEnableDescription;
-                ButtonText = Resources.TryMe;
+                ButtonEnabled = true;
             });
 
             return base.Initialize();

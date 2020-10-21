@@ -16,10 +16,23 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <include
-                layout="@layout/layout_button_click" />
-            <include
-                layout="@layout/layout_button_enable" />
+            <com.google.android.material.card.MaterialCardView
+                style="@style/WidgetItemCardViewStyle"
+                android:id="@+id/button_click_frame"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.card.MaterialCardView
+                style="@style/WidgetItemCardViewStyle"
+                android:id="@+id/button_enable_frame"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -9,7 +9,7 @@ using Android.Content.PM;
 
 namespace XamarinNativeExamples.Droid.Views.Home
 {
-    [Activity(Label = "@string/home", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(ScreenOrientation = ScreenOrientation.Portrait)]
     public class HomeActivity : BaseActivity<HomeViewModel>
     {
         protected override int LayoutResource => Resource.Layout.activity_home;

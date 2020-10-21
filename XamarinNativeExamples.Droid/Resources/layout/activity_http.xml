@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/toolbar_http"/>
+    <androidx.core.widget.NestedScrollView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/articles_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:MvxBind="Text ArticlesLabel;
+                    Visibility Visibility(SentimentsVisible)"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/articles_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:MvxBind="Text ArticlesCount;
+                    Visibility Visibility(SentimentsVisible)"
+                app:layout_constraintStart_toStartOf="@+id/articles_label"
+                app:layout_constraintTop_toBottomOf="@+id/articles_label"/>
+            <TextView
+                android:id="@+id/articles_weekly_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:MvxBind="Text ArticlesWeeklyCount;
+                    Visibility Visibility(SentimentsVisible)"
+                app:layout_constraintStart_toStartOf="@+id/articles_label"
+                app:layout_constraintTop_toBottomOf="@+id/articles_count"/>
+            <TextView
+                android:id="@+id/sentiment_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:MvxBind="Text SentimentLabel;
+                    Visibility Visibility(SentimentsVisible)"
+                app:layout_constraintStart_toStartOf="@+id/articles_label"
+                app:layout_constraintTop_toBottomOf="@+id/articles_weekly_count"/>
+            <TextView
+                android:id="@+id/sentiment_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                app:MvxBind="Text SentimentValue;
+                    Visibility Visibility(SentimentsVisible)"
+                app:layout_constraintStart_toEndOf="@+id/sentiment_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBaseline_toBaselineOf="@+id/sentiment_label"/>
+            <TextView
+                android:id="@+id/stock_label"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:MvxBind="Text StockSymbolLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sentiment_value"/>
+            <EditText
+                android:id="@+id/stock_edit_text"
+                android:inputType="textCapCharacters"
+                android:layout_width="0dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_height="wrap_content"
+                app:MvxBind="Text StockSymbol; Hint StockSymbolHint "
+                app:layout_constraintStart_toEndOf="@+id/stock_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBaseline_toBaselineOf="@+id/stock_label"/>
+            <Button
+                android:id="@+id/click_button"
+                android:layout_margin="20dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:padding="10dp"
+                app:layout_constraintVertical_bias="0"
+                app:MvxBind="Text GetNewsSentimentText;
+                    Click GetNewsSentimentCommand;
+                    Enabled ButtonEnabled" 
+                app:layout_constraintTop_toBottomOf="@+id/stock_label"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

@@ -1,0 +1,8 @@
+﻿"ButtonClickDescription" = "Default binding for UIButton in MVVM-Cross is click (TouchUpInside) while long click can be bound by adding a gesture for UILongPressGestureRecognizer. Try it with the button below!";
+"ButtonEnableDescription" = "You can bind the Enabled property to enable or disable your UIButton. Try it with the button below!";
+"AccordionClose" = "Close";
+"AccordionOpen" = "Open";
+"ButtonEnable" = "Enable";
+"TextTypeHint" = "Type here";
+"TextTextDescription" = "Default binding for UILabel and UITextField in MVVM-Cross is Text property. For button text, you can bind to the Title property. Try it with the text field below!";
+"SelectFilter" = "Select Filter";
