@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ApiKeyPlaceholder" xml:space="preserve">
+    <value>Paste API Token here</value>
+  </data>
   <data name="Articles" xml:space="preserve">
     <value>Articles</value>
   </data>
@@ -138,8 +141,14 @@
   <data name="ClickCountLabel" xml:space="preserve">
     <value>Click Count:</value>
   </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Connect</value>
+  </data>
   <data name="ConnectivityHeader" xml:space="preserve">
     <value>Communication</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Disconnect</value>
   </data>
   <data name="HomeTitle" xml:space="preserve">
     <value>XNE</value>
@@ -156,14 +165,26 @@
   <data name="Neutral" xml:space="preserve">
     <value>Neutral</value>
   </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
   <data name="Ok" xml:space="preserve">
     <value>Got it!</value>
   </data>
   <data name="OoopsTitle" xml:space="preserve">
     <value>Ooops!</value>
   </data>
+  <data name="PingCountFormat" xml:space="preserve">
+    <value>Ping Count: {0}</value>
+  </data>
+  <data name="PriceFormat" xml:space="preserve">
+    <value>Price: {0}</value>
+  </data>
   <data name="RestTitle" xml:space="preserve">
     <value>Rest service</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
   </data>
   <data name="SendRequest" xml:space="preserve">
     <value>Send Request</value>
@@ -177,8 +198,17 @@
   <data name="StockSymbol" xml:space="preserve">
     <value>Stock symbol:</value>
   </data>
+  <data name="StockSymbolFormat" xml:space="preserve">
+    <value>StockSymbol: {0}</value>
+  </data>
   <data name="StockSymbolHint" xml:space="preserve">
     <value>e.g. (AAPL, GOOGL etc)</value>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>Subscribe</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test</value>
   </data>
   <data name="TextFilterDescription" xml:space="preserve">
     <value>Below is a custom binding for implementing filter on your textbox using Regex. Try it the different examples below.</value>
@@ -198,6 +228,27 @@
   <data name="TextTitle" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="TimeFormat" xml:space="preserve">
+    <value>Time: {0:G}</value>
+  </data>
+  <data name="TokenCopyMessage" xml:space="preserve">
+    <value>Go to https://finnhub.io/dashboard and copy the API Key.</value>
+  </data>
+  <data name="TokenFailedMessage" xml:space="preserve">
+    <value>Invalid  key. Please make sure the you paste the correct API Key from your dashboard.</value>
+  </data>
+  <data name="TokenRegisterMessage" xml:space="preserve">
+    <value>Go to https://finnhub.io/register and sign up.</value>
+  </data>
+  <data name="TokenStartMessage" xml:space="preserve">
+    <value>An API Key from finnhub.io is required to proceed with testing.</value>
+  </data>
+  <data name="TokenSuccessMessage" xml:space="preserve">
+    <value>API Key validated! Store the token on your device by pressing the Save button below.</value>
+  </data>
+  <data name="TokenTestMessage" xml:space="preserve">
+    <value>Paste the API Key to the text box above then Test.</value>
+  </data>
   <data name="TryMe" xml:space="preserve">
     <value>Try me!</value>
   </data>
@@ -206,6 +257,9 @@
   </data>
   <data name="UserInterfaceHeader" xml:space="preserve">
     <value>User Interface</value>
+  </data>
+  <data name="VolumeFormat" xml:space="preserve">
+    <value>Volume: {0}</value>
   </data>
   <data name="WeeklyArticlesFormat" xml:space="preserve">
     <value>Weekly articles count: {0}</value>
