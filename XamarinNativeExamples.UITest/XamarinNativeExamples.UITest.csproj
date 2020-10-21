@@ -34,6 +34,8 @@
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\HttpPage.cs" />
     <Compile Include="Pages\TextPage.cs" />
+    <Compile Include="Pages\TokenPage.cs" />
+    <Compile Include="Pages\WebSocketPage.cs" />
     <Compile Include="Tests\CommunicationTests.cs" />
     <Compile Include="Tests\UserInterfaceTests.cs" />
     <Compile Include="AppManager.cs" />

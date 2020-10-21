@@ -19,7 +19,11 @@
 	<color name="pacificBlue">#46B1C9</color>
 	<color name="pacificBlueDark">#349bb2</color>
 	<color name="davysGrey">#545454</color>
-	
+
+	<color name="blackChocolate">#131200</color>
+	<color name="alloyOrange">#BD632F</color>
+	<color name="alloyOrangeDark">#a05427</color>
+
 	<color name="stilletoRed">#98342E</color>
 	<color name="stilletoRedDark">#7F1B15</color>
 	<color name="delugePurple">#9257A2</color>

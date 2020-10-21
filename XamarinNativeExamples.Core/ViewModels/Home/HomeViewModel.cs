@@ -1,15 +1,26 @@
 ﻿using System.Threading.Tasks;
+using MvvmCross;
 using MvvmCross.Commands;
+using XamarinNativeExamples.Core.Managers.Stocks;
 using XamarinNativeExamples.Core.Properties;
 using XamarinNativeExamples.Core.ViewModels.Base;
 using XamarinNativeExamples.Core.ViewModels.Button;
 using XamarinNativeExamples.Core.ViewModels.Http;
 using XamarinNativeExamples.Core.ViewModels.Text;
+using XamarinNativeExamples.Core.ViewModels.Token;
+using XamarinNativeExamples.Core.ViewModels.WebSocket;
 
 namespace XamarinNativeExamples.Core.ViewModels.Home
 {
     public class HomeViewModel : BasePageViewModel
     {
+        private readonly IStockManager _stockManager;
+
+        public HomeViewModel() 
+        { 
+            _stockManager = Mvx.IoCProvider.Resolve<IStockManager>();
+        }
+
         public override string Title => Resources.HomeTitle;
         public string ButtonTitle => Resources.ButtonTitle;
         public string TextTitle => Resources.TextTitle;
@@ -35,6 +46,12 @@ namespace XamarinNativeExamples.Core.ViewModels.Home
             get => _openRestCommand ?? (_openRestCommand = new MvxAsyncCommand(OpenRest));
         }
 
+        private IMvxCommand _openWebSocketCommand;
+        public IMvxCommand OpenWebSocketCommand
+        {
+            get => _openWebSocketCommand ?? (_openWebSocketCommand = new MvxAsyncCommand(OpenWebSocket));
+        }
+
         private Task OpenButton() 
         {
             return Navigation.Navigate<ButtonViewModel>();
@@ -45,9 +62,34 @@ namespace XamarinNativeExamples.Core.ViewModels.Home
             return Navigation.Navigate<TextViewModel>();
         }
 
-        private Task OpenRest() 
+        private async Task OpenRest() 
         {
-            return Navigation.Navigate<HttpViewModel>();
+            if (!(await _stockManager.TokenValidated()))
+            {
+                var validated = await Navigation.Navigate<TokenViewModel, bool>();
+
+                if (!validated)
+                {
+                    return;
+                }
+            }
+
+            await Navigation.Navigate<HttpViewModel>();
+        }
+
+        private async Task OpenWebSocket()
+        {
+            if (!(await _stockManager.TokenValidated()))
+            {
+                var validated = await Navigation.Navigate<TokenViewModel, bool>();
+
+                if (!validated)
+                {
+                    return;
+                }
+            }
+
+            await Navigation.Navigate<WebSocketViewModel>();
         }
     }
 }

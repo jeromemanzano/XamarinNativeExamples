@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using XamarinNativeExamples.Core.Exceptions;
 using XamarinNativeExamples.Core.Properties;
-using XamarinNativeExamples.Core.Services.Messages.Requests;
-using XamarinNativeExamples.Core.Services.Messages.Responses;
+using XamarinNativeExamples.Core.Services.RestServices.Requests;
+using XamarinNativeExamples.Core.Services.RestServices.Responses;
 using XamarinNativeExamples.Core.Utils.Constants;
 
 namespace XamarinNativeExamples.Core.Services.RestServices.Base
 {
     internal abstract class BaseRestService
     {
-        protected virtual string BaseAddress { get; } = ApiConstants.StocksUrl;
+        protected virtual string BaseAddress { get; } = ApiConstants.StocksRestUri;
 
         private readonly HttpClient _httpClient;
 
@@ -172,6 +172,20 @@ namespace XamarinNativeExamples.Core.Services.RestServices.Base
             }
 
             return default;
+        }
+
+        public async Task<bool> ValidateTokenAsync(string apiToken) 
+        {
+            if (string.IsNullOrEmpty(apiToken))
+            {
+                throw new ApiTokenException("API Token required");
+            }
+
+            var endpoint = $"{ApiEndPoints.NewsSentimentAction}&token={apiToken}";
+
+            var requestResponse = await _httpClient.GetAsync(endpoint).ConfigureAwait(false);
+                
+            return requestResponse?.StatusCode == HttpStatusCode.OK && requestResponse.IsSuccessStatusCode;
         }
 
         private HttpContent GetRequestContent(object content)

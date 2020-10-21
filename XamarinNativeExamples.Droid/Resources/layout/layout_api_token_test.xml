@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/token_edit_text"
+        android:background="@drawable/background_bordered_edit_text"
+        android:padding="10dp"
+        android:layout_margin="40dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:MvxBind="Text ApiToken; 
+            Hint ApiKeyPlaceholder; Enabled ApiTextEnabled"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="5dp"
+        app:MvxBind="DrawableId CheckIconConverter(TokenValid); 
+            Visibility Visibility(TokenTested)"
+        app:layout_constraintTop_toTopOf="@+id/token_edit_text"
+        app:layout_constraintEnd_toEndOf="@+id/token_edit_text"
+        app:layout_constraintBottom_toBottomOf="@+id/token_edit_text"/>
+    <TextView
+        style="@style/TokenTextStyle"
+        android:textColorLink="@color/imperialRed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:MvxBind="Text TokenFailedText; Visibility Visibility(ShowFailed)"
+        app:layout_constraintTop_toBottomOf="@+id/token_edit_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/success_text"
+        style="@style/TokenTextStyle"
+        android:textColorLink="@color/matrixGreen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:MvxBind="Text TokenSuccessText; Visibility Visibility(ShowSuccess)"
+        app:layout_constraintTop_toBottomOf="@+id/token_edit_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/token_message"
+        android:layout_weight="1"
+        style="@style/TokenTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:MvxBind="Text TokenTestText;
+            Visibility InvertedVisibility(TokenTested)"
+        app:layout_constraintTop_toBottomOf="@+id/token_edit_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <Button
+        android:id="@+id/save_button"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:MvxBind="Text TestButtonText; Click SaveCommand"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

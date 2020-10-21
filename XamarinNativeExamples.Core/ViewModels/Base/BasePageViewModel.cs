@@ -32,4 +32,30 @@ namespace XamarinNativeExamples.Core.ViewModels.Base
             return Navigation.Close(this);
         }
     }
+
+    public abstract class BaseResultPageViewModel<TResult> : MvxViewModelResult<TResult>, IPageViewModel
+    {
+        protected readonly IMvxNavigationService Navigation;
+
+        protected BaseResultPageViewModel()
+        {
+            Navigation = Mvx.IoCProvider.Resolve<IMvxNavigationService>();
+            Interactions = Mvx.IoCProvider.Resolve<IInteractionManager>();
+        }
+
+        private IMvxCommand _backCommand;
+        public IMvxCommand BackCommand
+        {
+            get => _backCommand ?? (_backCommand = new MvxAsyncCommand(BackAsync));
+        }
+
+        public virtual string Title { get; protected set; }
+
+        protected IInteractionManager Interactions { get; private set; }
+
+        protected virtual Task BackAsync()
+        {
+            return Navigation.Close(this);
+        }
+    }
 }

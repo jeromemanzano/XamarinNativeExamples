@@ -61,6 +61,15 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Paste API Token here.
+        /// </summary>
+        public static string ApiKeyPlaceholder {
+            get {
+                return ResourceManager.GetString("ApiKeyPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Articles.
         /// </summary>
         public static string Articles {
@@ -124,11 +133,29 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connect.
+        /// </summary>
+        public static string Connect {
+            get {
+                return ResourceManager.GetString("Connect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Communication.
         /// </summary>
         public static string ConnectivityHeader {
             get {
                 return ResourceManager.GetString("ConnectivityHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disconnect.
+        /// </summary>
+        public static string Disconnect {
+            get {
+                return ResourceManager.GetString("Disconnect", resourceCulture);
             }
         }
         
@@ -178,6 +205,15 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Next.
+        /// </summary>
+        public static string Next {
+            get {
+                return ResourceManager.GetString("Next", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Got it!.
         /// </summary>
         public static string Ok {
@@ -196,11 +232,38 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ping Count: {0}.
+        /// </summary>
+        public static string PingCountFormat {
+            get {
+                return ResourceManager.GetString("PingCountFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price: {0}.
+        /// </summary>
+        public static string PriceFormat {
+            get {
+                return ResourceManager.GetString("PriceFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rest service.
         /// </summary>
         public static string RestTitle {
             get {
                 return ResourceManager.GetString("RestTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
             }
         }
         
@@ -241,11 +304,38 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to StockSymbol: {0}.
+        /// </summary>
+        public static string StockSymbolFormat {
+            get {
+                return ResourceManager.GetString("StockSymbolFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to e.g. (AAPL, GOOGL etc).
         /// </summary>
         public static string StockSymbolHint {
             get {
                 return ResourceManager.GetString("StockSymbolHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subscribe.
+        /// </summary>
+        public static string Subscribe {
+            get {
+                return ResourceManager.GetString("Subscribe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test.
+        /// </summary>
+        public static string Test {
+            get {
+                return ResourceManager.GetString("Test", resourceCulture);
             }
         }
         
@@ -304,6 +394,69 @@ namespace XamarinNativeExamples.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Time: {0:G}.
+        /// </summary>
+        public static string TimeFormat {
+            get {
+                return ResourceManager.GetString("TimeFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go to https://finnhub.io/dashboard and copy the API Key..
+        /// </summary>
+        public static string TokenCopyMessage {
+            get {
+                return ResourceManager.GetString("TokenCopyMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid  key. Please make sure the you paste the correct API Key from your dashboard..
+        /// </summary>
+        public static string TokenFailedMessage {
+            get {
+                return ResourceManager.GetString("TokenFailedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go to https://finnhub.io/register and sign up..
+        /// </summary>
+        public static string TokenRegisterMessage {
+            get {
+                return ResourceManager.GetString("TokenRegisterMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An API Key from finnhub.io is required to proceed with testing..
+        /// </summary>
+        public static string TokenStartMessage {
+            get {
+                return ResourceManager.GetString("TokenStartMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API Key validated! Store the token on your device by pressing the Save button below..
+        /// </summary>
+        public static string TokenSuccessMessage {
+            get {
+                return ResourceManager.GetString("TokenSuccessMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paste the API Key to the text box above then Test..
+        /// </summary>
+        public static string TokenTestMessage {
+            get {
+                return ResourceManager.GetString("TokenTestMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Try me!.
         /// </summary>
         public static string TryMe {
@@ -327,6 +480,15 @@ namespace XamarinNativeExamples.Core.Properties {
         public static string UserInterfaceHeader {
             get {
                 return ResourceManager.GetString("UserInterfaceHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Volume: {0}.
+        /// </summary>
+        public static string VolumeFormat {
+            get {
+                return ResourceManager.GetString("VolumeFormat", resourceCulture);
             }
         }
         

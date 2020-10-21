@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace XamarinNativeExamples.Core.Services.Messages.Responses
+namespace XamarinNativeExamples.Core.Services.RestServices.Responses
 {
     internal class NewsSentimentResponse : BaseResponse
     {

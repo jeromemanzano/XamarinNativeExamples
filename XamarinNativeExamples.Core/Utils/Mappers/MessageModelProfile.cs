@@ -1,6 +1,8 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using XamarinNativeExamples.Core.Models;
-using XamarinNativeExamples.Core.Services.Messages.Responses;
+using XamarinNativeExamples.Core.Services.RestServices.Responses;
+using XamarinNativeExamples.Core.Services.WebSocketServices.Messages.Responses;
 
 namespace XamarinNativeExamples.Core.Utils.Mappers
 {
@@ -13,6 +15,9 @@ namespace XamarinNativeExamples.Core.Utils.Mappers
             CreateMap<NewsSentimentResponse, NewsSentimentModel>();
             CreateMap<Buzz, BuzzModel>();
             CreateMap<Sentiment, SentimentModel>();
+
+            CreateMap<DataResponse, PriceUpdateModel>()
+                .ForMember(dest => dest.Time, op => op.MapFrom(src => DateTimeExtensions.UnixTimeToLocalDateTime(src.UnixTimeStamp)));
         }
     }
 }

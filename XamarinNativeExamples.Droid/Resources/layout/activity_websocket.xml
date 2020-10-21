@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/toolbar_websocket"/>
+    <androidx.core.widget.NestedScrollView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/connect_button"
+                android:layout_width="0dp"
+                android:layout_margin="20dp"
+                android:padding="10dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:MvxBind="Text ConnectButtonText; 
+                    Click ConnectionCommand"/>
+            <TextView
+                android:id="@+id/ping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:MvxBind="Text PingCount"
+                app:layout_constraintStart_toStartOf="@+id/connect_button"
+                app:layout_constraintTop_toBottomOf="@+id/connect_button"/>
+            <EditText
+                android:background="@drawable/background_bordered_edit_text"
+                android:id="@+id/stock_edit"
+                android:layout_width="0dp"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"
+                android:layout_height="wrap_content"
+                app:MvxBind="Text InputStockSymbol;
+                    Visibility Visibility(ShowStockDetails)"
+                app:layout_constraintTop_toBottomOf="@+id/ping"
+                app:layout_constraintStart_toStartOf="@+id/connect_button"
+                app:layout_constraintEnd_toEndOf="@+id/connect_button"/>
+            <Button
+                android:id="@+id/subscribe_button"
+                android:layout_width="0dp"
+                android:padding="10dp"
+                android:layout_height="wrap_content"
+                app:MvxBind="Text SubscribeText;
+                    Visibility Visibility(ShowStockDetails);
+                    Click SubscribeCommand"
+                app:layout_constraintTop_toBottomOf="@+id/stock_edit"
+                app:layout_constraintStart_toStartOf="@+id/stock_edit"
+                app:layout_constraintEnd_toEndOf="@+id/stock_edit"/>
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:MvxBind="Text Price;
+                    Visibility Visibility(ShowStockDetails)"
+                app:layout_constraintStart_toStartOf="@+id/subscribe_button"
+                app:layout_constraintTop_toBottomOf="@+id/subscribe_button"/>
+            <TextView
+                android:id="@+id/volume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:MvxBind="Text Volume;
+                    Visibility Visibility(ShowStockDetails)"
+                app:layout_constraintStart_toStartOf="@+id/price"
+                app:layout_constraintTop_toBottomOf="@+id/price"/>
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:MvxBind="Text Time;
+                    Visibility Visibility(ShowStockDetails)"
+                app:layout_constraintStart_toStartOf="@+id/volume"
+                app:layout_constraintTop_toBottomOf="@+id/volume"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
