@@ -9,6 +9,7 @@ namespace XamarinNativeExamples.UITest.Pages
         private readonly Query buttonCard;
         private readonly Query textCard;
         private readonly Query httpCard;
+        private readonly Query webSocketCard;
 
         protected override PlatformQuery Trait => new PlatformQuery
         {
@@ -24,6 +25,7 @@ namespace XamarinNativeExamples.UITest.Pages
                 buttonCard = x => x.Id("button_card_view");
                 textCard = x => x.Id("text_card_view");
                 httpCard = x => x.Id("http_card_view");
+                webSocketCard = x => x.Id("websocket_card_view");
             }
 
             if (OniOS)
@@ -51,6 +53,12 @@ namespace XamarinNativeExamples.UITest.Pages
         {
             App.WaitForElement(httpCard);
             App.Tap(httpCard);
+        }
+
+        public void NavigateToWebSocketPage()
+        {
+            App.WaitForElement(webSocketCard);
+            App.Tap(webSocketCard);
         }
     }
 }

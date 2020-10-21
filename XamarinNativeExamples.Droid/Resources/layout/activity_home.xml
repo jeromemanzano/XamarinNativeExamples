@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/content"
-    
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
@@ -108,6 +107,18 @@
                     style="@style/WidgetImageStyle"
                     app:MvxBind="Click OpenRestCommand"
                     android:src="@drawable/panel_http"/>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/websocket_card_view"
+                style="@style/ConnectivityCardViewStyle"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <ImageView
+                    style="@style/WidgetImageStyle"
+                    app:MvxBind="Click OpenWebSocketCommand"
+                    android:src="@drawable/panel_websocket"/>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
     </HorizontalScrollView>
