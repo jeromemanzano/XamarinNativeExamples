@@ -10,3 +10,5 @@ https://play.google.com/store/apps/details?id=com.astromobilesolutions.xamarinna
 | ------------- | ------------- | ------------- |
 | Button  | Done  | Done  |
 | Text | Done  | Done  |
+| Http  | Done  | To do  |
+| Websocket | Done  | To do  |
