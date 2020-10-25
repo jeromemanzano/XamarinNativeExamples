@@ -1,14 +1,27 @@
 # XamarinNativeExamples
-XamarinNativeExamples is an app that aims to show how you can implement different mobile function using Xamarin.Android and Xamarin.iOS
+XNE is an open-source project that we created to help new Xamarin developers into bringing their work to the next level and showcase the capabilities of Xamarin.Android and Xamarin.iOS.
 
-# Google Play
-https://play.google.com/store/apps/details?id=com.astromobilesolutions.xamarinnativeexamples.droid
+# Usage
+1. To test Http and Web socket functions you would need an API key by creating a free account from https://finnhub.io/. Their API documentation can be found [here](https://finnhub.io/docs/api).
 
-## Roadmap
+# Framework/Tech used
+1. [MVVMCross](https://www.mvvmcross.com/)
+2. [Automapper](https://automapper.org/)
+3. [Xamarin Essentials](https://github.com/xamarin/Essentials)
+4. [NewtonSoft](https://www.newtonsoft.com/json)
+5. [Microsoft App Center](https://appcenter.ms/apps)
+6. [Folding Cell](https://github.com/Baseflow/FoldingCell)
+7. [Plugin Current Activity](https://github.com/jamesmontemagno/CurrentActivityPlugin)
 
-| Function  | Android Status | iOS Status |
+# UI Test
+| Page  | Android Status | iOS Status |
 | ------------- | ------------- | ------------- |
-| Button  | Done  | Done  |
-| Text | Done  | Done  |
+| Home  | Done  | To do  |
+| Button  | Done  | To do  |
+| Text | Done  | To do  |
 | Http  | Done  | To do  |
-| Websocket | Done  | To do  |
+| Web socket | Done  | To do  |
+
+# Install
+1. [Google Play Store](https://play.google.com/store/apps/details?id=com.astromobilesolutions.xamarinnativeexamples.droid)
+2. Apple App Store -TBA
