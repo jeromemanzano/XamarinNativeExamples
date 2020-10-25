@@ -1,6 +1,8 @@
 # XamarinNativeExamples
 XNE is an open-source project that we created to help new Xamarin developers into bringing their work to the next level and showcase the capabilities of Xamarin.Android and Xamarin.iOS.
 
+![Button](https://media.giphy.com/media/p4WmQfkarLqqEDOEHQ/giphy.gif) ![Text](https://media.giphy.com/media/NQyXIdUzVHoeXuY3Wu/giphy.gif)
+
 # Usage
 1. To test Http and Web socket functions you would need an API key by creating a free account from https://finnhub.io/. Their API documentation can be found [here](https://finnhub.io/docs/api).
 
