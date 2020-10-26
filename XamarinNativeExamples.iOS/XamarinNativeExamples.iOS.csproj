@@ -132,6 +132,22 @@
     <InterfaceDefinition Include="Views\Token\ApiTokenRegisterView.xib" />
     <InterfaceDefinition Include="Views\Token\ApiTokenCopyView.xib" />
     <InterfaceDefinition Include="Views\Token\ApiTokenTestView.xib" />
+    <Compile Include="Views\Token\ApiTokenCopyView.cs" />
+    <Compile Include="Views\Token\ApiTokenCopyView.designer.cs">
+      <DependentUpon>ApiTokenCopyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Token\ApiTokenRegisterView.cs" />
+    <Compile Include="Views\Token\ApiTokenRegisterView.designer.cs">
+      <DependentUpon>ApiTokenRegisterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Token\ApiTokenStartView.cs" />
+    <Compile Include="Views\Token\ApiTokenStartView.designer.cs">
+      <DependentUpon>ApiTokenStartView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Token\ApiTokenTestView.cs" />
+    <Compile Include="Views\Token\ApiTokenTestView.designer.cs">
+      <DependentUpon>ApiTokenTestView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
