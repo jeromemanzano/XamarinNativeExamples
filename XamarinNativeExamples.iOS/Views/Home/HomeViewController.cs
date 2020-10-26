@@ -21,6 +21,9 @@ namespace XamarinNativeExamples.iOS.Views.Home
 
             ButtonButton.ImageView.ContentMode = UIViewContentMode.ScaleAspectFill;
             TextButton.ImageView.ContentMode = UIViewContentMode.ScaleAspectFill;
+
+            HttpButton.ImageView.ContentMode = UIViewContentMode.ScaleAspectFill;
+            WebSocketButton.ImageView.ContentMode = UIViewContentMode.ScaleAspectFill;
         }
 
         protected override void BindControls()
@@ -32,10 +35,15 @@ namespace XamarinNativeExamples.iOS.Views.Home
             set.Bind(ButtonButton).To(vm => vm.OpenButtonCommand);
 
             set.Bind(UserInterfaceLabel).To(vm => vm.UserInterfaceHeader);
+            set.Bind(CommunicationLabel).To(vm => vm.ConnectivityHeader);
 
             set.Bind(TextLabel).To(vm => vm.TextTitle);
             set.Bind(UserInterfaceLabel).To(vm => vm.UserInterfaceHeader);
             set.Bind(TextButton).To(vm => vm.OpenTextCommand);
+
+            set.Bind(HttpButton).To(vm => vm.OpenRestCommand);
+
+            set.Bind(WebSocketButton).To(vm => vm.OpenWebSocketCommand);
 
             set.Apply();
         }

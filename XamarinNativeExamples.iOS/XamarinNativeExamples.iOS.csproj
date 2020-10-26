@@ -65,6 +65,7 @@
     <Compile Include="Extensions\ThemeExtensions.cs" />
     <Compile Include="Extensions\UIExtensions.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="Services\DialogService.cs" />
     <Compile Include="Views\Gestures\MvxLongPressGestureRecognizerBehavior.cs" />
     <Compile Include="Controls\AccordionView.cs" />
     <Compile Include="CustomPresenter.cs" />
@@ -153,6 +154,15 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\ApiTokenCopy.imageset\api-token-copy.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ApiTokenRegister.imageset\api-token-register.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ApiTokenStart.imageset\api-token-start.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -183,6 +193,12 @@
     <ImageAsset Include="Assets.xcassets\ButtonPanel.imageset\button-panel.pdf">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\CheckIcon.imageset\check-icon.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\CrossIcon.imageset\cross-icon.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\DownArrow.imageset\down-arrow.pdf">
       <Visible>false</Visible>
     </ImageAsset>
@@ -193,6 +209,12 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\DownArrow.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\HttpPanel.imageset\http-panel.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\WebSocketPanel.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\TextPanel.imageset\Contents.json">
@@ -222,24 +244,31 @@
     <ImageAsset Include="Assets.xcassets\MountBattenPink.colorset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\HttpPanel.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ApiTokenRegister.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ApiTokenStart.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ApiTokenCopy.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\CheckIcon.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\CrossIcon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\HttpPanel.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ApiTokenRegister.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ApiTokenStart.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ApiTokenCopy.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\CheckIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\CrossIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\WebSocketPanel.imageset\websocket-panel.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\MustardYellow.colorset\" />
     <Folder Include="Assets.xcassets\TimberGreen.colorset\" />
-    <Folder Include="Views\Http\" />
-    <Folder Include="Views\Token\" />
-    <Folder Include="Assets.xcassets\HttpPanel.imageset\" />
-    <Folder Include="Assets.xcassets\ApiTokenRegister.imageset\" />
-    <Folder Include="Assets.xcassets\ApiTokenStart.imageset\" />
-    <Folder Include="Assets.xcassets\ApiTokenCopy.imageset\" />
-    <Folder Include="Assets.xcassets\CheckIcon.imageset\" />
-    <Folder Include="Assets.xcassets\CrossIcon.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinNativeExamples.Core\XamarinNativeExamples.Core.csproj">

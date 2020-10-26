@@ -1,56 +1,29 @@
 {
-  "images" : [
+  "images": [
     {
-      "idiom" : "universal",
-      "scale" : "1x"
+      "appearances": [],
+      "scale": "1x",
+      "idiom": "universal"
     },
     {
-      "idiom" : "universal",
-      "scale" : "2x"
+      "appearances": [],
+      "scale": "2x",
+      "idiom": "universal"
     },
     {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "appearances": [],
+      "scale": "3x",
+      "idiom": "universal"
     },
     {
-      "idiom" : "iphone",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "iphone",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "iphone",
-      "scale" : "3x"
-    },
-    {
-      "idiom" : "ipad",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "ipad",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "watch",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "tv",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "mac",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "mac",
-      "scale" : "2x"
+      "appearances": [],
+      "idiom": "universal",
+      "filename": "http-panel.pdf"
     }
   ],
-  "info" : {
-    "version" : 1,
-    "author" : "xcode"
+  "properties": {},
+  "info": {
+    "version": 1,
+    "author": ""
   }
 }
