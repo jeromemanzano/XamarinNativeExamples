@@ -269,10 +269,20 @@
     <ImageAsset Include="Assets.xcassets\WebSocketPanel.imageset\websocket-panel.pdf">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\PacificBlue.colorset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\DavysGrey.colorset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ImperialRed.colorset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\BlackChocolate.colorset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AlloyOrange.colorset\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\MustardYellow.colorset\" />
     <Folder Include="Assets.xcassets\TimberGreen.colorset\" />
+    <Folder Include="Assets.xcassets\PacificBlue.colorset\" />
+    <Folder Include="Assets.xcassets\DavysGrey.colorset\" />
+    <Folder Include="Assets.xcassets\ImperialRed.colorset\" />
+    <Folder Include="Assets.xcassets\BlackChocolate.colorset\" />
+    <Folder Include="Assets.xcassets\AlloyOrange.colorset\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinNativeExamples.Core\XamarinNativeExamples.Core.csproj">
