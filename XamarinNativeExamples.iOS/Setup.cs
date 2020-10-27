@@ -1,4 +1,5 @@
 ﻿using MvvmCross;
+using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.Bindings.Target.Construction;
 using MvvmCross.Converters;
 using MvvmCross.Platforms.Ios.Core;
@@ -37,6 +38,7 @@ namespace XamarinNativeExamples.iOS
         {
             base.FillValueConverters(registry);
 
+            registry.AddOrOverwrite("Visibility", new MvvmCross.Plugin.Visibility.MvxVisibilityValueConverter());
             registry.AddOrOverwrite("CheckIconConverter", new BoolToCheckIconConverter());
         }
     }

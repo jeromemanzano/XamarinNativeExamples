@@ -269,11 +269,21 @@
     <ImageAsset Include="Assets.xcassets\WebSocketPanel.imageset\websocket-panel.pdf">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\PacificBlue.colorset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\DavysGrey.colorset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\ImperialRed.colorset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\BlackChocolate.colorset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AlloyOrange.colorset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\PacificBlue.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\DavysGrey.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ImperialRed.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\BlackChocolate.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AlloyOrange.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\MustardYellow.colorset\" />

@@ -129,5 +129,26 @@ namespace XamarinNativeExamples.iOS.Utils
             },
             PrimaryColor = UIColor.FromName("PrussianBlue"),
         };
+
+        public static ViewControllerTheme Http { get; } = new ViewControllerTheme
+        {
+            NavigationTheme = new NavigationTheme
+            {
+                BackgroundColor = UIColor.FromName("PacificBlue"),
+                TextColor = UIColor.White,
+                PrefersLargeTitles = true,
+                BackgroundImage = UIImage.FromBundle("HttpPanel").Blend(0.6f, UIColor.FromName("PacificBlue").CGColor),
+            },
+            ButtonTheme = new ButtonTheme
+            {
+                BackgroundColor = UIColor.FromName("DavysGrey"),
+                TextColor = UIColor.White,
+                DisabledBackgroundColor = UIColor.LightGray,
+                DisabledTextColor = UIColor.DarkTextColor,
+                CornerRadius = 5f,
+                Font = UIFont.SystemFontOfSize(20f, UIFontWeight.Bold)
+            },
+            PrimaryColor = UIColor.FromName("PacificBlue"),
+        };
     }
 }
