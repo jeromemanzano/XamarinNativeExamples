@@ -60,11 +60,16 @@
     <MtouchArch>ARM64</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Bindings\TextFieldFilterBinding.cs" />
+    <Compile Include="Converters\BoolToCheckIconConverter.cs" />
     <Compile Include="Extensions\ThemeExtensions.cs" />
     <Compile Include="Extensions\UIExtensions.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="Services\DialogService.cs" />
     <Compile Include="Views\Gestures\MvxLongPressGestureRecognizerBehavior.cs" />
     <Compile Include="Controls\AccordionView.cs" />
     <Compile Include="CustomPresenter.cs" />
@@ -117,6 +122,20 @@
     <Compile Include="Views\Text\TextFilterViewController.designer.cs">
       <DependentUpon>TextFilterViewController.cs</DependentUpon>
     </Compile>
+    <InterfaceDefinition Include="Views\Http\HttpViewController.xib" />
+    <Compile Include="Views\Http\HttpViewController.cs" />
+    <Compile Include="Views\Http\HttpViewController.designer.cs">
+      <DependentUpon>HttpViewController.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Views\Token\TokenViewController.xib" />
+    <Compile Include="Views\Token\TokenCopySubView.cs" />
+    <Compile Include="Views\Token\TokenRegisterSubView.cs" />
+    <Compile Include="Views\Token\TokenStartSubView.cs" />
+    <Compile Include="Views\Token\TokenTestSubView.cs" />
+    <Compile Include="Views\Token\TokenViewController.cs" />
+    <Compile Include="Views\Token\TokenViewController.designer.cs">
+      <DependentUpon>TokenViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -127,18 +146,27 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="MvvmCross.Plugin.Visibility">
+      <Version>7.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Xamarin.TestCloud.Agent">
       <Version>0.21.9</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross">
-      <Version>7.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="MvvmCross.Platform">
-      <Version>5.7.0</Version>
+      <Version>7.1.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\ApiTokenCopy.imageset\api-token-copy.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ApiTokenRegister.imageset\api-token-register.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ApiTokenStart.imageset\api-token-start.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -169,6 +197,12 @@
     <ImageAsset Include="Assets.xcassets\ButtonPanel.imageset\button-panel.pdf">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\CheckIcon.imageset\check-icon.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\CrossIcon.imageset\cross-icon.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\DownArrow.imageset\down-arrow.pdf">
       <Visible>false</Visible>
     </ImageAsset>
@@ -179,6 +213,12 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\DownArrow.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\HttpPanel.imageset\http-panel.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\WebSocketPanel.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\TextPanel.imageset\Contents.json">
@@ -208,10 +248,51 @@
     <ImageAsset Include="Assets.xcassets\MountBattenPink.colorset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\HttpPanel.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ApiTokenRegister.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ApiTokenStart.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ApiTokenCopy.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\CheckIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\CrossIcon.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\WebSocketPanel.imageset\websocket-panel.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\PacificBlue.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\DavysGrey.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\ImperialRed.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\BlackChocolate.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AlloyOrange.colorset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\MustardYellow.colorset\" />
     <Folder Include="Assets.xcassets\TimberGreen.colorset\" />
+    <Folder Include="Assets.xcassets\PacificBlue.colorset\" />
+    <Folder Include="Assets.xcassets\DavysGrey.colorset\" />
+    <Folder Include="Assets.xcassets\ImperialRed.colorset\" />
+    <Folder Include="Assets.xcassets\BlackChocolate.colorset\" />
+    <Folder Include="Assets.xcassets\AlloyOrange.colorset\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinNativeExamples.Core\XamarinNativeExamples.Core.csproj">

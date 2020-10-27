@@ -108,7 +108,7 @@ namespace XamarinNativeExamples.Core.ViewModels.Token
             {
                 TokenValid = await _stockManager.ValidateToken(ApiToken);
                 TestButtonText = TokenValid ? Resources.Save : Resources.Test;
-                ApiTextEnabled = false;
+                ApiTextEnabled = !TokenValid;
                 ShowSuccess = TokenValid;
                 ShowFailed = !TokenValid;
             }

@@ -35,6 +35,7 @@ namespace XamarinNativeExamples.iOS.Utils
 
     public struct ViewControllerTheme 
     {
+        public UIColor PrimaryColor { get; set; }
         public ButtonTheme ButtonTheme { get; set; }
         public NavigationTheme NavigationTheme { get; set; }
         public AccordionTheme AccordionTheme { get; set; }
@@ -76,7 +77,8 @@ namespace XamarinNativeExamples.iOS.Utils
                 ToggleBackgroundColor = UIColor.FromName("MustardYellow"),
                 ToggleTextColor = UIColor.White,
                 CornerRadius = 5f
-            }
+            },
+            PrimaryColor = UIColor.FromName("MustardYellow"),
         };
 
         public static ViewControllerTheme Text { get; } = new ViewControllerTheme
@@ -104,7 +106,49 @@ namespace XamarinNativeExamples.iOS.Utils
                 ToggleBackgroundColor = UIColor.FromName("ComoGreen"),
                 ToggleTextColor = UIColor.White,
                 CornerRadius = 5f
-            }
+            },
+            PrimaryColor = UIColor.FromName("ComoGreen"),
+        };
+
+        public static ViewControllerTheme Token { get; } = new ViewControllerTheme
+        {
+            NavigationTheme = new NavigationTheme
+            {
+                BackgroundColor = UIColor.Clear,
+                TextColor = UIColor.FromName("PrussianBlue"),
+                BackgroundImage = new UIImage(),
+            },
+            ButtonTheme = new ButtonTheme
+            {
+                BackgroundColor = UIColor.FromName("PrussianBlue"),
+                TextColor = UIColor.White,
+                DisabledBackgroundColor = UIColor.LightGray,
+                DisabledTextColor = UIColor.DarkTextColor,
+                CornerRadius = 5f,
+                Font = UIFont.SystemFontOfSize(20f, UIFontWeight.Bold)
+            },
+            PrimaryColor = UIColor.FromName("PrussianBlue"),
+        };
+
+        public static ViewControllerTheme Http { get; } = new ViewControllerTheme
+        {
+            NavigationTheme = new NavigationTheme
+            {
+                BackgroundColor = UIColor.FromName("PacificBlue"),
+                TextColor = UIColor.White,
+                PrefersLargeTitles = true,
+                BackgroundImage = UIImage.FromBundle("HttpPanel").Blend(0.6f, UIColor.FromName("PacificBlue").CGColor),
+            },
+            ButtonTheme = new ButtonTheme
+            {
+                BackgroundColor = UIColor.FromName("DavysGrey"),
+                TextColor = UIColor.White,
+                DisabledBackgroundColor = UIColor.LightGray,
+                DisabledTextColor = UIColor.DarkTextColor,
+                CornerRadius = 5f,
+                Font = UIFont.SystemFontOfSize(20f, UIFontWeight.Bold)
+            },
+            PrimaryColor = UIColor.FromName("PacificBlue"),
         };
     }
 }
