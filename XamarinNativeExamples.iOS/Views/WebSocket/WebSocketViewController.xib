@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WebSocketViewController">
+            <connections>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+                <outlet property="ConnectButton" destination="328" id="name-outlet-328"/>
+                <outlet property="PingLabel" destination="329" id="name-outlet-329"/>
+                <outlet property="SymbolInput" destination="330" id="name-outlet-330"/>
+                <outlet property="SubscribeButton" destination="331" id="name-outlet-331"/>
+                <outlet property="PriceLabel" destination="332" id="name-outlet-332"/>
+                <outlet property="VolumeLabel" destination="333" id="name-outlet-333"/>
+                <outlet property="TimeLabel" destination="334" id="name-outlet-334"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="328" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="20" y="50" width="374" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <constraints>
+                        <constraint id="1050" firstAttribute="height" constant="35"/>
+                    </constraints>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="329" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="20" y="115" width="41.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" id="330" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                    <rect key="frame" x="20" y="156" width="97" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <constraints>
+                        <constraint id="783" firstAttribute="height" constant="35"/>
+                    </constraints>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="331" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                    <rect key="frame" x="20" y="235" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <constraints>
+                        <constraint id="1109" firstAttribute="height" constant="35"/>
+                    </constraints>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="332" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                    <rect key="frame" x="22" y="306" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="333" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                    <rect key="frame" x="22" y="374" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="334" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                    <rect key="frame" x="22" y="447" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint id="373" firstItem="328" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20"/>
+                <constraint id="403" firstAttribute="trailing" secondItem="328" secondAttribute="trailing" constant="20"/>
+                <constraint id="694" firstItem="329" firstAttribute="leading" secondItem="328" secondAttribute="leading"/>
+                <constraint id="724" firstItem="329" firstAttribute="top" secondItem="328" secondAttribute="bottom" constant="30"/>
+                <constraint id="842" firstItem="328" firstAttribute="trailing" secondItem="330" secondAttribute="trailing"/>
+                <constraint id="872" firstItem="330" firstAttribute="leading" secondItem="328" secondAttribute="leading"/>
+                <constraint id="931" firstItem="330" firstAttribute="top" secondItem="329" secondAttribute="bottom" constant="30"/>
+                <constraint id="990" firstItem="331" firstAttribute="leading" secondItem="328" secondAttribute="leading"/>
+                <constraint id="1020" firstItem="328" firstAttribute="trailing" secondItem="331" secondAttribute="trailing"/>
+                <constraint id="1197" firstItem="331" firstAttribute="top" secondItem="330" secondAttribute="bottom" constant="30"/>
+                <constraint id="1256" firstItem="332" firstAttribute="leading" secondItem="331" secondAttribute="leading" constant="2"/>
+                <constraint id="1286" firstItem="332" firstAttribute="top" secondItem="331" secondAttribute="bottom" constant="30"/>
+                <constraint id="1345" firstItem="333" firstAttribute="leading" secondItem="332" secondAttribute="leading"/>
+                <constraint id="1375" firstItem="333" firstAttribute="top" secondItem="332" secondAttribute="bottom" constant="20"/>
+                <constraint id="1434" firstItem="334" firstAttribute="top" secondItem="333" secondAttribute="bottom" constant="20"/>
+                <constraint id="1464" firstItem="334" firstAttribute="leading" secondItem="333" secondAttribute="leading"/>
+                <constraint id="3216" firstItem="328" firstAttribute="top" secondItem="2" secondAttribute="top" constant="50"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

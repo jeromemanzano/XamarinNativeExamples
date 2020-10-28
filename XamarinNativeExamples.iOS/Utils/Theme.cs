@@ -150,5 +150,26 @@ namespace XamarinNativeExamples.iOS.Utils
             },
             PrimaryColor = UIColor.FromName("PacificBlue"),
         };
+
+        public static ViewControllerTheme WebSocket { get; } = new ViewControllerTheme
+        {
+            NavigationTheme = new NavigationTheme
+            {
+                BackgroundColor = UIColor.FromName("AlloyOrange"),
+                TextColor = UIColor.White,
+                PrefersLargeTitles = true,
+                BackgroundImage = UIImage.FromBundle("WebSocketPanel").Blend(0.6f, UIColor.FromName("AlloyOrange").CGColor),
+            },
+            ButtonTheme = new ButtonTheme
+            {
+                BackgroundColor = UIColor.FromName("BlackChocolate"),
+                TextColor = UIColor.White,
+                DisabledBackgroundColor = UIColor.LightGray,
+                DisabledTextColor = UIColor.DarkTextColor,
+                CornerRadius = 5f,
+                Font = UIFont.SystemFontOfSize(20f, UIFontWeight.Bold)
+            },
+            PrimaryColor = UIColor.FromName("AlloyOrange"),
+        };
     }
 }

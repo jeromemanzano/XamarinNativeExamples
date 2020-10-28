@@ -10,10 +10,6 @@ namespace XamarinNativeExamples.iOS.Views.Http
     {
         protected override ViewControllerTheme Theme => Themes.Http;
 
-
-        private UIView _buttonClickView;
-        private UIView _buttonEnableView;
-
         public HttpViewController() : base("HttpViewController")
         {
         }

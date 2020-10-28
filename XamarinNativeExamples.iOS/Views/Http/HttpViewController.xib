@@ -83,7 +83,7 @@
                 <constraint id="308" firstAttribute="trailing" secondItem="301" secondAttribute="trailing" constant="20"/>
                 <constraint id="309" firstItem="301" firstAttribute="top" secondItem="299" secondAttribute="bottom" constant="30"/>
                 <constraint id="328" firstItem="327" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20"/>
-                <constraint id="329" firstItem="327" firstAttribute="top" secondItem="2" secondAttribute="top" constant="30"/>
+                <constraint id="329" firstItem="327" firstAttribute="top" secondItem="2" secondAttribute="top" constant="50"/>
                 <constraint id="331" firstItem="330" firstAttribute="leading" secondItem="327" secondAttribute="leading"/>
                 <constraint id="333" firstItem="332" firstAttribute="leading" secondItem="330" secondAttribute="leading"/>
                 <constraint id="337" firstItem="335" firstAttribute="bottom" secondItem="334" secondAttribute="bottom"/>

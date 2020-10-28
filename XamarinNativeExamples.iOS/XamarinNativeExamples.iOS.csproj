@@ -136,6 +136,11 @@
     <Compile Include="Views\Token\TokenViewController.designer.cs">
       <DependentUpon>TokenViewController.cs</DependentUpon>
     </Compile>
+    <InterfaceDefinition Include="Views\WebSocket\WebSocketViewController.xib" />
+    <Compile Include="Views\WebSocket\WebSocketViewController.cs" />
+    <Compile Include="Views\WebSocket\WebSocketViewController.designer.cs">
+      <DependentUpon>WebSocketViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -293,6 +298,7 @@
     <Folder Include="Assets.xcassets\ImperialRed.colorset\" />
     <Folder Include="Assets.xcassets\BlackChocolate.colorset\" />
     <Folder Include="Assets.xcassets\AlloyOrange.colorset\" />
+    <Folder Include="Views\WebSocket\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinNativeExamples.Core\XamarinNativeExamples.Core.csproj">
