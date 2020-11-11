@@ -15,10 +15,11 @@
                 <outlet property="WeeklyCount" destination="332" id="name-outlet-332"/>
                 <outlet property="SentimentHeader" destination="334" id="name-outlet-334"/>
                 <outlet property="Sentiment" destination="335" id="name-outlet-335"/>
+                <outlet property="MainScroll" destination="2" id="name-outlet-2"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="2">
+        <view contentMode="scaleToFill" id="2" customClass="UIScrollView">
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <subviews>
@@ -93,6 +94,7 @@
                 <constraint id="341" firstItem="330" firstAttribute="top" secondItem="327" secondAttribute="bottom" constant="30"/>
                 <constraint id="342" firstItem="299" firstAttribute="top" secondItem="334" secondAttribute="bottom" constant="30"/>
                 <constraint id="538" firstItem="334" firstAttribute="leading" secondItem="332" secondAttribute="leading"/>
+                <constraint id="1657" firstAttribute="bottom" secondItem="301" secondAttribute="bottom" relation="greaterThanOrEqual"/>
             </constraints>
         </view>
     </objects>

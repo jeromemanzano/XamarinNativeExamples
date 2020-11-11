@@ -22,6 +22,7 @@ namespace XamarinNativeExamples.iOS.Views.WebSocket
 
             ConnectButton.ApplyTheme(Theme.ButtonTheme);
             SubscribeButton.ApplyTheme(Theme.ButtonTheme);
+            MainScrollView = MainScroll;
         }
 
         protected override void BindControls()

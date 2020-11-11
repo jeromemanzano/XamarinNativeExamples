@@ -1,4 +1,5 @@
-﻿using MvvmCross.Platforms.Ios.Views;
+﻿using CoreGraphics;
+using MvvmCross.Platforms.Ios.Views;
 using MvvmCross.ViewModels;
 using UIKit;
 using XamarinNativeExamples.Core.ViewModels.Text;
@@ -39,8 +40,8 @@ namespace XamarinNativeExamples.iOS.Views.Text
 
             EdgesForExtendedLayout = UIRectEdge.None;
 
-            var scrollView = new UIScrollView();
-            scrollView.TranslatesAutoresizingMaskIntoConstraints = false;
+            MainScrollView = new UIScrollView();
+            MainScrollView.TranslatesAutoresizingMaskIntoConstraints = false;
 
             var containerView = new UIView();
             containerView.TranslatesAutoresizingMaskIntoConstraints = false;
@@ -48,8 +49,8 @@ namespace XamarinNativeExamples.iOS.Views.Text
             AddChildViewController(_textTextViewController);
             AddChildViewController(_textFilterViewController);
 
-            View.AddSubview(scrollView);
-            scrollView.AddSubview(containerView);
+            View.AddSubview(MainScrollView);
+            MainScrollView.AddSubview(containerView);
 
             containerView.AddSubview(_textTextView);
             containerView.AddSubview(textFilterView);
@@ -60,16 +61,16 @@ namespace XamarinNativeExamples.iOS.Views.Text
             _textTextViewController.DidMoveToParentViewController(this);
             _textFilterViewController.DidMoveToParentViewController(this);
 
-            scrollView.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor).Active = true;
-            scrollView.LeadingAnchor.ConstraintEqualTo(View.LeadingAnchor).Active = true;
-            scrollView.TrailingAnchor.ConstraintEqualTo(View.TrailingAnchor).Active = true;
-            scrollView.BottomAnchor.ConstraintEqualTo(View.BottomAnchor).Active = true;
+            MainScrollView.TopAnchor.ConstraintEqualTo(View.SafeAreaLayoutGuide.TopAnchor).Active = true;
+            MainScrollView.LeadingAnchor.ConstraintEqualTo(View.LeadingAnchor).Active = true;
+            MainScrollView.TrailingAnchor.ConstraintEqualTo(View.TrailingAnchor).Active = true;
+            MainScrollView.BottomAnchor.ConstraintEqualTo(View.BottomAnchor).Active = true;
 
-            containerView.TopAnchor.ConstraintEqualTo(scrollView.TopAnchor).Active = true;
-            containerView.LeadingAnchor.ConstraintEqualTo(scrollView.LeadingAnchor).Active = true;
-            containerView.TrailingAnchor.ConstraintEqualTo(scrollView.TrailingAnchor).Active = true;
-            containerView.BottomAnchor.ConstraintEqualTo(scrollView.BottomAnchor).Active = true;
-            containerView.WidthAnchor.ConstraintEqualTo(scrollView.WidthAnchor).Active = true;
+            containerView.TopAnchor.ConstraintEqualTo(MainScrollView.TopAnchor).Active = true;
+            containerView.LeadingAnchor.ConstraintEqualTo(MainScrollView.LeadingAnchor).Active = true;
+            containerView.TrailingAnchor.ConstraintEqualTo(MainScrollView.TrailingAnchor).Active = true;
+            containerView.BottomAnchor.ConstraintEqualTo(MainScrollView.BottomAnchor).Active = true;
+            containerView.WidthAnchor.ConstraintEqualTo(MainScrollView.WidthAnchor).Active = true;
 
             _textTextView.TopAnchor.ConstraintEqualTo(containerView.TopAnchor, 50f).Active = true;
             _textTextView.LeadingAnchor.ConstraintEqualTo(containerView.LeadingAnchor, 20f).Active = true;
@@ -78,7 +79,16 @@ namespace XamarinNativeExamples.iOS.Views.Text
             textFilterView.TopAnchor.ConstraintEqualTo(_textTextView.BottomAnchor, 20f).Active = true;
             textFilterView.LeadingAnchor.ConstraintEqualTo(containerView.LeadingAnchor, 20f).Active = true;
             textFilterView.TrailingAnchor.ConstraintEqualTo(containerView.TrailingAnchor, -20f).Active = true;
-            textFilterView.BottomAnchor.ConstraintEqualTo(scrollView.BottomAnchor, -20f).Active = true;
+            textFilterView.BottomAnchor.ConstraintEqualTo(MainScrollView.BottomAnchor, -20f).Active = true;
+        }
+
+        protected override void SetViewStateForKeyboard(bool visible, CGRect rect)
+        {
+            base.SetViewStateForKeyboard(visible, rect);
+
+            var bottom = visible ? rect.Height : 0;
+            MainScrollView.ContentInset = new UIEdgeInsets(0, 0, bottom, 0);
+            MainScrollView.ScrollIndicatorInsets = new UIEdgeInsets(0, 0, bottom, 0);
         }
     }
 }
