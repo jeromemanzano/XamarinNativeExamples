@@ -24,6 +24,10 @@ namespace XamarinNativeExamples.iOS.Views.Http
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIScrollView MainScroll { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton RequestButton { get; set; }
 
         [Outlet]
@@ -56,6 +60,11 @@ namespace XamarinNativeExamples.iOS.Views.Http
             if (LastWeekCount != null) {
                 LastWeekCount.Dispose ();
                 LastWeekCount = null;
+            }
+
+            if (MainScroll != null) {
+                MainScroll.Dispose ();
+                MainScroll = null;
             }
 
             if (RequestButton != null) {

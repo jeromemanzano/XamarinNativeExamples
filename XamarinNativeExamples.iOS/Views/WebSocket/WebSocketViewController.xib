@@ -14,12 +14,13 @@
                 <outlet property="PriceLabel" destination="332" id="name-outlet-332"/>
                 <outlet property="VolumeLabel" destination="333" id="name-outlet-333"/>
                 <outlet property="TimeLabel" destination="334" id="name-outlet-334"/>
+                <outlet property="MainScroll" destination="2" id="name-outlet-2"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="2">
+        <view contentMode="scaleToFill" id="2" customClass="UIScrollView">
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="328" translatesAutoresizingMaskIntoConstraints="NO">
                     <rect key="frame" x="20" y="50" width="374" height="35"/>
@@ -62,7 +63,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="334" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                    <rect key="frame" x="22" y="447" width="42" height="21"/>
+                    <rect key="frame" x="22" y="447" width="41.5" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -70,7 +71,6 @@
             </subviews>
             <constraints>
                 <constraint id="373" firstItem="328" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20"/>
-                <constraint id="403" firstAttribute="trailing" secondItem="328" secondAttribute="trailing" constant="20"/>
                 <constraint id="694" firstItem="329" firstAttribute="leading" secondItem="328" secondAttribute="leading"/>
                 <constraint id="724" firstItem="329" firstAttribute="top" secondItem="328" secondAttribute="bottom" constant="30"/>
                 <constraint id="842" firstItem="328" firstAttribute="trailing" secondItem="330" secondAttribute="trailing"/>
@@ -86,6 +86,8 @@
                 <constraint id="1434" firstItem="334" firstAttribute="top" secondItem="333" secondAttribute="bottom" constant="20"/>
                 <constraint id="1464" firstItem="334" firstAttribute="leading" secondItem="333" secondAttribute="leading"/>
                 <constraint id="3216" firstItem="328" firstAttribute="top" secondItem="2" secondAttribute="top" constant="50"/>
+                <constraint id="3649" firstAttribute="bottom" secondItem="334" secondAttribute="bottom" relation="greaterThanOrEqual"/>
+                <constraint id="7447" firstItem="328" firstAttribute="width" secondItem="2" secondAttribute="width" constant="-40"/>
             </constraints>
         </view>
     </objects>

@@ -20,6 +20,7 @@ namespace XamarinNativeExamples.iOS.Views.Http
 
             EdgesForExtendedLayout = UIRectEdge.None;
             RequestButton.ApplyTheme(Theme.ButtonTheme);
+            MainScrollView = MainScroll;
         }
 
         protected override void BindControls()
@@ -33,6 +34,7 @@ namespace XamarinNativeExamples.iOS.Views.Http
             set.Bind(SymbolInput).For(v => v.Placeholder).To(vm => vm.StockSymbolHint);
 
             set.Bind(RequestButton).To(vm => vm.GetNewsSentimentCommand);
+            set.Bind(RequestButton).For("Title").To(vm => vm.GetNewsSentimentText);
             set.Bind(RequestButton).For(v => v.Enabled).To(vm => vm.ButtonEnabled);
 
             set.Bind(ArticlesHeader).To(vm => vm.ArticlesLabel);

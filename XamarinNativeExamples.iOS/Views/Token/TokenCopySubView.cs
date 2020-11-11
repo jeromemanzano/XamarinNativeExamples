@@ -27,7 +27,7 @@ namespace XamarinNativeExamples.iOS.Views.Token
             tokenCopyImage.TrailingAnchor.ConstraintEqualTo(TrailingAnchor, -40).Active = true;
 
             CopyDescription.TranslatesAutoresizingMaskIntoConstraints = false;
-            CopyDescription.TopAnchor.ConstraintEqualTo(tokenCopyImage.BottomAnchor, 30).Active = true;
+            CopyDescription.BottomAnchor.ConstraintEqualTo(SafeAreaLayoutGuide.BottomAnchor, -60).Active = true;
             CopyDescription.LeadingAnchor.ConstraintEqualTo(LeadingAnchor, 40).Active = true;
             CopyDescription.TrailingAnchor.ConstraintEqualTo(TrailingAnchor, -40).Active = true;
             CopyDescription.Lines = 0;

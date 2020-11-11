@@ -27,7 +27,7 @@ namespace XamarinNativeExamples.iOS.Views.Token
             tokenRegisterImage.TrailingAnchor.ConstraintEqualTo(TrailingAnchor, -40).Active = true;
 
             RegisterDescription.TranslatesAutoresizingMaskIntoConstraints = false;
-            RegisterDescription.TopAnchor.ConstraintEqualTo(tokenRegisterImage.BottomAnchor, 30).Active = true;
+            RegisterDescription.BottomAnchor.ConstraintEqualTo(SafeAreaLayoutGuide.BottomAnchor, -60).Active = true;
             RegisterDescription.LeadingAnchor.ConstraintEqualTo(LeadingAnchor, 40).Active = true;
             RegisterDescription.TrailingAnchor.ConstraintEqualTo(TrailingAnchor, -40).Active = true;
             RegisterDescription.Lines = 0;

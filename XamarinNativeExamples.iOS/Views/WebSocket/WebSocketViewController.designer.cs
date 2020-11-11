@@ -20,6 +20,10 @@ namespace XamarinNativeExamples.iOS.Views.WebSocket
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIScrollView MainScroll { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel PingLabel { get; set; }
 
         [Outlet]
@@ -47,6 +51,11 @@ namespace XamarinNativeExamples.iOS.Views.WebSocket
             if (ConnectButton != null) {
                 ConnectButton.Dispose ();
                 ConnectButton = null;
+            }
+
+            if (MainScroll != null) {
+                MainScroll.Dispose ();
+                MainScroll = null;
             }
 
             if (PingLabel != null) {
