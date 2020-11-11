@@ -1,4 +1,7 @@
 ﻿using Foundation;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using MvvmCross.Platforms.Ios.Core;
 using UIKit;
 using XamarinNativeExamples.Core;
@@ -27,7 +30,8 @@ namespace XamarinNativeExamples.iOS
 
             var result = base.FinishedLaunching(application, launchOptions);
 
-            // here is where your custom code should be placed
+            AppCenter.Start("4c261955-6d13-4cd4-a289-6b6c33f56223",
+                   typeof(Analytics), typeof(Crashes));
 
             return result;
         }
