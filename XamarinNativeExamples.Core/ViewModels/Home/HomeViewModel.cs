@@ -66,7 +66,7 @@ namespace XamarinNativeExamples.Core.ViewModels.Home
         {
             if (!(await _stockManager.TokenValidated()))
             {
-                var validated = await Navigation.Navigate<TokenViewModel, bool>();
+                var validated = await Navigation.Navigate<TokenViewModel>();
 
                 if (!validated)
                 {
@@ -81,7 +81,7 @@ namespace XamarinNativeExamples.Core.ViewModels.Home
         {
             if (!(await _stockManager.TokenValidated()))
             {
-                var validated = await Navigation.Navigate<TokenViewModel, bool>();
+                var validated = await Navigation.Navigate<TokenViewModel>();
 
                 if (!validated)
                 {

@@ -1,10 +1,14 @@
 ﻿using Android.Widget;
 using Com.Ramotion.Foldingcell;
+using Microsoft.Extensions.Logging;
 using MvvmCross;
 using MvvmCross.Binding.Bindings.Target.Construction;
 using MvvmCross.Converters;
+using MvvmCross.IoC;
 using MvvmCross.Platforms.Android.Core;
 using MvvmCross.Platforms.Android.Presenters;
+using Serilog;
+using Serilog.Extensions.Logging;
 using XamarinNativeExamples.Core;
 using XamarinNativeExamples.Core.Services.Interactions;
 using XamarinNativeExamples.Droid.Binders;
@@ -15,11 +19,10 @@ namespace XamarinNativeExamples.Droid
 {
     public class Setup : MvxAndroidSetup<App>
     {
-        protected override void InitializeFirstChance()
+        protected override void InitializeFirstChance(IMvxIoCProvider iocProvider)
         {
-            base.InitializeFirstChance();
-
-            Mvx.IoCProvider.RegisterSingleton<IDialogService>(() => Mvx.IoCProvider.IoCConstruct<DialogService>());
+            base.InitializeFirstChance(iocProvider);
+            iocProvider.RegisterSingleton<IDialogService>(() => Mvx.IoCProvider.IoCConstruct<DialogService>());
         }
 
         protected override IMvxAndroidViewPresenter CreateViewPresenter()
@@ -41,6 +44,20 @@ namespace XamarinNativeExamples.Droid
             base.FillValueConverters(registry);
 
             registry.AddOrOverwrite("CheckIconConverter", new BoolToCheckIconConverter());
+        }
+
+        protected override ILoggerProvider CreateLogProvider()
+        {
+            return new SerilogLoggerProvider();
+        }
+
+        protected override ILoggerFactory CreateLogFactory()
+        {
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .CreateLogger();
+
+            return new SerilogLoggerFactory();
         }
     }
 }

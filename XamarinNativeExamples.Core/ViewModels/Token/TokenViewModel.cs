@@ -102,7 +102,7 @@ namespace XamarinNativeExamples.Core.ViewModels.Token
             if (TokenValid)
             {
                 await _stockManager.UpdateToken(ApiToken);
-                await Navigation.Close<bool>(this, true);
+                await Navigation.Close(this);
             }
             else 
             {
