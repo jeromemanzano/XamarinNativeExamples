@@ -124,10 +124,5 @@ namespace XamarinNativeExamples.Droid
             var context2 = new MvxTaskBasedBindingContext();
             context2.Dispose();
         }
-
-        public void Include(MvxNavigationService service, IMvxViewModelLoader loader)
-        {
-            service = new MvxNavigationService(null, loader);
-        }
     }
 }
