@@ -1,22 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
+﻿using System.Collections.Generic;
 using Android.Views;
-using Android.Widget;
 using AndroidX.ViewPager.Widget;
 
 namespace XamarinNativeExamples.Droid.Views.Token
 {
     public class TokenPagerAdapter : PagerAdapter
     {
-        private List<int> _items = new List<int>();
-        public override int Count => _items.Count();
+        private readonly List<int> _items = new ();
+        public override int Count => _items.Count;
 
         public override bool IsViewFromObject(View view, Java.Lang.Object obj)
         {

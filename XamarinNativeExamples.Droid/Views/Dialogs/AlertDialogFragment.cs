@@ -70,34 +70,40 @@ namespace XamarinNativeExamples.Droid.Views.Dialogs
 
             var dialogView = inflater.Inflate(Resource.Layout.dialog_alert, null);
 
-            _blurView = dialogView.FindViewById<BlurView>(Resource.Id.dialog_alert_blur_background);
-            _blurView.SetBlurredView(Activity.Window.DecorView);
-            _blurView.Click += OnBackgroundClick;
+            if (dialogView != null)
+            {
+                _blurView = dialogView.FindViewById<BlurView>(Resource.Id.dialog_alert_blur_background);
+                _blurView.SetBlurredView(Activity.Window.DecorView);
+                _blurView.Click += OnBackgroundClick;
 
-            _titleView = dialogView.FindViewById<TextView>(Resource.Id.dialog_alert_title);
-            _titleView.Visibility = Arguments.ContainsKey(TITLE_ARG) ? ViewStates.Visible : ViewStates.Gone;
-            _titleView.Text = Arguments.GetString(TITLE_ARG, string.Empty);
+                _titleView = dialogView.FindViewById<TextView>(Resource.Id.dialog_alert_title);
+                _titleView.Visibility = Arguments.ContainsKey(TITLE_ARG) ? ViewStates.Visible : ViewStates.Gone;
+                _titleView.Text = Arguments.GetString(TITLE_ARG, string.Empty);
 
-            _messageView = dialogView.FindViewById<TextView>(Resource.Id.dialog_alert_message);
-            _messageView.Visibility = Arguments.ContainsKey(MESSAGE_ARG) ? ViewStates.Visible : ViewStates.Gone;
-            _messageView.Text = Arguments.GetString(MESSAGE_ARG, string.Empty);
+                _messageView = dialogView.FindViewById<TextView>(Resource.Id.dialog_alert_message);
+                _messageView.Visibility = Arguments.ContainsKey(MESSAGE_ARG) ? ViewStates.Visible : ViewStates.Gone;
+                _messageView.Text = Arguments.GetString(MESSAGE_ARG, string.Empty);
 
-            _positiveButton = dialogView.FindViewById<Android.Widget.Button>(Resource.Id.dialog_alert_positive_button);
-            _positiveButton.Text = Core.Properties.Resources.Ok;
-            _positiveButton.Click += OnPositiveClick;
+                _positiveButton =
+                    dialogView.FindViewById<Android.Widget.Button>(Resource.Id.dialog_alert_positive_button);
+                _positiveButton.Text = Core.Properties.Resources.Ok;
+                _positiveButton.Click += OnPositiveClick;
 
-            _negativeButton = dialogView.FindViewById<Android.Widget.Button>(Resource.Id.dialog_alert_negative_button);
-            _negativeButton.Visibility = Arguments.ContainsKey(NEGATIVE_LABEL_ARG) ? ViewStates.Visible : ViewStates.Gone;
-            _negativeButton.Text = Arguments.GetString(NEGATIVE_LABEL_ARG, string.Empty);
-            _negativeButton.Click += OnNegativeClick;
-
+                _negativeButton =
+                    dialogView.FindViewById<Android.Widget.Button>(Resource.Id.dialog_alert_negative_button);
+                _negativeButton.Visibility =
+                    Arguments.ContainsKey(NEGATIVE_LABEL_ARG) ? ViewStates.Visible : ViewStates.Gone;
+                _negativeButton.Text = Arguments.GetString(NEGATIVE_LABEL_ARG, string.Empty);
+                _negativeButton.Click += OnNegativeClick;
+            }
+            
             return dialogView;
         }
 
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetStyle(DialogFragment.StyleNoTitle, Resource.Style.AppTheme_AlertDialog);
+            SetStyle(StyleNoTitle, Resource.Style.AppTheme_AlertDialog);
         }
 
         public override void OnStart()

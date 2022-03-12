@@ -22,7 +22,7 @@ namespace XamarinNativeExamples.Droid.Binders
 
             if (value is bool open)
             {
-                if (open != layout.IsUnfolded)
+                if (layout != null && open != layout.IsUnfolded)
                 {
                     layout.Toggle(false);
                 }

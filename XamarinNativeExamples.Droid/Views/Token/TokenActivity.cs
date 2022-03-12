@@ -16,14 +16,19 @@ namespace XamarinNativeExamples.Droid.Views.Token
         {
             base.OnCreate(savedInstanceState);
 
-            var viewPager = FindViewById<ViewPager>(Resource.Id.view_pager);
             var adapter = new TokenPagerAdapter();
             adapter.AddView(Resource.Id.token_start);
             adapter.AddView(Resource.Id.token_register);
             adapter.AddView(Resource.Id.token_copy);
             adapter.AddView(Resource.Id.token_test);
-            viewPager.OffscreenPageLimit = adapter.Count;
-            viewPager.Adapter = adapter;
+            
+            var viewPager = FindViewById<ViewPager>(Resource.Id.view_pager);
+
+            if (viewPager is not null)
+            {
+                viewPager.OffscreenPageLimit = adapter.Count;
+                viewPager.Adapter = adapter;
+            }
         }
     }
 }
