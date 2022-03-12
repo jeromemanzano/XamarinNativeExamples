@@ -1,6 +1,10 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using MvvmCross;
 using MvvmCross.Commands;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
+using XamarinNativeExamples.Core.Managers.Interactions;
 using XamarinNativeExamples.Core.Managers.Stocks;
 using XamarinNativeExamples.Core.Properties;
 using XamarinNativeExamples.Core.ViewModels.Base;
@@ -35,49 +39,57 @@ namespace XamarinNativeExamples.Core.ViewModels.Home
         private IMvxCommand _openWebSocketCommand;
         public IMvxCommand OpenWebSocketCommand => _openWebSocketCommand ??= new MvxAsyncCommand(OpenWebSocketAsync);
 
-        public HomeViewModel() 
-        { 
-            _stockManager = Mvx.IoCProvider.Resolve<IStockManager>();
+        public HomeViewModel(ILoggerFactory loggerFactory, 
+            IMvxNavigationService navigationService,
+            IInteractionManager interactionManager,
+            IStockManager stockManager)
+            :base(loggerFactory, navigationService, interactionManager)
+        {
+            _stockManager = stockManager;
         }
         
         private Task OpenButtonAsync() 
         {
-            return Navigation.Navigate<ButtonViewModel>();
+            return NavigationService.Navigate<ButtonViewModel>();
         }
 
         private Task OpenTextAsync()
         {
-            return Navigation.Navigate<TextViewModel>();
+            return NavigationService.Navigate<TextViewModel>();
         }
 
-        private async Task OpenRestAsync() 
+        private async Task OpenRestAsync()
+        {
+            await NavigateIfTokenIsValidAsync<HttpViewModel>();
+        }
+        private async Task OpenWebSocketAsync()
+        {
+            await NavigateIfTokenIsValidAsync<WebSocketViewModel>();
+        }
+        
+        private async Task NavigateIfTokenIsValidAsync<TViewModel>() where TViewModel : BasePageViewModel
         {
             if (!await _stockManager.TokenValidatedAsync())
             {
-                var validated = await Navigation.Navigate<TokenViewModel>();
+                var result = await NavigationService.Navigate<TokenViewModel, NavigationResult>();
 
-                if (!validated)
-                {
+                if (!result?.Success ?? true)
                     return;
-                }
             }
 
-            await Navigation.Navigate<HttpViewModel>();
+            await NavigationService.Navigate<TViewModel>();
         }
 
-        private async Task OpenWebSocketAsync()
+        private async Task<bool> TokenValidatedAsnyc()
         {
-            if (!(await _stockManager.TokenValidatedAsync()))
+            if (!await _stockManager.TokenValidatedAsync())
             {
-                var validated = await Navigation.Navigate<TokenViewModel>();
+                var result = await NavigationService.Navigate<TokenViewModel, NavigationResult>();
 
-                if (!validated)
-                {
-                    return;
-                }
+                return result?.Success == true;
             }
 
-            await Navigation.Navigate<WebSocketViewModel>();
+            return true;
         }
     }
 }

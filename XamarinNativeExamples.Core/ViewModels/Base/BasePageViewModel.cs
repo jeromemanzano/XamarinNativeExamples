@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.IoC;
@@ -8,17 +9,17 @@ using XamarinNativeExamples.Core.Managers.Interactions;
 
 namespace XamarinNativeExamples.Core.ViewModels.Base
 {
-    public abstract class BasePageViewModel : MvxViewModel, IPageViewModel
+    public abstract class BasePageViewModel : MvxNavigationViewModel, IPageViewModel
     {
         protected IMvxIoCProvider IoCProvider { get; } = Mvx.IoCProvider;
-
-        protected IMvxNavigationService Navigation { get; }
         protected IInteractionManager Interactions { get; }
 
-        protected BasePageViewModel()
+        protected BasePageViewModel(ILoggerFactory loggerFactory, 
+            IMvxNavigationService navigationService,
+            IInteractionManager interactionManager)
+            :base(loggerFactory, navigationService)
         {
-            Navigation = IoCProvider.Resolve<IMvxNavigationService>();
-            Interactions = IoCProvider.Resolve<IInteractionManager>();
+            Interactions = interactionManager;
         }
 
         private IMvxCommand _backCommand;
@@ -28,7 +29,7 @@ namespace XamarinNativeExamples.Core.ViewModels.Base
 
         protected virtual Task BackAsync()
         {
-            return Navigation.Close(this);
+            return NavigationService.Close(this);
         }
     }
 
@@ -37,18 +38,31 @@ namespace XamarinNativeExamples.Core.ViewModels.Base
         IMvxViewModelResult<TResult>
         where TResult : notnull
     {
+        protected BaseResultPageViewModel(ILoggerFactory loggerFactory, 
+            IMvxNavigationService navigationService,
+            IInteractionManager interactionManager)
+            :base(loggerFactory, navigationService, interactionManager)
+        {
+        }
+        
         public TaskCompletionSource<object> CloseCompletionSource { get; set; }
 
         public override void ViewDestroy(bool viewFinishing = true)
         {
-            if (viewFinishing && CloseCompletionSource != null &&
-                !CloseCompletionSource.Task.IsCompleted &&
-                !CloseCompletionSource.Task.IsFaulted)
-            {
-                CloseCompletionSource.TrySetCanceled();
-            }
+            if (viewFinishing && CloseCompletionSource != null && !CloseCompletionSource.Task.IsCompleted && !CloseCompletionSource.Task.IsFaulted)
+                CloseCompletionSource?.TrySetCanceled();
 
             base.ViewDestroy(viewFinishing);
+        }
+    }
+
+    public class NavigationResult
+    {
+        public bool Success { get; }
+
+        public NavigationResult(bool success)
+        {
+            Success = success;
         }
     }
 }
