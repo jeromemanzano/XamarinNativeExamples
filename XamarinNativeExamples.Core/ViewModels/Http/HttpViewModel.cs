@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using System;
 using XamarinNativeExamples.Core.Exceptions;
 using System.Net.Http;
+using Microsoft.Extensions.Logging;
+using MvvmCross.Navigation;
+using XamarinNativeExamples.Core.Managers.Interactions;
 
 namespace XamarinNativeExamples.Core.ViewModels.Http
 {
@@ -40,9 +43,13 @@ namespace XamarinNativeExamples.Core.ViewModels.Http
         private IMvxCommand _getNewSentimentCommand;
         public IMvxCommand GetNewsSentimentCommand => _getNewSentimentCommand ??= new MvxAsyncCommand(GetNewsSentimentAsync);
 
-        public HttpViewModel() 
+        public HttpViewModel(ILoggerFactory loggerFactory, 
+            IMvxNavigationService navigationService,
+            IStockManager stockManager,
+            IInteractionManager interactionManager)
+            :base(loggerFactory, navigationService, interactionManager)
         {
-            _stockManager = IoCProvider.Resolve<IStockManager>();
+            _stockManager = stockManager;
         }
         
         private async Task GetNewsSentimentAsync() 

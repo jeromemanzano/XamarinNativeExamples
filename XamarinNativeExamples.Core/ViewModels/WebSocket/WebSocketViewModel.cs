@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using MvvmCross.Commands;
+using MvvmCross.Navigation;
+using XamarinNativeExamples.Core.Managers.Interactions;
 using XamarinNativeExamples.Core.Managers.Stocks;
 using XamarinNativeExamples.Core.Models;
 using XamarinNativeExamples.Core.Properties;
@@ -42,10 +45,14 @@ namespace XamarinNativeExamples.Core.ViewModels.WebSocket
 
         private IMvxCommand _subscribeCommand;
         public IMvxCommand SubscribeCommand => _subscribeCommand ??= new MvxAsyncCommand(SubscribeAsync);
-
-        public WebSocketViewModel()
+        
+        public WebSocketViewModel(ILoggerFactory loggerFactory, 
+            IMvxNavigationService navigationService,
+            IStockManager stockManager,
+            IInteractionManager interactionManager)
+            :base(loggerFactory, navigationService, interactionManager)
         {
-            _stockManager = IoCProvider.Resolve<IStockManager>();
+            _stockManager = stockManager;
             _stockManager.ErrorReceived += OnError;
             _stockManager.PingReceived += OnPing;
             _stockManager.PriceUpdated += OnPriceUpdate;

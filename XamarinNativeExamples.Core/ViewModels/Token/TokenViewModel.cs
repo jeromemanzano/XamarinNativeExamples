@@ -1,12 +1,15 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using MvvmCross.Commands;
+using MvvmCross.Navigation;
+using XamarinNativeExamples.Core.Managers.Interactions;
 using XamarinNativeExamples.Core.Managers.Stocks;
 using XamarinNativeExamples.Core.Properties;
 using XamarinNativeExamples.Core.ViewModels.Base;
 
 namespace XamarinNativeExamples.Core.ViewModels.Token
 {
-    public class TokenViewModel : BaseResultPageViewModel<bool>
+    public class TokenViewModel : BaseResultPageViewModel<NavigationResult>
     {
         private readonly IStockManager _stockManager;
         public override string Title => string.Empty;
@@ -31,9 +34,13 @@ namespace XamarinNativeExamples.Core.ViewModels.Token
         private IMvxCommand _saveCommand;
         public IMvxCommand SaveCommand => _saveCommand ??= new MvxAsyncCommand(SaveAsync);
 
-        public TokenViewModel() 
-        { 
-            _stockManager = IoCProvider.Resolve<IStockManager>();
+        public TokenViewModel(ILoggerFactory loggerFactory, 
+            IMvxNavigationService navigationService,
+            IStockManager stockManager,
+            IInteractionManager interactionManager)
+            :base(loggerFactory, navigationService, interactionManager)
+        {
+            _stockManager = stockManager;
         }
 
         public override Task Initialize()
@@ -49,7 +56,7 @@ namespace XamarinNativeExamples.Core.ViewModels.Token
             if (TokenValid)
             {
                 await _stockManager.UpdateTokenAsync(ApiToken);
-                await Navigation.Close(this);
+                await NavigationService.Close(this, new NavigationResult(true));
             }
             else 
             {
