@@ -2,7 +2,7 @@
 
 namespace XamarinNativeExamples.Core.Models
 {
-    internal class PriceUpdateModel
+    public class PriceUpdateModel
     {
         public string Symbol { get; set; }
         public double Price { get; set; }

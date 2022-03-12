@@ -4,7 +4,7 @@ using XamarinNativeExamples.Core.Models;
 
 namespace XamarinNativeExamples.Core.Managers.Stocks
 {
-    internal interface IStockManager
+    public interface IStockManager
     {
         event Action PingReceived;
 
