@@ -9,9 +9,9 @@ namespace XamarinNativeExamples.UITest.Pages
 {
     public class WebSocketPage : BasePage
     {
-        private readonly Query connectButton;
-        private readonly Query pingLabel;
-        private readonly Query stockEditField;
+        private readonly Query _connectButton;
+        private readonly Query _pingLabel;
+        private readonly Query _stockEditField;
 
         protected override PlatformQuery Trait => new PlatformQuery
         {
@@ -24,9 +24,9 @@ namespace XamarinNativeExamples.UITest.Pages
         {
             if (OnAndroid)
             {
-                connectButton = x => x.Id("connect_button");
-                pingLabel = x => x.Id("ping");
-                stockEditField = x => x.Id("stock_edit_text");
+                _connectButton = x => x.Id("connect_button");
+                _pingLabel = x => x.Id("ping");
+                _stockEditField = x => x.Id("stock_edit_text");
             }
 
             if (OniOS)
@@ -37,8 +37,8 @@ namespace XamarinNativeExamples.UITest.Pages
 
         public WebSocketPage Connect() 
         {
-            App.Tap(connectButton);
-            App.WaitForElement(pingLabel);
+            App.Tap(_connectButton);
+            App.WaitForElement(_pingLabel);
             return this;
         }
     }

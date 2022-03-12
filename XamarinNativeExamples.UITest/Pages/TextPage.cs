@@ -8,12 +8,12 @@ namespace XamarinNativeExamples.UITest.Pages
 {
     public class TextPage : BasePage
     {
-        private readonly Query inputField;
-        private readonly Query displayedLabel;
-        private readonly Query displayedButton;
-        private readonly Query filterDropDown;
-        private readonly string textContainerId;
-        private readonly string textFilterContainerId;
+        private readonly Query _inputField;
+        private readonly Query _displayedLabel;
+        private readonly Query _displayedButton;
+        private readonly Query _filterDropDown;
+        private readonly string _textContainerId;
+        private readonly string _textFilterContainerId;
 
         protected override PlatformQuery Trait => new PlatformQuery
         {
@@ -25,42 +25,42 @@ namespace XamarinNativeExamples.UITest.Pages
         {
             if (OnAndroid)
             {
-                inputField = x => x.Id("input_text");
-                displayedLabel = x => x.Id("text_label");
-                displayedButton = x => x.Id("click_button");
-                filterDropDown = x => x.Id("filter_spinner");
-                textContainerId = "text_text_frame";
-                textFilterContainerId = "text_filter_frame";
+                _inputField = x => x.Id("input_text");
+                _displayedLabel = x => x.Id("text_label");
+                _displayedButton = x => x.Id("click_button");
+                _filterDropDown = x => x.Id("filter_spinner");
+                _textContainerId = "text_text_frame";
+                _textFilterContainerId = "text_filter_frame";
             }
 
             if (OniOS)
             {
-                inputField = x => x.Marked("InputTextField");
-                displayedLabel = x => x.Marked("InputDisplayLabel");
-                displayedButton = x => x.Marked("InputDisplayButton");
-                filterDropDown = x => x.Marked("FilterInputPickerTextField");
-                textContainerId = "TextTextViewController";
-                textFilterContainerId = "TextFilterViewController";
+                _inputField = x => x.Marked("InputTextField");
+                _displayedLabel = x => x.Marked("InputDisplayLabel");
+                _displayedButton = x => x.Marked("InputDisplayButton");
+                _filterDropDown = x => x.Marked("FilterInputPickerTextField");
+                _textContainerId = "TextTextViewController";
+                _textFilterContainerId = "TextFilterViewController";
             }
         }
 
         public TextPage OpenTextContainer() 
         {
-            OpenContainer(textContainerId);
+            OpenContainer(_textContainerId);
 
             return this;
         }
 
         public TextPage OpenFilterContainer() 
         {
-            OpenContainer(textFilterContainerId);
+            OpenContainer(_textFilterContainerId);
 
             return this;
         }
 
         public TextPage InputString(string input) 
         {
-            App.Tap(inputField);
+            App.Tap(_inputField);
 
             if (OnAndroid)
             {
@@ -69,7 +69,7 @@ namespace XamarinNativeExamples.UITest.Pages
             }
             else 
             {
-                App.EnterText(inputField, input);
+                App.EnterText(_inputField, input);
             }
 
             App.DismissKeyboard();
@@ -85,7 +85,7 @@ namespace XamarinNativeExamples.UITest.Pages
 
             if (!selectionElement.Any())
             {
-                App.Tap(filterDropDown);
+                App.Tap(_filterDropDown);
                 App.Tap(selectionQuery);
             }
 
@@ -94,8 +94,8 @@ namespace XamarinNativeExamples.UITest.Pages
 
         public TextPage VerifyDisplayedString(string input) 
         {
-            var labelText = App.Query(displayedLabel)[0].Text;
-            var buttonText = App.Query(displayedButton)[0].Text;
+            var labelText = App.Query(_displayedLabel)[0].Text;
+            var buttonText = App.Query(_displayedButton)[0].Text;
 
             Assert.AreEqual(labelText, input);
             Assert.AreEqual(buttonText, input);
@@ -105,7 +105,7 @@ namespace XamarinNativeExamples.UITest.Pages
 
         public TextPage VerifyFilteredDisplayString(string input, bool correct) 
         {
-            var outputString = App.Query(inputField)[0].Text;
+            var outputString = App.Query(_inputField)[0].Text;
 
             Assert.IsTrue((input == outputString) == correct);
 

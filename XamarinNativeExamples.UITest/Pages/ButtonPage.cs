@@ -7,12 +7,12 @@ namespace XamarinNativeExamples.UITest.Pages
 {
     public class ButtonPage : BasePage
     {
-        private readonly Query clickButton;
-        private readonly Query clickCountLabel;
-        private readonly Query longClickCountLabel;
-        private readonly Query enableSwitch;
-        private readonly string clickContainerId;
-        private readonly string enableContainerId;
+        private readonly Query _clickButton;
+        private readonly Query _clickCountLabel;
+        private readonly Query _longClickCountLabel;
+        private readonly Query _enableSwitch;
+        private readonly string _clickContainerId;
+        private readonly string _enableContainerId;
 
         protected override PlatformQuery Trait => new PlatformQuery
         {
@@ -24,35 +24,35 @@ namespace XamarinNativeExamples.UITest.Pages
         {
             if (OnAndroid)
             {
-                clickButton = x => x.Id("click_button");
-                clickCountLabel = x => x.Id("click_counter");
-                longClickCountLabel = x => x.Id("long_click_counter");
-                enableSwitch = x => x.Id("enable_switch");
-                clickContainerId = "button_click_frame";
-                enableContainerId = "button_enable_frame";
+                _clickButton = x => x.Id("click_button");
+                _clickCountLabel = x => x.Id("click_counter");
+                _longClickCountLabel = x => x.Id("long_click_counter");
+                _enableSwitch = x => x.Id("enable_switch");
+                _clickContainerId = "button_click_frame";
+                _enableContainerId = "button_enable_frame";
             }
 
             if (OniOS)
             {
-                clickButton = x => x.Marked("ClickButton");
-                clickCountLabel = x => x.Marked("ClickCountLabel");
-                longClickCountLabel = x => x.Marked("LongClickCountLabel");
-                enableSwitch = x => x.Marked("EnableSwitch");
-                clickContainerId = "ButtonClickViewController";
-                enableContainerId = "ButtonEnableViewController";
+                _clickButton = x => x.Marked("ClickButton");
+                _clickCountLabel = x => x.Marked("ClickCountLabel");
+                _longClickCountLabel = x => x.Marked("LongClickCountLabel");
+                _enableSwitch = x => x.Marked("EnableSwitch");
+                _clickContainerId = "ButtonClickViewController";
+                _enableContainerId = "ButtonEnableViewController";
             }
         }
 
         public ButtonPage OpenClickContainer() 
         {
-            OpenContainer(clickContainerId);
+            OpenContainer(_clickContainerId);
 
             return this;
         }
 
         public ButtonPage OpenEnableContainer()
         {
-            OpenContainer(enableContainerId);
+            OpenContainer(_enableContainerId);
 
             return this;
         }
@@ -61,7 +61,7 @@ namespace XamarinNativeExamples.UITest.Pages
         {
             for (int i = 0; i < clickCount; i++)
             {
-                App.Tap(clickButton);
+                App.Tap(_clickButton);
             }
 
             return this;
@@ -71,7 +71,7 @@ namespace XamarinNativeExamples.UITest.Pages
         {
             for (int i = 0; i < longClickCount; i++)
             {
-                App.TouchAndHold(clickButton);
+                App.TouchAndHold(_clickButton);
             }
 
             return this;
@@ -79,7 +79,7 @@ namespace XamarinNativeExamples.UITest.Pages
 
         public ButtonPage VerifyClickCount(int clickCount) 
         {
-            var displayedClickCount = int.Parse(App.Query(clickCountLabel)[0].Text);
+            var displayedClickCount = int.Parse(App.Query(_clickCountLabel)[0].Text);
 
             Assert.AreEqual(clickCount, displayedClickCount);
             return this;
@@ -88,7 +88,7 @@ namespace XamarinNativeExamples.UITest.Pages
 
         public ButtonPage VerifyLongClickCount(int longClickCount)
         {
-            var displayedLongClickCount = int.Parse(App.Query(longClickCountLabel)[0].Text);
+            var displayedLongClickCount = int.Parse(App.Query(_longClickCountLabel)[0].Text);
 
             Assert.AreEqual(longClickCount, displayedLongClickCount);
             return this;
@@ -96,7 +96,7 @@ namespace XamarinNativeExamples.UITest.Pages
 
         public ButtonPage EnableDisableButton() 
         {
-            App.Tap(enableSwitch);
+            App.Tap(_enableSwitch);
             return this;
         }
     }

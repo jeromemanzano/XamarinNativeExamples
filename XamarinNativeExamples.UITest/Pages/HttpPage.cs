@@ -6,9 +6,9 @@ namespace XamarinNativeExamples.UITest.Pages
 {
     public class HttpPage : BasePage
     {
-        private readonly Query clickButton;
-        private readonly Query sentimentLabel;
-        private readonly Query stockEditField;
+        private readonly Query _clickButton;
+        private readonly Query _sentimentLabel;
+        private readonly Query _stockEditField;
 
         protected override PlatformQuery Trait => new PlatformQuery
         {
@@ -21,9 +21,9 @@ namespace XamarinNativeExamples.UITest.Pages
         {
             if (OnAndroid)
             {
-                clickButton = x => x.Id("click_button");
-                sentimentLabel = x => x.Id("sentiment_label");
-                stockEditField = x => x.Id("stock_edit_text");
+                _clickButton = x => x.Id("click_button");
+                _sentimentLabel = x => x.Id("sentiment_label");
+                _stockEditField = x => x.Id("stock_edit_text");
             }
 
             if (OniOS)
@@ -34,7 +34,7 @@ namespace XamarinNativeExamples.UITest.Pages
 
         public HttpPage EnterStock(string input)
         {
-            App.Tap(stockEditField);
+            App.Tap(_stockEditField);
 
             if (OnAndroid)
             {
@@ -43,21 +43,19 @@ namespace XamarinNativeExamples.UITest.Pages
             }
             else
             {
-                App.EnterText(stockEditField, input);
+                App.EnterText(_stockEditField, input);
             }
 
-            App.Tap(clickButton);
+            App.Tap(_clickButton);
 
             return this;
         }
 
         public void VerifyReceivedResponse()
         {
-            var query = App.WaitForElement(sentimentLabel);
+            var query = App.WaitForElement(_sentimentLabel);
 
             Assert.IsTrue(query.Any());
-
-            return;
         }
     }
 }
