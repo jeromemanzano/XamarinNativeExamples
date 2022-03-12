@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MvvmCross;
+using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using XamarinNativeExamples.Core.Managers.Interactions;
 using XamarinNativeExamples.Core.Managers.Stocks;
@@ -45,7 +46,7 @@ namespace XamarinNativeExamples.Core
                 cfg.AddProfile<MessageModelProfile>();
             });
 
-            Mvx.IoCProvider.RegisterSingleton<IMapper>(() => config.CreateMapper());
+            Mvx.IoCProvider.RegisterSingleton(() => config.CreateMapper());
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿
-using System.Threading.Tasks;
-using XamarinNativeExamples.Core.Properties;
+﻿using System.Threading.Tasks;
 
 namespace XamarinNativeExamples.Core.Services.Interactions
 {

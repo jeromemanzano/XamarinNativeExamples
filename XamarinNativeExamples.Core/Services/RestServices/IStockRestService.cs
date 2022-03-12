@@ -6,6 +6,6 @@ namespace XamarinNativeExamples.Core.Services.RestServices
 {
     internal interface IStockRestService : IBaseRestService
     {
-        Task<NewsSentimentResponse> GetNewsSentiment(string stock, string apiToken);
+        Task<NewsSentimentResponse> GetNewsSentimentAsync(string stock, string apiToken);
     }
 }

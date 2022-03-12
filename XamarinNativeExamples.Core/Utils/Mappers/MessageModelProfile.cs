@@ -8,6 +8,7 @@ namespace XamarinNativeExamples.Core.Utils.Mappers
 {
     /// <summary>
     /// Profile to be used for mapping Request Message to Model object or vice versa
+    /// </summary>
     public class MessageModelProfile : Profile
     {
         public MessageModelProfile()

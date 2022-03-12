@@ -7,11 +7,11 @@ namespace XamarinNativeExamples.Core.Services.RestServices
 {
     internal class StockRestService : BaseRestService, IStockRestService
     {
-        public StockRestService(IHttpClientFactory httpfactory) : base (httpfactory)
+        public StockRestService(IHttpClientFactory httpFactory) : base (httpFactory)
         {
         }
 
-        public Task<NewsSentimentResponse> GetNewsSentiment(string stock, string apiToken)
+        public Task<NewsSentimentResponse> GetNewsSentimentAsync(string stock, string apiToken)
         {
             var endpoint = string.Format(ApiEndPoints.NewsSentimentAction, stock);
             return GetRequestAsync<NewsSentimentResponse>(endpoint, apiToken);

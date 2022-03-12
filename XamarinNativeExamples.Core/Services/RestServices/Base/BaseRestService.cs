@@ -11,24 +11,25 @@ using XamarinNativeExamples.Core.Utils.Constants;
 
 namespace XamarinNativeExamples.Core.Services.RestServices.Base
 {
-    internal abstract class BaseRestService
+    internal abstract class BaseRestService : IBaseRestService
     {
         protected virtual string BaseAddress { get; } = ApiConstants.StocksRestUri;
 
         private readonly HttpClient _httpClient;
 
-        public BaseRestService(IHttpClientFactory httpfactory)
+        protected BaseRestService(IHttpClientFactory httpFactory)
         {
-            _httpClient = httpfactory.HttpClient;
-            httpfactory.UpdateBaseAddress(BaseAddress);
+            _httpClient = httpFactory.HttpClient;
+            httpFactory.UpdateBaseAddress(BaseAddress);
         }
 
         /// <summary>
         /// Request an asynchronous call to webservices by the given endpoint.
         /// </summary>
         /// <param name="requestUri">The endpoint of webservices.</param>
+        /// <param name="apiToken">Token used for calling api</param>
         /// <returns>The content of the requested endpoint.</returns>
-        public async Task<TResponse> GetRequestAsync<TResponse>(string requestUri, string apiToken = null) 
+        protected async Task<TResponse> GetRequestAsync<TResponse>(string requestUri, string apiToken = null) 
             where TResponse : BaseResponse
         {
             if (string.IsNullOrEmpty(apiToken))
@@ -41,12 +42,12 @@ namespace XamarinNativeExamples.Core.Services.RestServices.Base
 
             var requestResponse = await _httpClient.GetAsync(endpoint).ConfigureAwait(false);
 
-            if (requestResponse != null && !requestResponse.IsSuccessStatusCode)
+            if (requestResponse is {IsSuccessStatusCode: false})
             {
                 throw new HttpRequestException(string.Format(Resources.HttpErrorMessage, fullPath));
             }
 
-            if (requestResponse != null && requestResponse.StatusCode == HttpStatusCode.OK && requestResponse.IsSuccessStatusCode)
+            if (requestResponse is {StatusCode: HttpStatusCode.OK, IsSuccessStatusCode: true})
             {
                 var responseJson =  await requestResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 var response = JsonConvert.DeserializeObject<TResponse>(responseJson);
@@ -65,7 +66,7 @@ namespace XamarinNativeExamples.Core.Services.RestServices.Base
         /// <param name="content">The object that will be serialized to json string.</param>
         /// <param name="apiToken">The access token of the logged in user.</param>
         /// <returns>The content of the requested endpoint.</returns>
-        public async Task<TResponse> PutRequestAsync<TRequest, TResponse>(string requestUri, TRequest content, string apiToken = null)
+        protected async Task<TResponse> PutRequestAsync<TRequest, TResponse>(string requestUri, TRequest content, string apiToken = null)
             where TResponse : BaseResponse
             where TRequest : BaseRequest
         {
@@ -82,12 +83,12 @@ namespace XamarinNativeExamples.Core.Services.RestServices.Base
 
             var requestResponse = await _httpClient.PutAsync(endpoint, stringJsonContent).ConfigureAwait(false);
 
-            if (requestResponse != null && !requestResponse.IsSuccessStatusCode)
+            if (requestResponse is {IsSuccessStatusCode: false})
             {
                 throw new HttpRequestException("request failed");
             }
 
-            if (requestResponse != null && requestResponse.StatusCode == HttpStatusCode.OK && requestResponse.IsSuccessStatusCode)
+            if (requestResponse is {StatusCode: HttpStatusCode.OK, IsSuccessStatusCode: true})
             {
                 var responseJson = await requestResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 var response = JsonConvert.DeserializeObject<TResponse>(responseJson);
@@ -106,7 +107,7 @@ namespace XamarinNativeExamples.Core.Services.RestServices.Base
         /// <param name="content">The object that will be serialized to json string.</param>
         /// <param name="apiToken">The access token of the logged in user.</param>
         /// <returns>The content of the requested endpoint.</returns>
-        public async Task<TResponse> PostRequestAsync<TRequest, TResponse>(string requestUri, TRequest content, string apiToken = null)
+        protected async Task<TResponse> PostRequestAsync<TRequest, TResponse>(string requestUri, TRequest content, string apiToken = null)
             where TResponse : BaseResponse
             where TRequest : BaseRequest
         {
@@ -122,12 +123,12 @@ namespace XamarinNativeExamples.Core.Services.RestServices.Base
 
             var requestResponse = await _httpClient.PostAsync(endpoint, requestContent).ConfigureAwait(false);
 
-            if (requestResponse != null && !requestResponse.IsSuccessStatusCode)
+            if (requestResponse is {IsSuccessStatusCode: false})
             {
                 throw new HttpRequestException("request failed");
             }
 
-            if (requestResponse != null && requestResponse.StatusCode == HttpStatusCode.OK && requestResponse.IsSuccessStatusCode)
+            if (requestResponse is {StatusCode: HttpStatusCode.OK, IsSuccessStatusCode: true})
             {
                 var responseJson = await requestResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 var response = JsonConvert.DeserializeObject<TResponse>(responseJson);
@@ -145,7 +146,7 @@ namespace XamarinNativeExamples.Core.Services.RestServices.Base
         /// <param name="requestUri">The request URI.</param>
         /// <param name="apiToken">The access token of the logged in user.</param>
         /// <returns></returns>
-        public async Task<TResponse> DeleteRequestAsync<TResponse>(string requestUri, string apiToken = null)
+        protected async Task<TResponse> DeleteRequestAsync<TResponse>(string requestUri, string apiToken = null)
             where TResponse : BaseResponse
         {
             if (string.IsNullOrEmpty(apiToken))
@@ -157,12 +158,12 @@ namespace XamarinNativeExamples.Core.Services.RestServices.Base
 
             var requestResponse = await _httpClient.DeleteAsync(endpoint).ConfigureAwait(false);
 
-            if (requestResponse != null && !requestResponse.IsSuccessStatusCode)
+            if (requestResponse is {IsSuccessStatusCode: false})
             {
                 throw new HttpRequestException("request failed");
             }
 
-            if (requestResponse != null && requestResponse.StatusCode == HttpStatusCode.OK && requestResponse.IsSuccessStatusCode)
+            if (requestResponse is {StatusCode: HttpStatusCode.OK, IsSuccessStatusCode: true})
             {
                 var responseJson = await requestResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 var response = JsonConvert.DeserializeObject<TResponse>(responseJson);
@@ -190,14 +191,11 @@ namespace XamarinNativeExamples.Core.Services.RestServices.Base
 
         private HttpContent GetRequestContent(object content)
         {
-            MultipartFormDataContent formDataContent = content as MultipartFormDataContent;
-
-            if (formDataContent != null) return formDataContent;
+            if (content is MultipartFormDataContent formDataContent) 
+                return formDataContent;
 
             var httpContent = content as StringContent;
-            httpContent = httpContent ?? new StringContent(JsonConvert.SerializeObject(content), Encoding.UTF8, "application/json");
-
-            return httpContent;
+            return httpContent ?? new StringContent(JsonConvert.SerializeObject(content), Encoding.UTF8, "application/json");
         }
     }
 }

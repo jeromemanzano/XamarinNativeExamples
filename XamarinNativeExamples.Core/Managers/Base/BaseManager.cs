@@ -5,7 +5,7 @@ namespace XamarinNativeExamples.Core.Managers.Base
 {
     internal abstract class BaseManager
     {
-        public BaseManager() 
+        protected BaseManager() 
         {
             Mapper = Mvx.IoCProvider.Resolve<IMapper>();
         }

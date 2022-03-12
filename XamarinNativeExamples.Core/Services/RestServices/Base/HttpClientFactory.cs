@@ -10,7 +10,7 @@ namespace XamarinNativeExamples.Core.Services.RestServices.Base
             HttpClient = new HttpClient();
         }
 
-        public HttpClient HttpClient { get; private set; }
+        public HttpClient HttpClient { get; }
 
         public void UpdateBaseAddress(string baseAddress) 
         {

@@ -37,9 +37,9 @@ namespace XamarinNativeExamples.Core.Managers.Stocks
             _stockWebSocketService.PriceUpdateReceived += OnPriceUpdateReceived;
         }
 
-        public async Task<NewsSentimentModel> GetNewsSentiment(string stockSymbol)
+        public async Task<NewsSentimentModel> GetNewsSentimentAsync(string stockSymbol)
         {
-            var response = await _stockRestService.GetNewsSentiment(stockSymbol, await GetApiToken());
+            var response = await _stockRestService.GetNewsSentimentAsync(stockSymbol, await GetApiTokenAsync());
             var newsSentimentModel = Mapper.Map<NewsSentimentModel>(response);
 
             if (newsSentimentModel.Buzz == null)
@@ -50,42 +50,42 @@ namespace XamarinNativeExamples.Core.Managers.Stocks
             return newsSentimentModel;
         }
 
-        public async Task<bool> ValidateToken(string token)
+        public async Task<bool> ValidateTokenAsync(string token)
         {
             return await _stockRestService.ValidateTokenAsync(token);
         }
 
-        public async Task<bool> TokenValidated()
+        public async Task<bool> TokenValidatedAsync()
         {
-            return !(await GetApiToken()).IsNullOrEmpty();
+            return !(await GetApiTokenAsync()).IsNullOrEmpty();
         }
 
-        public Task UpdateToken(string token)
+        public Task UpdateTokenAsync(string token)
         {
             return _securedStorage.SetAsync(StorageKeys.ApiToken, token);
         }
 
-        public async Task SubscribeToStock(string stockSymbol)
+        public async Task SubscribeToStockAsync(string stockSymbol)
         {
             await _stockWebSocketService.UpdateStockSubscription("subscribe", stockSymbol, new CancellationTokenSource(30000).Token);
         }
 
-        public async Task UnsubscribeToStock(string stockSymbol) 
+        public async Task UnsubscribeToStockAsync(string stockSymbol) 
         { 
             await _stockWebSocketService.UpdateStockSubscription("unsubscribe", stockSymbol, new CancellationTokenSource(30000).Token);
         }
 
-        public async Task ConnectWebSocket()
+        public async Task ConnectWebSocketAsync()
         {
-            await _stockWebSocketService.EnsureConnectionOpen(await GetApiToken());
+            await _stockWebSocketService.EnsureConnectionOpen(await GetApiTokenAsync());
         }
 
-        public async Task DisconnectWebSocket()
+        public async Task DisconnectWebSocketAsync()
         {
             await _stockWebSocketService.Disconnect();
         }
 
-        private Task<string> GetApiToken() 
+        private Task<string> GetApiTokenAsync() 
         { 
             return _securedStorage.GetAsync(StorageKeys.ApiToken);
         }
