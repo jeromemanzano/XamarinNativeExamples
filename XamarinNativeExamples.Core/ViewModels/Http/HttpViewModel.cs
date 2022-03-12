@@ -53,14 +53,11 @@ namespace XamarinNativeExamples.Core.ViewModels.Http
 
                 var newsSentimentsModel = await _stockManager.GetNewsSentimentAsync(StockSymbol);
 
-                await InvokeOnMainThreadAsync(() =>
-                {
-                    ArticlesCount = string.Format(Resources.LastWeekArticlesFormat, newsSentimentsModel.Buzz.ArticlesInLastWeek);
-                    ArticlesWeeklyCount = string.Format(Resources.WeeklyArticlesFormat, newsSentimentsModel.Buzz.WeeklyAverage);
+                ArticlesCount = string.Format(Resources.LastWeekArticlesFormat, newsSentimentsModel.Buzz.ArticlesInLastWeek);
+                ArticlesWeeklyCount = string.Format(Resources.WeeklyArticlesFormat, newsSentimentsModel.Buzz.WeeklyAverage);
 
-                    SentimentValue = newsSentimentsModel.Sentiment.BullishPercent < .45 ? Resources.Bearish :
-                        newsSentimentsModel.Sentiment.BullishPercent < .55 ? Resources.Neutral : Resources.Bullish;
-                });
+                SentimentValue = newsSentimentsModel.Sentiment.BullishPercent < .45 ? Resources.Bearish :
+                    newsSentimentsModel.Sentiment.BullishPercent < .55 ? Resources.Neutral : Resources.Bullish;
 
                 SentimentsVisible = true;
             }

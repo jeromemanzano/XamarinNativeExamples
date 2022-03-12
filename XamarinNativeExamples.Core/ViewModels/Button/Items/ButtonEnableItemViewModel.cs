@@ -16,7 +16,7 @@ namespace XamarinNativeExamples.Core.ViewModels.Button.Items
 
         private void ProcessClick()
         {
-            InvokeOnMainThread(() => ClickCount++);
+            ClickCount++;
         }
     }
 }

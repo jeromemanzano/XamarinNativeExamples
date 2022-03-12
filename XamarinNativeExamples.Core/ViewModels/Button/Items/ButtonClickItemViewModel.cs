@@ -21,12 +21,12 @@ namespace XamarinNativeExamples.Core.ViewModels.Button.Items
 
         private void ProcessClick()
         {
-            InvokeOnMainThread(() => ClickCount++);
+            ClickCount++;
         }
 
         private void ProcessLongClick()
         {
-            InvokeOnMainThread(() => LongClickCount++);
+            LongClickCount++;
         }
     }
 }
