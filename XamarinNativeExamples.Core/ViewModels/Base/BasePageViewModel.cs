@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using MvvmCross;
 using MvvmCross.Commands;
+using MvvmCross.IoC;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using XamarinNativeExamples.Core.Managers.Interactions;
@@ -9,23 +10,21 @@ namespace XamarinNativeExamples.Core.ViewModels.Base
 {
     public abstract class BasePageViewModel : MvxViewModel, IPageViewModel
     {
-        protected readonly IMvxNavigationService Navigation;
+        protected IMvxIoCProvider IoCProvider { get; } = Mvx.IoCProvider;
+
+        protected IMvxNavigationService Navigation { get; }
+        protected IInteractionManager Interactions { get; }
 
         protected BasePageViewModel()
         {
-            Navigation = Mvx.IoCProvider.Resolve<IMvxNavigationService>();
-            Interactions = Mvx.IoCProvider.Resolve<IInteractionManager>();
+            Navigation = IoCProvider.Resolve<IMvxNavigationService>();
+            Interactions = IoCProvider.Resolve<IInteractionManager>();
         }
 
         private IMvxCommand _backCommand;
-        public IMvxCommand BackCommand
-        {
-            get => _backCommand ?? (_backCommand = new MvxAsyncCommand(BackAsync));
-        }
+        public IMvxCommand BackCommand => _backCommand ??= new MvxAsyncCommand(BackAsync);
 
-        public virtual string Title { get; protected set; }
-
-        protected IInteractionManager Interactions { get; private set; }
+        public virtual string Title { get; }
 
         protected virtual Task BackAsync()
         {
@@ -33,29 +32,23 @@ namespace XamarinNativeExamples.Core.ViewModels.Base
         }
     }
 
-    public abstract class BaseResultPageViewModel<TResult> : MvxViewModelResult<TResult>, IPageViewModel
+    public abstract class BaseResultPageViewModel<TResult> : 
+        BasePageViewModel, 
+        IMvxViewModelResult<TResult>
+        where TResult : notnull
     {
-        protected readonly IMvxNavigationService Navigation;
+        public TaskCompletionSource<object> CloseCompletionSource { get; set; }
 
-        protected BaseResultPageViewModel()
+        public override void ViewDestroy(bool viewFinishing = true)
         {
-            Navigation = Mvx.IoCProvider.Resolve<IMvxNavigationService>();
-            Interactions = Mvx.IoCProvider.Resolve<IInteractionManager>();
-        }
+            if (viewFinishing && CloseCompletionSource != null &&
+                !CloseCompletionSource.Task.IsCompleted &&
+                !CloseCompletionSource.Task.IsFaulted)
+            {
+                CloseCompletionSource.TrySetCanceled();
+            }
 
-        private IMvxCommand _backCommand;
-        public IMvxCommand BackCommand
-        {
-            get => _backCommand ?? (_backCommand = new MvxAsyncCommand(BackAsync));
-        }
-
-        public virtual string Title { get; protected set; }
-
-        protected IInteractionManager Interactions { get; private set; }
-
-        protected virtual Task BackAsync()
-        {
-            return Navigation.Close(this);
+            base.ViewDestroy(viewFinishing);
         }
     }
 }

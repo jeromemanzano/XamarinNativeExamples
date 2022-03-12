@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using MvvmCross;
 using MvvmCross.Commands;
 using XamarinNativeExamples.Core.Managers.Stocks;
 using XamarinNativeExamples.Core.Models;
@@ -18,26 +17,14 @@ namespace XamarinNativeExamples.Core.ViewModels.WebSocket
         private int _ping;
 
         public override string Title => string.Empty;
-
-        public WebSocketViewModel()
-        {
-            _stockManager = Mvx.IoCProvider.Resolve<IStockManager>();
-            _stockManager.ErrorReceived += OnError;
-            _stockManager.PingReceived += OnPing;
-            _stockManager.PriceUpdated += OnPriceUpdate;
-        }
-
-        private IMvxCommand _connectionCommand;
-        public IMvxCommand ConnectionCommand
-        {
-            get => _connectionCommand ?? (_connectionCommand = new MvxAsyncCommand(UpdateConnection));
-        }
-
-        private IMvxCommand _subscribeCommand;
-        public IMvxCommand SubscribeCommand
-        {
-            get => _subscribeCommand ?? (_subscribeCommand = new MvxAsyncCommand(Subscribe));
-        }
+        public string SubscribeText => Resources.Subscribe;
+        public string Price { get; private set; }
+        public string Volume { get; private set; }
+        public string Time { get; private set; }
+        public string PingCount { get; private set; }
+        public string ConnectButtonText { get; private set; }
+        public bool SubscribeEnabled { get; private set; }
+        public bool ShowStockDetails { get; private set; }
 
         private string _inputStockSymbol;
         public string InputStockSymbol
@@ -49,17 +36,21 @@ namespace XamarinNativeExamples.Core.ViewModels.WebSocket
                 SubscribeEnabled = _currentStockSymbol != value;
             }
         }
+        
+        private IMvxCommand _connectionCommand;
+        public IMvxCommand ConnectionCommand => _connectionCommand ??= new MvxAsyncCommand(UpdateConnectionAsync);
 
-        public string Price { get; private set; }
-        public string Volume { get; private set; }
-        public string Time { get; private set; }
-        public string PingCount { get; private set; }
-        public string ConnectButtonText { get; private set; }
-        public bool SubscribeEnabled { get; private set; }
-        public bool ShowStockDetails { get; private set; }
+        private IMvxCommand _subscribeCommand;
+        public IMvxCommand SubscribeCommand => _subscribeCommand ??= new MvxAsyncCommand(SubscribeAsync);
 
-        public string SubscribeText => Resources.Subscribe;
-
+        public WebSocketViewModel()
+        {
+            _stockManager = IoCProvider.Resolve<IStockManager>();
+            _stockManager.ErrorReceived += OnError;
+            _stockManager.PingReceived += OnPing;
+            _stockManager.PriceUpdated += OnPriceUpdate;
+        }
+        
         public override Task Initialize()
         {
             _currentStockSymbol = string.Empty;
@@ -76,24 +67,27 @@ namespace XamarinNativeExamples.Core.ViewModels.WebSocket
 
             if (_connected)
             {
-                await UpdateConnection();
+                await UpdateConnectionAsync();
+                _stockManager.ErrorReceived -= OnError;
+                _stockManager.PingReceived -= OnPing;
+                _stockManager.PriceUpdated -= OnPriceUpdate;
             }
         }
 
-        private async Task UpdateConnection()
+        private async Task UpdateConnectionAsync()
         {
 
             if (_connected)
             {
                 await UnsubscribeCurrent();
-                await _stockManager.DisconnectWebSocket();
+                await _stockManager.DisconnectWebSocketAsync();
                 ConnectButtonText = Resources.Connect;
                 PingCount = string.Empty;
                 InputStockSymbol = string.Empty;
             }
             else 
             {
-                await _stockManager.ConnectWebSocket();
+                await _stockManager.ConnectWebSocketAsync();
                 _ping = 0;
                 PingCount = string.Format(Resources.PingCountFormat, 0);
                 Time = string.Empty;
@@ -106,10 +100,10 @@ namespace XamarinNativeExamples.Core.ViewModels.WebSocket
             ShowStockDetails = _connected;
         }
 
-        private async Task Subscribe() 
+        private async Task SubscribeAsync() 
         {
             await UnsubscribeCurrent();
-            await _stockManager.SubscribeToStock(InputStockSymbol);
+            await _stockManager.SubscribeToStockAsync(InputStockSymbol);
             _currentStockSymbol = InputStockSymbol;
         }
 
@@ -117,7 +111,7 @@ namespace XamarinNativeExamples.Core.ViewModels.WebSocket
         {
             if (!_currentStockSymbol.IsNullOrEmpty())
             {
-                await _stockManager.UnsubscribeToStock(_currentStockSymbol);
+                await _stockManager.UnsubscribeToStockAsync(_currentStockSymbol);
                 _currentStockSymbol = string.Empty;
             }
         }

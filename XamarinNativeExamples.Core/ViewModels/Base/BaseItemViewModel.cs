@@ -2,7 +2,7 @@
 
 namespace XamarinNativeExamples.Core.ViewModels.Base
 {
-    public class BaseItemViewModel : MvxViewModel, IMvxViewModel
+    public class BaseItemViewModel : MvxViewModel
     {
     }
 }
