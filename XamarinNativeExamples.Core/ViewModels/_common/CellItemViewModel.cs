@@ -15,7 +15,7 @@ namespace XamarinNativeExamples.Core.ViewModels
 
         private void ToggleFoldState()
         {
-            InvokeOnMainThread(() => CellOpen = !CellOpen);
+            CellOpen = !CellOpen;
         }
     }
 }

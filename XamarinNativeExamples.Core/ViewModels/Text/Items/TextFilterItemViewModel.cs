@@ -15,18 +15,11 @@ namespace XamarinNativeExamples.Core.ViewModels.Text.Items
         private IMvxCommand _filterSelectedCommand;
         public IMvxCommand FilterSelectedCommand => _filterSelectedCommand ??= new MvxCommand<FilterItemViewModel>(FilterSelected);
 
-        public MvxObservableCollection<FilterItemViewModel> Filters { get; } = new ();
-
-        public override Task Initialize()
+        public MvxObservableCollection<FilterItemViewModel> Filters { get; } = new ()
         {
-            InvokeOnMainThread(() =>
-            {
-                Filters.Add(new FilterItemViewModel(Resources.TextFilterNumber, @"^[0-9]*$"));
-                Filters.Add(new FilterItemViewModel(Resources.TextFilterLowerCase, @"^[a-z]*$"));
-            });
-
-            return base.Initialize();
-        }
+            new FilterItemViewModel(Resources.TextFilterNumber, @"^[0-9]*$"),
+            new FilterItemViewModel(Resources.TextFilterLowerCase, @"^[a-z]*$")
+        };
 
         private void FilterSelected(FilterItemViewModel item)
         {
