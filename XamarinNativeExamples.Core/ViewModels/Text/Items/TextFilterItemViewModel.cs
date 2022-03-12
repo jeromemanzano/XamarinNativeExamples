@@ -16,19 +16,8 @@ namespace XamarinNativeExamples.Core.ViewModels.Text.Items
 
         public MvxObservableCollection<FilterItemViewModel> Filters { get; } = new MvxObservableCollection<FilterItemViewModel>();
 
-        private string _inputText;
-        public string InputText
-        {
-            get => _inputText;
-            private set => SetProperty(ref _inputText, value);
-        }
-
-        private string _regex;
-        public string Regex
-        {
-            get => _regex;
-            private set => SetProperty(ref _regex, value);
-        }
+        public string InputText { get; private set; }
+        public string Regex { get; private set; }
 
         public override Task Initialize()
         {

@@ -5,12 +5,7 @@ namespace XamarinNativeExamples.Core.ViewModels.Text.Items
 {
     public class TextTextItemViewModel: CellItemViewModel
     {
-        private string _text;
-        public string Text
-        {
-            get => _text;
-            private set => SetProperty(ref _text, value);
-        }
+        public string Text { get; private set; }
 
         public override Task Initialize()
         {
