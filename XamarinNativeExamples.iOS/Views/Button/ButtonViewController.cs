@@ -24,13 +24,13 @@ namespace XamarinNativeExamples.iOS.Views.Button
             _buttonClickViewController = Presenter.CreateViewControllerFor<ButtonClickItemViewModel>(buttonClickViewModelRequest)
                 as ButtonClickViewController;
 
-            _buttonClickView = _buttonClickViewController.View;
+            _buttonClickView = _buttonClickViewController?.View;
 
             var buttonEnableViewModelRequest = new MvxViewModelRequest(typeof(ButtonEnableItemViewModel));
             _buttonEnableViewController = Presenter.CreateViewControllerFor<ButtonEnableItemViewModel>(buttonEnableViewModelRequest)
                 as ButtonEnableViewController;
 
-            _buttonEnableView = _buttonEnableViewController.View;
+            _buttonEnableView = _buttonEnableViewController?.View;
         }
 
         protected override void InitializeControls()

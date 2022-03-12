@@ -12,20 +12,17 @@ namespace XamarinNativeExamples.iOS.Services
             get
             {
                 var rootNavigation = (UINavigationController)UIApplication.SharedApplication.KeyWindow.RootViewController;
-                var lastVC = rootNavigation.ViewControllers.Last();
+                var lastVC = rootNavigation?.ViewControllers?.Last();
                 if (lastVC.PresentedViewController != null)
                     return lastVC.PresentedViewController;
-                if (lastVC.ModalViewController != null)
-                    return lastVC.ModalViewController;
                 return lastVC;
             }
         }
 
         public void ShowDialog(string title, string message, string okButton)
         {
-
             var alertController = UIAlertController.Create(title, message, UIAlertControllerStyle.Alert);
-            alertController.AddAction(UIAlertAction.Create(okButton, UIAlertActionStyle.Default, action =>
+            alertController.AddAction(UIAlertAction.Create(okButton, UIAlertActionStyle.Default, _ =>
             {
                 alertController.DismissViewControllerAsync(true);
             }));
@@ -38,7 +35,7 @@ namespace XamarinNativeExamples.iOS.Services
             var tcs = new TaskCompletionSource<bool>();
 
             var alertController = UIAlertController.Create(title, message, UIAlertControllerStyle.Alert);
-            alertController.AddAction(UIAlertAction.Create(okButton, UIAlertActionStyle.Default, action =>
+            alertController.AddAction(UIAlertAction.Create(okButton, UIAlertActionStyle.Default, _ =>
             {
                 alertController.DismissViewControllerAsync(true);
                 tcs.TrySetResult(true);

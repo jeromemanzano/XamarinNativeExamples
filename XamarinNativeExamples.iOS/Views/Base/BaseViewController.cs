@@ -111,7 +111,7 @@ namespace XamarinNativeExamples.iOS.Views.Base
 
         private void KeyboardWillShowNotification(NSNotification notification)
         {
-            View.AddGestureRecognizer(_tapRecognizer);
+            View?.AddGestureRecognizer(_tapRecognizer);
 
             var notificationFrameValue = notification.UserInfo
                 .ValueForKey(UIKeyboard.FrameEndUserInfoKey) as NSValue;

@@ -7,8 +7,6 @@ namespace XamarinNativeExamples.iOS.Utils
     { 
         public UIColor BackgroundColor { get; set; }
         public UIColor TextColor { get; set; }
-        public UIColor SelectedBackgroundColor { get; set; }
-        public UIColor SelectedTextColor { get; set; }
         public UIColor DisabledBackgroundColor { get; set; }
         public UIColor DisabledTextColor { get; set; }
         public nfloat CornerRadius { get; set; }
