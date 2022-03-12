@@ -24,7 +24,7 @@ namespace XamarinNativeExamples.Droid.Services
         {
             var alertDialog = AlertDialog.NewInstance(title, message, okButton, null);
 
-            Application.SynchronizationContext.Post(ignored =>
+            Application.SynchronizationContext.Post(_ =>
             {
                 if (CurrentActivity != null)
                 {
@@ -37,7 +37,7 @@ namespace XamarinNativeExamples.Droid.Services
         {
             var alertDialog = AlertDialog.NewInstance(title, message, okButton, null);
 
-            Application.SynchronizationContext.Post(ignored =>
+            Application.SynchronizationContext.Post(_ =>
             {
                 if (CurrentActivity != null)
                 {
@@ -51,12 +51,12 @@ namespace XamarinNativeExamples.Droid.Services
 
         public void ShowNotification(string message, NotificationLength length)
         {
-            Application.SynchronizationContext.Post(ignored =>
+            Application.SynchronizationContext.Post(_ =>
             {
                 if (CurrentActivity != null)
                 {
                     var toastLength = length == NotificationLength.Short ? ToastLength.Short : ToastLength.Long;
-                    Toast.MakeText(CurrentActivity, message, toastLength).Show();
+                    Toast.MakeText(CurrentActivity, message, toastLength)?.Show();
                 }
             }, null);
         }

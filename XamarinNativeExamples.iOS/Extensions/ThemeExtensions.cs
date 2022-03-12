@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using XamarinNativeExamples.iOS.Controls;
+﻿using XamarinNativeExamples.iOS.Controls;
 using XamarinNativeExamples.iOS.Utils;
 
 namespace UIKit

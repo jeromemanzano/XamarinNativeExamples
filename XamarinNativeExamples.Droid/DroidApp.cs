@@ -3,7 +3,6 @@ using Android.App;
 using Android.OS;
 using Android.Runtime;
 using MvvmCross.Platforms.Android.Views;
-using MvvmCross.ViewModels;
 using XamarinNativeExamples.Core;
 
 namespace XamarinNativeExamples.Droid

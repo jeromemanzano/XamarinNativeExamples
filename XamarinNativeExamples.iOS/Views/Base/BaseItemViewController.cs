@@ -31,11 +31,5 @@ namespace XamarinNativeExamples.iOS.Views.Base
             ApplyTheme();
             BindControls();
         }
-
-        public override void ViewWillAppear(bool animated)
-        {
-            base.ViewWillAppear(animated);
-        }
-
     }
 }

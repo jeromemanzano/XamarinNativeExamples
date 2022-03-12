@@ -16,7 +16,7 @@ namespace XamarinNativeExamples.Core.Services.WebSocketServices.Base
         public event Action<string> ErrorReceived;
         public event Action PingReceived;
 
-        public BaseWebSocketService(IWebSocketFactory webSocketFactory)
+        protected BaseWebSocketService(IWebSocketFactory webSocketFactory)
         {
             _webSocketClient = webSocketFactory.WebSocketClient;
         }

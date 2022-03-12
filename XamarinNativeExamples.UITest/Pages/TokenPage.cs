@@ -4,12 +4,12 @@ namespace XamarinNativeExamples.UITest.Pages
 {
     public class TokenPage : BasePage
     {
-        private readonly Query startScreen;
-        private readonly Query registerScreen;
-        private readonly Query copyScreen;
-        private readonly Query tokenField;
-        private readonly Query submitButton;
-        private readonly Query successText;
+        private readonly Query _startScreen;
+        private readonly Query _registerScreen;
+        private readonly Query _copyScreen;
+        private readonly Query _tokenField;
+        private readonly Query _submitButton;
+        private readonly Query _successText;
 
         protected override PlatformQuery Trait => new PlatformQuery
         {
@@ -21,12 +21,12 @@ namespace XamarinNativeExamples.UITest.Pages
         {
             if (OnAndroid)
             {
-                startScreen = x => x.Id("img_api_token");
-                registerScreen = x => x.Id("img_api_register");
-                copyScreen = x => x.Id("img_copy_token");
-                tokenField = x => x.Id("token_edit_text");
-                submitButton = x => x.Id("save_button");
-                successText = x => x.Id("success_text");
+                _startScreen = x => x.Id("img_api_token");
+                _registerScreen = x => x.Id("img_api_register");
+                _copyScreen = x => x.Id("img_copy_token");
+                _tokenField = x => x.Id("token_edit_text");
+                _submitButton = x => x.Id("save_button");
+                _successText = x => x.Id("success_text");
             }
 
             if (OniOS)
@@ -37,9 +37,9 @@ namespace XamarinNativeExamples.UITest.Pages
         public TokenPage SwipeToInput()
         {
             App.SwipeRightToLeft();
-            App.WaitForElement(registerScreen);
+            App.WaitForElement(_registerScreen);
             App.SwipeRightToLeft();
-            App.WaitForElement(copyScreen);
+            App.WaitForElement(_copyScreen);
             App.SwipeRightToLeft();
 
             return this;
@@ -53,15 +53,15 @@ namespace XamarinNativeExamples.UITest.Pages
                 .Invoke("setText", apiKey));
             }
 
-            App.Tap(submitButton);
+            App.Tap(_submitButton);
 
             return this;
         }
 
         public void SaveToken() 
         {
-            App.WaitForElement(successText);
-            App.Tap(submitButton);
+            App.WaitForElement(_successText);
+            App.Tap(_submitButton);
         }
     }
 }

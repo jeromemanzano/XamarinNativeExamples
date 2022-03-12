@@ -13,6 +13,7 @@ namespace XamarinNativeExamples.iOS.Views.Home
         public HomeViewController() : base("HomeViewController")
         {
         }
+        
         protected override void InitializeControls()
         {
             base.InitializeControls();

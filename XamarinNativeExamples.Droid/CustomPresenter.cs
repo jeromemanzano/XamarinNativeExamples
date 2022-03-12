@@ -1,9 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using Android.OS;
-using MvvmCross.Platforms.Android.Presenters;
-using MvvmCross.Platforms.Android.Presenters.Attributes;
-using MvvmCross.ViewModels;
+﻿using MvvmCross.Platforms.Android.Presenters;
 
 namespace XamarinNativeExamples.Droid
 {

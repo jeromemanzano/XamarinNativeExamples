@@ -11,7 +11,7 @@ namespace XamarinNativeExamples.Core.Services.WebSocketServices.Base
     internal class WebSocketClient : IWebSocketClient
     {
         private ClientWebSocket _client;
-        private bool _initialized = false;
+        private bool _initialized;
         private List<string> _connections = new List<string>();
 
         public event Action<string> MessageReceived;
@@ -21,13 +21,7 @@ namespace XamarinNativeExamples.Core.Services.WebSocketServices.Base
             _client = new ClientWebSocket();
         }
 
-        public WebSocketClientState State 
-        { 
-            get 
-            {
-                return (WebSocketClientState)_client.State;
-            } 
-        }
+        public WebSocketClientState State => (WebSocketClientState)_client.State;
 
         public async Task Connect(string uriString, CancellationToken ct)
         {
@@ -58,9 +52,9 @@ namespace XamarinNativeExamples.Core.Services.WebSocketServices.Base
         public Task Send(string message, CancellationToken ct) 
         {
             var byteMessage = Encoding.UTF8.GetBytes(message);
-            var segmnet = new ArraySegment<byte>(byteMessage);
+            var segment = new ArraySegment<byte>(byteMessage);
 
-            return _client.SendAsync(segmnet, WebSocketMessageType.Text, true, ct);
+            return _client.SendAsync(segment, WebSocketMessageType.Text, true, ct);
         }
 
         private async Task ReadMessage()

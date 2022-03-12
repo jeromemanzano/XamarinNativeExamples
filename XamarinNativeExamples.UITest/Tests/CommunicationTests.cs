@@ -43,10 +43,5 @@ namespace XamarinNativeExamples.UITest.Tests
             new WebSocketPage()
                 .Connect();
         }
-
-        public override void BeforeEachTest()
-        {
-            base.BeforeEachTest();
-        }
     }
 }

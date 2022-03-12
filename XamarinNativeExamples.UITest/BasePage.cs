@@ -12,8 +12,8 @@ namespace XamarinNativeExamples.UITest
         protected bool OniOS => AppManager.Platform == Platform.iOS;
         protected abstract PlatformQuery Trait { get; }
 
-        private readonly string openId;
-        private readonly Query closeButton;
+        private readonly string _openId;
+        private readonly Query _closeButton;
 
         protected BasePage()
         {
@@ -22,8 +22,8 @@ namespace XamarinNativeExamples.UITest
 
             if (OnAndroid)
             {
-                openId = "open";
-                closeButton = x => x.Marked("close");
+                _openId = "open";
+                _closeButton = x => x.Marked("close");
             }
 
             if (OniOS)
@@ -69,9 +69,9 @@ namespace XamarinNativeExamples.UITest
             App.WaitForElement(container);
             App.Tap(c => c.Marked(containerId)
                 .Descendant()
-                .Marked(openId));
-            App.ScrollDownTo(closeButton);
-            App.WaitForElement(closeButton);
+                .Marked(_openId));
+            App.ScrollDownTo(_closeButton);
+            App.WaitForElement(_closeButton);
 
             App.Screenshot($"Container {containerId} opened");
         }

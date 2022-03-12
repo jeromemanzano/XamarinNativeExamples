@@ -6,10 +6,10 @@ namespace XamarinNativeExamples.UITest.Pages
 {
     public class HomePage : BasePage
     {
-        private readonly Query buttonCard;
-        private readonly Query textCard;
-        private readonly Query httpCard;
-        private readonly Query webSocketCard;
+        private readonly Query _buttonCard;
+        private readonly Query _textCard;
+        private readonly Query _httpCard;
+        private readonly Query _webSocketCard;
 
         protected override PlatformQuery Trait => new PlatformQuery
         {
@@ -22,43 +22,43 @@ namespace XamarinNativeExamples.UITest.Pages
 
             if (OnAndroid)
             {
-                buttonCard = x => x.Id("button_card_view");
-                textCard = x => x.Id("text_card_view");
-                httpCard = x => x.Id("http_card_view");
-                webSocketCard = x => x.Id("websocket_card_view");
+                _buttonCard = x => x.Id("button_card_view");
+                _textCard = x => x.Id("text_card_view");
+                _httpCard = x => x.Id("http_card_view");
+                _webSocketCard = x => x.Id("websocket_card_view");
             }
 
             if (OniOS)
             {
-                buttonCard = x => x.Marked("ButtonButton");
-                textCard = x => x.Marked("TextButton");
+                _buttonCard = x => x.Marked("ButtonButton");
+                _textCard = x => x.Marked("TextButton");
                 //TODO:
-                //httpCard = x => x.Id("HttpButton");
+                //_httpCard = x => x.Id("HttpButton");
             }
         }
 
         public void NavigateToButtonPage() 
         {
-            App.WaitForElement(buttonCard);
-            App.Tap(buttonCard);
+            App.WaitForElement(_buttonCard);
+            App.Tap(_buttonCard);
         }
 
         public void NavigateToTextPage()
         {
-            App.WaitForElement(textCard);
-            App.Tap(textCard);
+            App.WaitForElement(_textCard);
+            App.Tap(_textCard);
         }
 
         public void NavigateToHttpPage()
         {
-            App.WaitForElement(httpCard);
-            App.Tap(httpCard);
+            App.WaitForElement(_httpCard);
+            App.Tap(_httpCard);
         }
 
         public void NavigateToWebSocketPage()
         {
-            App.WaitForElement(webSocketCard);
-            App.Tap(webSocketCard);
+            App.WaitForElement(_webSocketCard);
+            App.Tap(_webSocketCard);
         }
     }
 }

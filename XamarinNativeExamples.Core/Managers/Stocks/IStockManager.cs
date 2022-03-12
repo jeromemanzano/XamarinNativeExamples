@@ -12,20 +12,20 @@ namespace XamarinNativeExamples.Core.Managers.Stocks
 
         event Action<PriceUpdateModel> PriceUpdated;
 
-        Task<NewsSentimentModel> GetNewsSentiment(string stockSymbol);
+        Task<NewsSentimentModel> GetNewsSentimentAsync(string stockSymbol);
 
-        Task<bool> ValidateToken(string token);
+        Task<bool> ValidateTokenAsync(string token);
 
-        Task<bool> TokenValidated();
+        Task<bool> TokenValidatedAsync();
 
-        Task UpdateToken(string token);
+        Task UpdateTokenAsync(string token);
 
-        Task SubscribeToStock(string stockSymbol);
+        Task SubscribeToStockAsync(string stockSymbol);
 
-        Task UnsubscribeToStock(string stockSymbol);
+        Task UnsubscribeToStockAsync(string stockSymbol);
 
-        Task ConnectWebSocket();
+        Task ConnectWebSocketAsync();
 
-        Task DisconnectWebSocket();
+        Task DisconnectWebSocketAsync();
     }
 }

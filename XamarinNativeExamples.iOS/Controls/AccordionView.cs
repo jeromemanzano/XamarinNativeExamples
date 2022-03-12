@@ -97,11 +97,6 @@ namespace XamarinNativeExamples.iOS.Controls
             _toggleButton.Layer.MaskedCorners = CACornerMask.MinXMaxYCorner | CACornerMask.MaxXMaxYCorner;
         }
 
-        public override void LayoutSubviews()
-        {
-            base.LayoutSubviews();
-        }
-
         private void Initialize() 
         {
             ClipsToBounds = true;
@@ -155,11 +150,6 @@ namespace XamarinNativeExamples.iOS.Controls
             Layer.ShadowColor = UIColor.Black.CGColor;
             Layer.ShadowOffset = new CGSize(0f, 5f);
             Layer.ShadowOpacity = .2f;
-        }
-
-        private void ToggleOpenState(object sender, EventArgs e)
-        {
-            Open = !Open;
         }
 
         private void SetHeightAnchor() 

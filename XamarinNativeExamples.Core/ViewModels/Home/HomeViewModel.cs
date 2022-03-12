@@ -15,12 +15,7 @@ namespace XamarinNativeExamples.Core.ViewModels.Home
     public class HomeViewModel : BasePageViewModel
     {
         private readonly IStockManager _stockManager;
-
-        public HomeViewModel() 
-        { 
-            _stockManager = Mvx.IoCProvider.Resolve<IStockManager>();
-        }
-
+        
         public override string Title => Resources.HomeTitle;
         public string ButtonTitle => Resources.ButtonTitle;
         public string TextTitle => Resources.TextTitle;
@@ -29,42 +24,35 @@ namespace XamarinNativeExamples.Core.ViewModels.Home
         public string ConnectivityHeader => Resources.ConnectivityHeader;
 
         private IMvxCommand _openButtonCommand;
-        public IMvxCommand OpenButtonCommand
-        {
-            get => _openButtonCommand ?? (_openButtonCommand = new MvxAsyncCommand(OpenButton));
-        }
+        public IMvxCommand OpenButtonCommand => _openButtonCommand ??= new MvxAsyncCommand(OpenButtonAsync);
 
         private IMvxCommand _openTextCommand;
-        public IMvxCommand OpenTextCommand
-        {
-            get => _openTextCommand ?? (_openTextCommand = new MvxAsyncCommand(OpenText));
-        }
-
+        public IMvxCommand OpenTextCommand => _openTextCommand ??= new MvxAsyncCommand(OpenTextAsync);
+        
         private IMvxCommand _openRestCommand;
-        public IMvxCommand OpenRestCommand
-        {
-            get => _openRestCommand ?? (_openRestCommand = new MvxAsyncCommand(OpenRest));
-        }
-
+        public IMvxCommand OpenRestCommand => _openRestCommand ??= new MvxAsyncCommand(OpenRestAsync);
+        
         private IMvxCommand _openWebSocketCommand;
-        public IMvxCommand OpenWebSocketCommand
-        {
-            get => _openWebSocketCommand ?? (_openWebSocketCommand = new MvxAsyncCommand(OpenWebSocket));
-        }
+        public IMvxCommand OpenWebSocketCommand => _openWebSocketCommand ??= new MvxAsyncCommand(OpenWebSocketAsync);
 
-        private Task OpenButton() 
+        public HomeViewModel() 
+        { 
+            _stockManager = Mvx.IoCProvider.Resolve<IStockManager>();
+        }
+        
+        private Task OpenButtonAsync() 
         {
             return Navigation.Navigate<ButtonViewModel>();
         }
 
-        private Task OpenText()
+        private Task OpenTextAsync()
         {
             return Navigation.Navigate<TextViewModel>();
         }
 
-        private async Task OpenRest() 
+        private async Task OpenRestAsync() 
         {
-            if (!(await _stockManager.TokenValidated()))
+            if (!await _stockManager.TokenValidatedAsync())
             {
                 var validated = await Navigation.Navigate<TokenViewModel>();
 
@@ -77,9 +65,9 @@ namespace XamarinNativeExamples.Core.ViewModels.Home
             await Navigation.Navigate<HttpViewModel>();
         }
 
-        private async Task OpenWebSocket()
+        private async Task OpenWebSocketAsync()
         {
-            if (!(await _stockManager.TokenValidated()))
+            if (!(await _stockManager.TokenValidatedAsync()))
             {
                 var validated = await Navigation.Navigate<TokenViewModel>();
 

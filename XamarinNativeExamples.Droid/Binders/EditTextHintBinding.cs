@@ -18,9 +18,7 @@ namespace XamarinNativeExamples.Droid.Binders
 
         protected override void SetValueImpl(object target, object value)
         {
-            var editText = target as EditText;
-
-            if (value != null)
+            if (value != null && target is EditText editText)
             {
                 editText.Hint = value as string;
             }
