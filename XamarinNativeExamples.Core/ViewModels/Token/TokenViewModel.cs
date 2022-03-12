@@ -42,54 +42,13 @@ namespace XamarinNativeExamples.Core.ViewModels.Token
 
         public string TokenSuccessText => Resources.TokenSuccessMessage;
 
-        private string _testButtonText;
-        public string TestButtonText
-        {
-            get => _testButtonText;
-            private set => SetProperty(ref _testButtonText, value);
-        }
-
-        private string _apiToken;
-        public string ApiToken
-        {
-            get => _apiToken;
-            private set => SetProperty(ref _apiToken, value);
-        }
-
-        private bool _tokenValid;
-        public bool TokenValid
-        {
-            get => _tokenValid;
-            private set => SetProperty(ref _tokenValid, value);
-        }
-
-        private bool _tokenTested;
-        public bool TokenTested
-        {
-            get => _tokenTested;
-            private set => SetProperty(ref _tokenTested, value);
-        }
-
-        private bool _apiTextEnabled;
-        public bool ApiTextEnabled
-        {
-            get => _apiTextEnabled;
-            private set => SetProperty(ref _apiTextEnabled, value);
-        }
-
-        private bool _showFailed;
-        public bool ShowFailed
-        {
-            get => _showFailed;
-            private set => SetProperty(ref _showFailed, value);
-        }
-
-        private bool _showSuccess;
-        public bool ShowSuccess
-        {
-            get => _showSuccess;
-            private set => SetProperty(ref _showSuccess, value);
-        }
+        public string TestButtonText { get; private set; }
+        public string ApiToken { get; private set; }
+        public bool TokenValid { get; private set; }
+        public bool TokenTested { get; private set; }
+        public bool ApiTextEnabled { get; private set; }
+        public bool ShowFailed { get; private set; }
+        public bool ShowSuccess { get; private set; }
 
         private IMvxCommand _saveCommand;
         public IMvxCommand SaveCommand

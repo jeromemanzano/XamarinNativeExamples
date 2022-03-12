@@ -38,40 +38,11 @@ namespace XamarinNativeExamples.Core.ViewModels.Http
             }
         }
 
-        private string _sentimentValue;
-        public string SentimentValue
-        {
-            get => _sentimentValue;
-            private set => SetProperty(ref _sentimentValue, value);
-        }
-
-        private string _articlesWeeklyCount;
-        public string ArticlesWeeklyCount
-        {
-            get => _articlesWeeklyCount;
-            private set => SetProperty(ref _articlesWeeklyCount, value);
-        }
-
-        private string _articlesCount;
-        public string ArticlesCount
-        {
-            get => _articlesCount;
-            private set => SetProperty(ref _articlesCount, value);
-        }
-
-        private bool _sentimentsVisible;
-        public bool SentimentsVisible
-        {
-            get => _sentimentsVisible;
-            private set => SetProperty(ref _sentimentsVisible, value);
-        }
-
-        private bool _buttonEnabled;
-        public bool ButtonEnabled
-        {
-            get => _buttonEnabled;
-            private set => SetProperty(ref _buttonEnabled, value);
-        }
+        public string SentimentValue { get; private set; }
+        public string ArticlesWeeklyCount { get; private set; }
+        public string ArticlesCount { get; private set; }
+        public bool SentimentsVisible { get; private set; }
+        public bool ButtonEnabled { get; private set; }
 
         public string GetNewsSentimentText => Resources.SendRequest;
 

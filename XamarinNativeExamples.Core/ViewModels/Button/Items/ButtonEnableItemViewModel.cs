@@ -12,19 +12,8 @@ namespace XamarinNativeExamples.Core.ViewModels.Button.Items
             get => _clickCommand ?? (_clickCommand = new MvxCommand(ProcessClick));
         }
 
-        private int _clickCount;
-        public int ClickCount
-        {
-            get => _clickCount;
-            private set => SetProperty(ref _clickCount, value);
-        }
-
-        private bool _buttonEnabled;
-        public bool ButtonEnabled
-        {
-            get => _buttonEnabled;
-            private set => SetProperty(ref _buttonEnabled, value);
-        }
+        public int ClickCount { get; private set; }
+        public bool ButtonEnabled { get; private set; }
 
         public string ButtonText => Resources.TryMe;
 

@@ -50,54 +50,13 @@ namespace XamarinNativeExamples.Core.ViewModels.WebSocket
             }
         }
 
-        private string _price;
-        public string Price
-        {
-            get => _price;
-            private set => SetProperty(ref _price, value);
-        }
-
-        private string _volume;
-        public string Volume
-        {
-            get => _volume;
-            private set => SetProperty(ref _volume, value);
-        }
-
-        private string _time;
-        public string Time
-        {
-            get => _time;
-            private set => SetProperty(ref _time, value);
-        }
-
-        private string _pingCount;
-        public string PingCount
-        {
-            get => _pingCount;
-            private set => SetProperty(ref _pingCount, value);
-        }
-
-        private string _connectButtonText;
-        public string ConnectButtonText
-        {
-            get => _connectButtonText;
-            private set => SetProperty(ref _connectButtonText, value);
-        }
-
-        private bool _subscribeEnabled;
-        public bool SubscribeEnabled
-        {
-            get => _subscribeEnabled;
-            private set => SetProperty(ref _subscribeEnabled, value);
-        }
-
-        private bool _showStockDetails;
-        public bool ShowStockDetails
-        {
-            get => _showStockDetails;
-            private set => SetProperty(ref _showStockDetails, value);
-        }
+        public string Price { get; private set; }
+        public string Volume { get; private set; }
+        public string Time { get; private set; }
+        public string PingCount { get; private set; }
+        public string ConnectButtonText { get; private set; }
+        public bool SubscribeEnabled { get; private set; }
+        public bool ShowStockDetails { get; private set; }
 
         public string SubscribeText => Resources.Subscribe;
 

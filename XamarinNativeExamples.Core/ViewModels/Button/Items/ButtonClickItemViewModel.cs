@@ -13,24 +13,11 @@ namespace XamarinNativeExamples.Core.ViewModels.Button.Items
         }
 
         private IMvxCommand _longClickCommand;
-        public IMvxCommand LongClickCommand
-        {
-            get => _longClickCommand ?? (_longClickCommand = new MvxCommand(ProcessLongClick));
-        }
+        public IMvxCommand LongClickCommand => _longClickCommand ??= new MvxCommand(ProcessLongClick);
 
-        private int _clickCount;
-        public int ClickCount
-        {
-            get => _clickCount;
-            private set => SetProperty(ref _clickCount, value);
-        }
+        public int ClickCount { get; private set; }
 
-        private int _longClickCount;
-        public int LongClickCount
-        {
-            get => _longClickCount;
-            private set => SetProperty(ref _longClickCount, value);
-        }
+        public int LongClickCount { get; private set; }
 
         public string ButtonText => Resources.TryMe;
 
