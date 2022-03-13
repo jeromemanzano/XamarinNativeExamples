@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinNativeExamples.Droid
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinNativeExamples.UITest", "XamarinNativeExamples.UITest\XamarinNativeExamples.UITest.csproj", "{77D0A5A4-A958-4872-919C-3272BA9376A4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1199898E-E723-4CBC-BE32-FBD02394D415}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinNativeExamples.Core.Tests", "XamarinNativeExamples.Core.Tests\XamarinNativeExamples.Core.Tests.csproj", "{EAE1E925-5B92-4AEF-945C-77867FEC0464}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,5 +71,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FAD74F9C-CD28-4CA7-9C28-ECCA8D338758}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EAE1E925-5B92-4AEF-945C-77867FEC0464} = {1199898E-E723-4CBC-BE32-FBD02394D415}
 	EndGlobalSection
 EndGlobal

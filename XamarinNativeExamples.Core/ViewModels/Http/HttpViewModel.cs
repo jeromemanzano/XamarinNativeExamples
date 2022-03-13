@@ -33,15 +33,15 @@ namespace XamarinNativeExamples.Core.ViewModels.Http
         public string StockSymbol
         {
             get => _stockSymbol;
-            private set
+            set
             {
                 SetProperty(ref _stockSymbol, value);
                 ButtonEnabled = !value.IsNullOrEmpty();
             }
         }
-        
-        private IMvxCommand _getNewSentimentCommand;
-        public IMvxCommand GetNewsSentimentCommand => _getNewSentimentCommand ??= new MvxAsyncCommand(GetNewsSentimentAsync);
+            
+        private IMvxAsyncCommand _getNewSentimentCommand;
+        public IMvxAsyncCommand GetNewsSentimentCommand => _getNewSentimentCommand ??= new MvxAsyncCommand(GetNewsSentimentAsync);
 
         public HttpViewModel(ILoggerFactory loggerFactory, 
             IMvxNavigationService navigationService,
@@ -60,21 +60,19 @@ namespace XamarinNativeExamples.Core.ViewModels.Http
 
                 var newsSentimentsModel = await _stockManager.GetNewsSentimentAsync(StockSymbol);
 
-                ArticlesCount = string.Format(Resources.LastWeekArticlesFormat, newsSentimentsModel.Buzz.ArticlesInLastWeek);
-                ArticlesWeeklyCount = string.Format(Resources.WeeklyArticlesFormat, newsSentimentsModel.Buzz.WeeklyAverage);
+                ArticlesCount = string.Format(Resources.LastWeekArticlesFormat,
+                    newsSentimentsModel.Buzz.ArticlesInLastWeek);
+                ArticlesWeeklyCount =
+                    string.Format(Resources.WeeklyArticlesFormat, newsSentimentsModel.Buzz.WeeklyAverage);
 
                 SentimentValue = newsSentimentsModel.Sentiment.BullishPercent < .45 ? Resources.Bearish :
                     newsSentimentsModel.Sentiment.BullishPercent < .55 ? Resources.Neutral : Resources.Bullish;
 
                 SentimentsVisible = true;
             }
-            catch (HttpRequestException hEx)
+            catch (Exception exception) when (exception is HttpRequestException or BusinessException)
             {
-                await Interactions.ShowDialogAsync(hEx.Message);
-            }
-            catch (BusinessException bEx) 
-            { 
-                await Interactions.ShowDialogAsync(bEx.Message);
+                await Interactions.ShowDialogAsync(exception.Message);
             }
             catch (Exception)
             {
