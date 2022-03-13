@@ -33,18 +33,18 @@ namespace XamarinNativeExamples.Core.ViewModels.WebSocket
         public string InputStockSymbol
         {
             get => _inputStockSymbol;
-            private set
+            set
             {
                 SetProperty(ref _inputStockSymbol, value);
                 SubscribeEnabled = _currentStockSymbol != value;
             }
         }
         
-        private IMvxCommand _connectionCommand;
-        public IMvxCommand ConnectionCommand => _connectionCommand ??= new MvxAsyncCommand(UpdateConnectionAsync);
+        private IMvxAsyncCommand _connectionCommand;
+        public IMvxAsyncCommand ConnectionCommand => _connectionCommand ??= new MvxAsyncCommand(UpdateConnectionAsync);
 
-        private IMvxCommand _subscribeCommand;
-        public IMvxCommand SubscribeCommand => _subscribeCommand ??= new MvxAsyncCommand(SubscribeAsync);
+        private IMvxAsyncCommand _subscribeCommand;
+        public IMvxAsyncCommand SubscribeCommand => _subscribeCommand ??= new MvxAsyncCommand(SubscribeAsync);
         
         public WebSocketViewModel(ILoggerFactory loggerFactory, 
             IMvxNavigationService navigationService,
