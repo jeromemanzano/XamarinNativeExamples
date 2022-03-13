@@ -14,6 +14,8 @@ XNE is an open-source project that we created to help new Xamarin developers int
 5. [Microsoft App Center](https://appcenter.ms/apps)
 6. [Folding Cell](https://github.com/Baseflow/FoldingCell)
 7. [Plugin Current Activity](https://github.com/jamesmontemagno/CurrentActivityPlugin)
+8. [NUnit](https://nunit.org)
+9. [Fody PropertyChanged](https://github.com/Fody/PropertyChanged)
 
 # UI Test
 | Page  | Android Status | iOS Status |
