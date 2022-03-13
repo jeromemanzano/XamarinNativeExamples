@@ -24,15 +24,15 @@ namespace XamarinNativeExamples.Core.ViewModels.Token
 
         public string TokenSuccessText => Resources.TokenSuccessMessage;
         public string TestButtonText { get; private set; }
-        public string ApiToken { get; private set; }
-        public bool TokenValid { get; private set; }
+        public string ApiToken { get; set; }
+        public bool TokenValid { get; set; }
         public bool TokenTested { get; private set; }
         public bool ApiTextEnabled { get; private set; }
         public bool ShowFailed { get; private set; }
         public bool ShowSuccess { get; private set; }
 
-        private IMvxCommand _saveCommand;
-        public IMvxCommand SaveCommand => _saveCommand ??= new MvxAsyncCommand(SaveAsync);
+        private IMvxAsyncCommand _saveCommand;
+        public IMvxAsyncCommand SaveCommand => _saveCommand ??= new MvxAsyncCommand(SaveAsync);
 
         public TokenViewModel(ILoggerFactory loggerFactory, 
             IMvxNavigationService navigationService,
