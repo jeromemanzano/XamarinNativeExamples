@@ -27,17 +27,17 @@ namespace XamarinNativeExamples.Core.ViewModels.Home
         public string UserInterfaceHeader => Resources.UserInterfaceHeader;
         public string ConnectivityHeader => Resources.ConnectivityHeader;
 
-        private IMvxCommand _openButtonCommand;
-        public IMvxCommand OpenButtonCommand => _openButtonCommand ??= new MvxAsyncCommand(OpenButtonAsync);
+        private IMvxAsyncCommand _openButtonCommand;
+        public IMvxAsyncCommand OpenButtonCommand => _openButtonCommand ??= new MvxAsyncCommand(OpenButtonAsync);
 
-        private IMvxCommand _openTextCommand;
-        public IMvxCommand OpenTextCommand => _openTextCommand ??= new MvxAsyncCommand(OpenTextAsync);
+        private IMvxAsyncCommand _openTextCommand;
+        public IMvxAsyncCommand OpenTextCommand => _openTextCommand ??= new MvxAsyncCommand(OpenTextAsync);
         
-        private IMvxCommand _openRestCommand;
-        public IMvxCommand OpenRestCommand => _openRestCommand ??= new MvxAsyncCommand(OpenRestAsync);
+        private IMvxAsyncCommand _openRestCommand;
+        public IMvxAsyncCommand OpenRestCommand => _openRestCommand ??= new MvxAsyncCommand(OpenRestAsync);
         
-        private IMvxCommand _openWebSocketCommand;
-        public IMvxCommand OpenWebSocketCommand => _openWebSocketCommand ??= new MvxAsyncCommand(OpenWebSocketAsync);
+        private IMvxAsyncCommand _openWebSocketCommand;
+        public IMvxAsyncCommand OpenWebSocketCommand => _openWebSocketCommand ??= new MvxAsyncCommand(OpenWebSocketAsync);
 
         public HomeViewModel(ILoggerFactory loggerFactory, 
             IMvxNavigationService navigationService,
