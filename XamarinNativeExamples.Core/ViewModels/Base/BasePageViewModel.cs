@@ -1,8 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using MvvmCross;
 using MvvmCross.Commands;
-using MvvmCross.IoC;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using XamarinNativeExamples.Core.Managers.Interactions;
@@ -11,7 +9,6 @@ namespace XamarinNativeExamples.Core.ViewModels.Base
 {
     public abstract class BasePageViewModel : MvxNavigationViewModel, IPageViewModel
     {
-        protected IMvxIoCProvider IoCProvider { get; } = Mvx.IoCProvider;
         protected IInteractionManager Interactions { get; }
 
         protected BasePageViewModel(ILoggerFactory loggerFactory, 
@@ -22,8 +19,8 @@ namespace XamarinNativeExamples.Core.ViewModels.Base
             Interactions = interactionManager;
         }
 
-        private IMvxCommand _backCommand;
-        public IMvxCommand BackCommand => _backCommand ??= new MvxAsyncCommand(BackAsync);
+        private IMvxAsyncCommand _backCommand;
+        public IMvxAsyncCommand BackCommand => _backCommand ??= new MvxAsyncCommand(BackAsync);
 
         public virtual string Title { get; }
 
@@ -50,7 +47,7 @@ namespace XamarinNativeExamples.Core.ViewModels.Base
         public override void ViewDestroy(bool viewFinishing = true)
         {
             if (viewFinishing && CloseCompletionSource != null && !CloseCompletionSource.Task.IsCompleted && !CloseCompletionSource.Task.IsFaulted)
-                CloseCompletionSource?.TrySetCanceled();
+                CloseCompletionSource.TrySetCanceled();
 
             base.ViewDestroy(viewFinishing);
         }
