@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.WebSockets;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using MvvmCross.Commands;
@@ -83,8 +84,22 @@ namespace XamarinNativeExamples.Core.ViewModels.WebSocket
 
         private async Task UpdateConnectionAsync()
         {
-
             if (_connected)
+            {
+                await DisconnectAsync();
+            }
+            else
+            {
+                await ConnectAsync();
+            }
+
+            _connected = !_connected;
+            ShowStockDetails = _connected;
+        }
+
+        private async Task DisconnectAsync()
+        {
+            try
             {
                 await UnsubscribeCurrent();
                 await _stockManager.DisconnectWebSocketAsync();
@@ -92,7 +107,15 @@ namespace XamarinNativeExamples.Core.ViewModels.WebSocket
                 PingCount = string.Empty;
                 InputStockSymbol = string.Empty;
             }
-            else 
+            catch
+            {
+                // Ignore. There's nothing else we can do;
+            }
+        }
+
+        private async Task ConnectAsync()
+        {
+            try
             {
                 await _stockManager.ConnectWebSocketAsync();
                 _ping = 0;
@@ -102,9 +125,14 @@ namespace XamarinNativeExamples.Core.ViewModels.WebSocket
                 Volume = string.Empty;
                 ConnectButtonText = Resources.Disconnect;
             }
-
-            _connected = !_connected;
-            ShowStockDetails = _connected;
+            catch (WebSocketException)
+            {
+                await Interactions.ShowDialogAsync(Resources.WebSocketExceptionMessage);
+            }
+            catch
+            {
+                await Interactions.ShowDialogAsync(Resources.UnknownErrorMessage);
+            }
         }
 
         private async Task SubscribeAsync() 

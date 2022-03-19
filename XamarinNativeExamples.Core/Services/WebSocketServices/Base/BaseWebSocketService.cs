@@ -39,6 +39,7 @@ namespace XamarinNativeExamples.Core.Services.WebSocketServices.Base
 
         public Task Disconnect() 
         {
+            _webSocketClient.MessageReceived -= OnMessageReceived;
             return _webSocketClient.Disconnect();
         }
 

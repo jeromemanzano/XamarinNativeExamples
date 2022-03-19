@@ -1,4 +1,5 @@
 using System;
+using System.Net.WebSockets;
 using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
@@ -53,6 +54,26 @@ namespace XamarinNativeExamples.Core.Tests.ViewModels.WebSocket
         }
 
         [Test]
+        public async Task ConnectionCommand_Should_Show_WebSocketExceptionMessage_When_ConnectWebSocket_Throws_WebSocketException()
+        {
+            _stockManager.Setup(manager => manager.ConnectWebSocketAsync()).ThrowsAsync(new WebSocketException());
+            
+            await ViewModel.ConnectionCommand.ExecuteAsync();
+
+            InteractionManager.Verify(manager => manager.ShowDialogAsync(Resources.WebSocketExceptionMessage, null, null), Times.Once);
+        }
+        
+        [Test]
+        public async Task ConnectionCommand_Should_Show_UnknownErrorMessage_When_ConnectWebSocket_Throws_Exception()
+        {
+            _stockManager.Setup(manager => manager.ConnectWebSocketAsync()).ThrowsAsync(new Exception());
+            
+            await ViewModel.ConnectionCommand.ExecuteAsync();
+
+            InteractionManager.Verify(manager => manager.ShowDialogAsync(Resources.UnknownErrorMessage, null, null), Times.Once);
+        }
+
+        [Test]
         public async Task SubscribeCommand_Should_Execute_SubscribeToStock()
         {
             var stockSymbol = "a";
@@ -60,6 +81,19 @@ namespace XamarinNativeExamples.Core.Tests.ViewModels.WebSocket
             await ViewModel.SubscribeCommand.ExecuteAsync();
             
             _stockManager.Verify(manager => manager.SubscribeToStockAsync(stockSymbol), Times.Once);
+        }
+
+        [Test]
+        public async Task When_Disconnecting_Should_Not_Throw_Exception_When_DisconnectWebSocket_Throws_Exception()
+        {
+            // Connect first
+            await ViewModel.ConnectionCommand.ExecuteAsync();
+            Assert.AreEqual(Resources.Disconnect, ViewModel.ConnectButtonText);
+
+            _stockManager.Setup(manager => manager.DisconnectWebSocketAsync()).Throws(new Exception());
+           
+            Assert.DoesNotThrow(() => ViewModel.ConnectionCommand.ExecuteAsync());
+            InteractionManager.VerifyNoOtherCalls();
         }
 
         [Test]
