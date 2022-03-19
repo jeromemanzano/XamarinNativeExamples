@@ -264,4 +264,7 @@
   <data name="WeeklyArticlesFormat" xml:space="preserve">
     <value>Weekly articles count: {0}</value>
   </data>
+  <data name="WebSocketExceptionMessage" xml:space="preserve">
+    <value>Unable to connect. Please check your connection or API Token.</value>
+  </data>
 </root>
